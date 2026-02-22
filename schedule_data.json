@@ -1,0 +1,93 @@
+{
+  "last_updated": "2025-02-21T06:00:00",
+  "classes": [
+    {
+      "id": "1",
+      "title": "Morning Flow",
+      "studio": "Example Yoga Studio",
+      "instructor": "Sarah M.",
+      "start": "2025-02-21T07:00:00",
+      "end": "2025-02-21T08:00:00",
+      "level": "All Levels",
+      "spots_left": 5,
+      "color": "#c17a5c"
+    },
+    {
+      "id": "2",
+      "title": "Power Vinyasa",
+      "studio": "Sunrise Wellness Center",
+      "instructor": "James T.",
+      "start": "2025-02-21T09:30:00",
+      "end": "2025-02-21T10:45:00",
+      "level": "Intermediate",
+      "spots_left": 12,
+      "color": "#7a9e7e"
+    },
+    {
+      "id": "3",
+      "title": "Yin & Restore",
+      "studio": "Example Yoga Studio",
+      "instructor": "Lisa R.",
+      "start": "2025-02-21T12:00:00",
+      "end": "2025-02-21T13:15:00",
+      "level": "Beginner",
+      "spots_left": 8,
+      "color": "#c17a5c"
+    },
+    {
+      "id": "4",
+      "title": "Ashtanga Primary",
+      "studio": "Sunrise Wellness Center",
+      "instructor": "James T.",
+      "start": "2025-02-22T08:00:00",
+      "end": "2025-02-22T09:30:00",
+      "level": "Advanced",
+      "spots_left": 3,
+      "color": "#7a9e7e"
+    },
+    {
+      "id": "5",
+      "title": "Gentle Morning",
+      "studio": "Example Yoga Studio",
+      "instructor": "Sarah M.",
+      "start": "2025-02-22T07:00:00",
+      "end": "2025-02-22T08:00:00",
+      "level": "Beginner",
+      "spots_left": 10,
+      "color": "#c17a5c"
+    },
+    {
+      "id": "6",
+      "title": "Sunset Restorative",
+      "studio": "Sunrise Wellness Center",
+      "instructor": "Priya K.",
+      "start": "2025-02-22T18:00:00",
+      "end": "2025-02-22T19:15:00",
+      "level": "All Levels",
+      "spots_left": 14,
+      "color": "#7a9e7e"
+    },
+    {
+      "id": "7",
+      "title": "Hot Vinyasa",
+      "studio": "Example Yoga Studio",
+      "instructor": "Tom B.",
+      "start": "2025-02-23T10:00:00",
+      "end": "2025-02-23T11:00:00",
+      "level": "Intermediate",
+      "spots_left": 6,
+      "color": "#c17a5c"
+    },
+    {
+      "id": "8",
+      "title": "Breathwork & Flow",
+      "studio": "Sunrise Wellness Center",
+      "instructor": "Priya K.",
+      "start": "2025-02-23T17:30:00",
+      "end": "2025-02-23T18:30:00",
+      "level": "All Levels",
+      "spots_left": 9,
+      "color": "#7a9e7e"
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+# .github/workflows/scrape.yml
+#
+# This file tells GitHub Actions to run your scraper automatically.
+# Think of it like setting a recurring alarm that wakes up a robot,
+# runs your Python script, and commits the updated data back to your repo.
+#
+# GitHub Actions is FREE for public repositories.
+
+name: Scrape Yoga Schedules
+
+on:
+  # ⏰ Run automatically every day at 5:00 AM UTC (adjust to your timezone)
+  # Cron format: minute hour day-of-month month day-of-week
+  schedule:
+    - cron: "0 5 * * *"
+
+  # 🖱️  Also lets you trigger it manually from the GitHub Actions tab
+  workflow_dispatch:
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest  # GitHub spins up a fresh Linux machine for each run
+
+    steps:
+      # Step 1: Download your repo's code onto the runner machine
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Step 2: Install Python
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      # Step 3: Install your scraper's dependencies
+      - name: Install dependencies
+        run: pip install httpx beautifulsoup4
+
+      # Step 4: Run your scraper — this updates schedule_data.json
+      - name: Run scraper
+        run: python yoga_scraper.py
+
+      # Step 5: Commit the updated schedule_data.json back to the repo
+      # The website reads this file, so pushing it here = live update!
+      - name: Commit updated schedule data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add schedule_data.json
+          # Only commit if something actually changed (avoids empty commits)
+          git diff --staged --quiet || git commit -m "chore: update schedule data [$(date -u '+%Y-%m-%d %H:%M UTC')]"
+          git push
