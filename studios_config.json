@@ -1,15 +1,15 @@
 {
   "studios": [
     {
-      "name": "Example Yoga Studio",
-      "url": "https://www.exampleyoga.com/schedule",
+      "name": "Grounded by yoga",
+      "url": "https://www.groundedbyyoga.com/schedule/",
       "color": "#c17a5c",
       "enabled": true,
       "notes": "Replace this with a real studio URL. See README for scraping setup."
     },
     {
-      "name": "Sunrise Wellness Center",
-      "url": "https://www.sunrisewellness.com/classes",
+      "name": "Finger Lakes Yoga Center",
+      "url": "https://www.fingerlakesyogacenter.com/yogaclasses",
       "color": "#7a9e7e",
       "enabled": false,
       "notes": "Set enabled: true once you've configured the scraper for this site."
