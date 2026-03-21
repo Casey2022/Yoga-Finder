@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Local Yoga — Class Calendar</title>
+
+  <!-- FullCalendar: renders the Google Calendar-style view -->
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js"></script>
+
+  <!-- Cormorant Garamond: elegant serif for headings -->
+  <!-- Jost: clean geometric sans for body -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"/>
+
+  <style>
+    /* ── Design System ─────────────────────────────────────────── */
+    :root {
+      --bg:          #f5f0e8;
+      --bg-card:     #fdfaf4;
+      --bg-dark:     #2c2416;
+      --clay:        #c17a5c;
+      --clay-light:  #e8c4aa;
+      --sage:        #7a9e7e;
+      --sage-light:  #b8d4ba;
+      --ink:         #2c2416;
+      --ink-mid:     #6b5c47;
+      --ink-soft:    #a0907a;
+      --border:      #ddd4c0;
+      --shadow:      rgba(44, 36, 22, 0.08);
+      --font-display: 'Cormorant Garamond', serif;
+      --font-body:    'Jost', sans-serif;
+      --radius:       12px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      font-family: var(--font-body);
+      color: var(--ink);
+      min-height: 100vh;
+    }
+
+    /* ── Noise texture overlay ──────────────────────────────────── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      opacity: 0.025;
+      pointer-events: none;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+      background-size: 128px;
+    }
+
+    /* ── Header ────────────────────────────────────────────────── */
+    header {
+      background: var(--bg-dark);
+      color: #f5f0e8;
+      padding: 2.5rem 3rem 2rem;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .header-brand h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      line-height: 1;
+    }
+
+    .header-brand h1 em {
+      font-style: italic;
+      color: var(--clay-light);
+    }
+
+    .header-brand p {
+      margin-top: 0.4rem;
+      font-size: 0.85rem;
+      font-weight: 300;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+    }
+
+    .last-updated {
+      font-size: 0.75rem;
+      font-weight: 300;
+      color: var(--ink-soft);
+      letter-spacing: 0.06em;
+      text-align: right;
+    }
+
+    /* ── Studio filter pills ────────────────────────────────────── */
+    .filter-bar {
+      background: var(--bg-card);
+      border-bottom: 1px solid var(--border);
+      padding: 0.9rem 3rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .filter-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--ink-soft);
+      margin-right: 0.25rem;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 400;
+      cursor: pointer;
+      border: 1.5px solid transparent;
+      transition: all 0.18s ease;
+      user-select: none;
+    }
+
+    .pill-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .pill.active {
+      border-color: currentColor;
+    }
+
+    .pill:hover {
+      opacity: 0.85;
+      transform: translateY(-1px);
+    }
+
+    /* ── Main layout ────────────────────────────────────────────── */
+    .main {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 0;
+      min-height: calc(100vh - 130px);
+    }
+
+    /* ── Sidebar ────────────────────────────────────────────────── */
+    .sidebar {
+      background: var(--bg-card);
+      border-right: 1px solid var(--border);
+      padding: 1.5rem;
+      overflow-y: auto;
+    }
+
+    .sidebar-section-title {
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--ink-soft);
+      margin-bottom: 0.75rem;
+      margin-top: 1.25rem;
+    }
+
+    .sidebar-section-title:first-child {
+      margin-top: 0;
+    }
+
+    /* Today's classes list */
+    .class-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .class-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 0.75rem;
+      border-left: 3px solid var(--clay);
+      cursor: pointer;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .class-card:hover {
+      transform: translateX(2px);
+      box-shadow: 2px 4px 12px var(--shadow);
+    }
+
+    .class-card-name {
+      font-size: 0.88rem;
+      font-weight: 500;
+      line-height: 1.2;
+    }
+
+    .class-card-meta {
+      margin-top: 0.3rem;
+      font-size: 0.72rem;
+      color: var(--ink-mid);
+      font-weight: 300;
+    }
+
+    .class-card-spots {
+      display: inline-block;
+      margin-top: 0.3rem;
+      font-size: 0.65rem;
+      padding: 0.15rem 0.5rem;
+      border-radius: 999px;
+      background: var(--sage-light);
+      color: var(--sage);
+      font-weight: 500;
+    }
+
+    .class-card-spots.few {
+      background: #fde8d8;
+      color: var(--clay);
+    }
+
+    /* Level badges */
+    .level-badge {
+      display: inline-block;
+      font-size: 0.6rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      padding: 0.15rem 0.45rem;
+      border-radius: 4px;
+      margin-left: 0.3rem;
+      background: var(--border);
+      color: var(--ink-soft);
+    }
+
+    /* ── Calendar pane ──────────────────────────────────────────── */
+    .calendar-pane {
+      padding: 1.5rem 2rem;
+    }
+
+    /* Override FullCalendar styles to match our theme */
+    .fc {
+      font-family: var(--font-body) !important;
+    }
+
+    .fc .fc-toolbar-title {
+      font-family: var(--font-display) !important;
+      font-size: 1.7rem !important;
+      font-weight: 400 !important;
+      color: var(--ink) !important;
+    }
+
+    .fc .fc-button {
+      background: var(--bg-card) !important;
+      border: 1.5px solid var(--border) !important;
+      color: var(--ink) !important;
+      font-family: var(--font-body) !important;
+      font-size: 0.78rem !important;
+      font-weight: 400 !important;
+      letter-spacing: 0.05em !important;
+      border-radius: 6px !important;
+      padding: 0.35rem 0.8rem !important;
+      box-shadow: none !important;
+      transition: background 0.15s !important;
+    }
+
+    .fc .fc-button:hover,
+    .fc .fc-button-active {
+      background: var(--ink) !important;
+      color: var(--bg) !important;
+      border-color: var(--ink) !important;
+    }
+
+    .fc .fc-col-header-cell-cushion {
+      font-size: 0.72rem !important;
+      text-transform: uppercase !important;
+      letter-spacing: 0.1em !important;
+      color: var(--ink-soft) !important;
+      font-weight: 400 !important;
+    }
+
+    .fc .fc-daygrid-day-number {
+      font-size: 0.8rem !important;
+      color: var(--ink-mid) !important;
+    }
+
+    .fc .fc-daygrid-day.fc-day-today {
+      background: rgba(193, 122, 92, 0.06) !important;
+    }
+
+    .fc .fc-daygrid-day.fc-day-today .fc-daygrid-day-number {
+      background: var(--clay) !important;
+      color: white !important;
+      border-radius: 50% !important;
+      width: 22px;
+      height: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .fc-event {
+      border-radius: 5px !important;
+      border: none !important;
+      font-size: 0.72rem !important;
+      font-family: var(--font-body) !important;
+      padding: 1px 4px !important;
+      cursor: pointer !important;
+    }
+
+    .fc-h-event .fc-event-title {
+      font-weight: 500 !important;
+    }
+
+    /* ── Event detail modal ─────────────────────────────────────── */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(44, 36, 22, 0.5);
+      backdrop-filter: blur(4px);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-overlay.open {
+      display: flex;
+    }
+
+    .modal {
+      background: var(--bg-card);
+      border-radius: 16px;
+      padding: 2rem;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 20px 60px rgba(44, 36, 22, 0.25);
+      animation: modalIn 0.22s ease;
+      position: relative;
+    }
+
+    @keyframes modalIn {
+      from { opacity: 0; transform: translateY(16px) scale(0.97); }
+      to   { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    .modal-color-bar {
+      height: 4px;
+      border-radius: 2px;
+      margin-bottom: 1.25rem;
+    }
+
+    .modal-title {
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      font-weight: 400;
+      line-height: 1.1;
+    }
+
+    .modal-studio {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--ink-soft);
+      margin-top: 0.25rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .modal-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      margin-bottom: 0.6rem;
+      font-size: 0.88rem;
+      color: var(--ink-mid);
+    }
+
+    .modal-icon {
+      width: 18px;
+      flex-shrink: 0;
+      opacity: 0.5;
+      margin-top: 1px;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: none;
+      border: none;
+      font-size: 1.2rem;
+      cursor: pointer;
+      color: var(--ink-soft);
+      padding: 0.25rem;
+      border-radius: 4px;
+      transition: color 0.15s;
+    }
+
+    .modal-close:hover { color: var(--ink); }
+
+    /* ── Empty state ────────────────────────────────────────────── */
+    .empty-state {
+      text-align: center;
+      padding: 3rem 1rem;
+      color: var(--ink-soft);
+    }
+
+    .empty-state-icon {
+      font-size: 2.5rem;
+      margin-bottom: 0.75rem;
+      opacity: 0.4;
+    }
+
+    .empty-state p {
+      font-size: 0.85rem;
+      font-weight: 300;
+      line-height: 1.6;
+    }
+
+    /* ── Responsive ─────────────────────────────────────────────── */
+    @media (max-width: 768px) {
+      header { padding: 1.5rem; }
+      .filter-bar { padding: 0.75rem 1.5rem; }
+      .main { grid-template-columns: 1fr; }
+      .sidebar { border-right: none; border-bottom: 1px solid var(--border); }
+      .calendar-pane { padding: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── Header ─────────────────────────────────────────────────────── -->
+<header>
+  <div class="header-brand">
+    <h1>Local <em>Yoga</em></h1>
+    <p>Unified class calendar</p>
+  </div>
+  <div class="last-updated" id="lastUpdated">Loading...</div>
+</header>
+
+<!-- ── Studio filter pills ──────────────────────────────────────── -->
+<div class="filter-bar" id="filterBar">
+  <span class="filter-label">Studios</span>
+  <!-- Pills injected here by JS -->
+</div>
+
+<!-- ── Main layout ──────────────────────────────────────────────── -->
+<div class="main">
+
+  <!-- Sidebar: today's classes -->
+  <aside class="sidebar">
+    <p class="sidebar-section-title">Today's Classes</p>
+    <div class="class-list" id="todayList">
+      <div class="empty-state">
+        <div class="empty-state-icon">🧘</div>
+        <p>Loading schedule...</p>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Calendar -->
+  <section class="calendar-pane">
+    <div id="calendar"></div>
+  </section>
+</div>
+
+<!-- ── Event detail modal ────────────────────────────────────────── -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div class="modal-color-bar" id="modalColorBar"></div>
+    <div class="modal-title" id="modalTitle"></div>
+    <div class="modal-studio" id="modalStudio"></div>
+    <div class="modal-row">
+      <svg class="modal-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+      <span id="modalTime"></span>
+    </div>
+    <div class="modal-row">
+      <svg class="modal-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+      <span id="modalInstructor"></span>
+    </div>
+    <div class="modal-row">
+      <svg class="modal-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+      <span id="modalLevel"></span>
+    </div>
+    <div class="modal-row" id="modalSpotsRow">
+      <svg class="modal-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+      <span id="modalSpots"></span>
+    </div>
+  </div>
+</div>
+
+<script>
+// ── App State ──────────────────────────────────────────────────────
+let allClasses = [];         // All scraped classes
+let activeStudios = new Set(); // Studios currently shown
+let calendar;
+
+// ── Fetch Data ─────────────────────────────────────────────────────
+async function loadSchedule() {
+  try {
+    // Loads schedule_data.json — the file your Python scraper generates
+    const response = await fetch("schedule_data.json");
+    const data = await response.json();
+    allClasses = data.classes || [];
+
+    // Show last updated time
+    const updated = new Date(data.last_updated);
+    document.getElementById("lastUpdated").textContent =
+      `Updated ${updated.toLocaleString("en-US", { month: "short", day: "numeric", hour: "numeric", minute: "2-digit" })}`;
+
+    // Build set of all studio names
+    const studios = [...new Set(allClasses.map(c => c.studio))];
+    studios.forEach(s => activeStudios.add(s));
+
+    buildFilterPills(studios);
+    buildSidebar();
+    initCalendar();
+  } catch (err) {
+    console.error("Could not load schedule_data.json:", err);
+    document.getElementById("lastUpdated").textContent = "Could not load data";
+    document.getElementById("todayList").innerHTML = `
+      <div class="empty-state">
+        <div class="empty-state-icon">⚠️</div>
+        <p>Could not load schedule.<br/>Make sure <code>schedule_data.json</code> exists in your repo.</p>
+      </div>`;
+  }
+}
+
+// ── Studio Filter Pills ────────────────────────────────────────────
+function buildFilterPills(studios) {
+  const bar = document.getElementById("filterBar");
+  studios.forEach(studio => {
+    const color = allClasses.find(c => c.studio === studio)?.color || "#888";
+    const pill = document.createElement("button");
+    pill.className = "pill active";
+    pill.style.color = color;
+    pill.style.background = hexToRgba(color, 0.1);
+    pill.dataset.studio = studio;
+    pill.innerHTML = `<span class="pill-dot" style="background:${color}"></span>${studio}`;
+    pill.addEventListener("click", () => toggleStudio(studio, pill));
+    bar.appendChild(pill);
+  });
+}
+
+function toggleStudio(studio, pill) {
+  if (activeStudios.has(studio)) {
+    activeStudios.delete(studio);
+    pill.classList.remove("active");
+    pill.style.background = "transparent";
+  } else {
+    activeStudios.add(studio);
+    pill.classList.add("active");
+    const color = allClasses.find(c => c.studio === studio)?.color || "#888";
+    pill.style.background = hexToRgba(color, 0.1);
+  }
+  calendar.refetchEvents();
+  buildSidebar();
+}
+
+// ── Today's Classes Sidebar ────────────────────────────────────────
+function buildSidebar() {
+  const today = new Date().toDateString();
+  const todayClasses = allClasses
+    .filter(c => activeStudios.has(c.studio) && new Date(c.start).toDateString() === today)
+    .sort((a, b) => new Date(a.start) - new Date(b.start));
+
+  const list = document.getElementById("todayList");
+
+  if (todayClasses.length === 0) {
+    list.innerHTML = `<div class="empty-state">
+      <div class="empty-state-icon">🌿</div>
+      <p>No classes today<br/>for selected studios.</p>
+    </div>`;
+    return;
+  }
+
+  list.innerHTML = todayClasses.map(cls => `
+    <div class="class-card" style="border-left-color:${cls.color}" onclick="showModal(${JSON.stringify(cls).replace(/"/g, '&quot;')})">
+      <div class="class-card-name">${cls.title} <span class="level-badge">${cls.level}</span></div>
+      <div class="class-card-meta">
+        ${formatTime(cls.start)} – ${formatTime(cls.end)} · ${cls.instructor}
+      </div>
+      ${cls.spots_left != null ? `<span class="class-card-spots ${cls.spots_left <= 5 ? 'few' : ''}">${cls.spots_left} spots left</span>` : ""}
+    </div>
+  `).join("");
+}
+
+// ── FullCalendar ───────────────────────────────────────────────────
+function initCalendar() {
+  const el = document.getElementById("calendar");
+  calendar = new FullCalendar.Calendar(el, {
+    initialView: "dayGridMonth",
+    headerToolbar: {
+      left: "prev,next today",
+      center: "title",
+      right: "dayGridMonth,timeGridWeek,timeGridDay"
+    },
+    buttonText: {
+      today: "Today",
+      month: "Month",
+      week:  "Week",
+      day:   "Day"
+    },
+    height: "auto",
+    events: fetchCalendarEvents,
+    eventClick: ({ event }) => {
+      showModal(event.extendedProps.rawData);
+    },
+    // Update sidebar when navigating to a different week/day
+    datesSet: () => buildSidebar()
+  });
+  calendar.render();
+}
+
+function fetchCalendarEvents(info, successCallback) {
+  const events = allClasses
+    .filter(c => activeStudios.has(c.studio))
+    .map(c => ({
+      id:    c.id,
+      title: c.title,
+      start: c.start,
+      end:   c.end,
+      backgroundColor: c.color,
+      borderColor:     c.color,
+      extendedProps: { rawData: c }
+    }));
+  successCallback(events);
+}
+
+// ── Modal ──────────────────────────────────────────────────────────
+function showModal(cls) {
+  if (typeof cls === "string") cls = JSON.parse(cls);
+  document.getElementById("modalColorBar").style.background = cls.color;
+  document.getElementById("modalTitle").textContent = cls.title;
+  document.getElementById("modalStudio").textContent = cls.studio;
+  document.getElementById("modalTime").textContent =
+    `${formatDate(cls.start)}  ·  ${formatTime(cls.start)} – ${formatTime(cls.end)}`;
+  document.getElementById("modalInstructor").textContent = cls.instructor;
+  document.getElementById("modalLevel").textContent = cls.level;
+
+  const spotsRow = document.getElementById("modalSpotsRow");
+  if (cls.spots_left != null) {
+    spotsRow.style.display = "flex";
+    document.getElementById("modalSpots").textContent = `${cls.spots_left} spots remaining`;
+  } else {
+    spotsRow.style.display = "none";
+  }
+
+  document.getElementById("modalOverlay").classList.add("open");
+  document.body.style.overflow = "hidden";
+}
+
+function closeModal(e) {
+  if (e && e.target !== e.currentTarget) return;
+  document.getElementById("modalOverlay").classList.remove("open");
+  document.body.style.overflow = "";
+}
+
+document.addEventListener("keydown", e => { if (e.key === "Escape") closeModal(); });
+
+// ── Helpers ────────────────────────────────────────────────────────
+function formatTime(iso) {
+  return new Date(iso).toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit" });
+}
+
+function formatDate(iso) {
+  return new Date(iso).toLocaleDateString("en-US", { weekday: "long", month: "long", day: "numeric" });
+}
+
+function hexToRgba(hex, alpha) {
+  const r = parseInt(hex.slice(1,3), 16);
+  const g = parseInt(hex.slice(3,5), 16);
+  const b = parseInt(hex.slice(5,7), 16);
+  return `rgba(${r},${g},${b},${alpha})`;
+}
+
+// ── Boot ───────────────────────────────────────────────────────────
+loadSchedule();
+</script>
+</body>
+</html>
