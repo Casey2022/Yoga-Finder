@@ -1,5 +1,5 @@
 {
-  "last_updated": "2025-02-21T06:00:00",
+  "last_updated": "2026-04-01T16:55:52",
   "classes": [
     {
       "id": "1",
@@ -88,6 +88,28 @@
       "level": "All Levels",
       "spots_left": 9,
       "color": "#7a9e7e"
+    },
+    {
+      "id": "Victor Yoga Studio-0-87415",
+      "title": "Warmer Vinyasa Flow in Studio",
+      "studio": "Victor Yoga Studio",
+      "instructor": "Mandy W",
+      "start": "2026-04-01T17:30:00",
+      "end": "2026-04-01T18:30:00",
+      "level": "All Levels",
+      "spots_left": null,
+      "color": "#c17a5c"
+    },
+    {
+      "id": "Victor Yoga Studio-4-70831",
+      "title": "Gentle Yoga in Studio",
+      "studio": "Victor Yoga Studio",
+      "instructor": "Mandy W",
+      "start": "2026-04-01T19:00:00",
+      "end": "2026-04-01T20:00:00",
+      "level": "All Levels",
+      "spots_left": null,
+      "color": "#c17a5c"
     }
   ]
 }
