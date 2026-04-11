@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-01T16:55:52",
+  "last_updated": "2026-04-11T22:52:29",
   "classes": [
     {
       "id": "1",
@@ -90,23 +90,122 @@
       "color": "#7a9e7e"
     },
     {
-      "id": "Victor Yoga Studio-0-87415",
-      "title": "Warmer Vinyasa Flow in Studio",
+      "id": "Victor Yoga Studio-56658",
+      "title": "Warm Vinyasa in Studio",
       "studio": "Victor Yoga Studio",
       "instructor": "Mandy W",
-      "start": "2026-04-01T17:30:00",
-      "end": "2026-04-01T18:30:00",
+      "start": "2026-04-12T09:30:00",
+      "end": "2026-04-12T10:30:00",
       "level": "All Levels",
       "spots_left": null,
       "color": "#c17a5c"
     },
     {
-      "id": "Victor Yoga Studio-4-70831",
+      "id": "Victor Yoga Studio-73754",
+      "title": "Warm Vinyasa Flow in Studio",
+      "studio": "Victor Yoga Studio",
+      "instructor": "Alex M",
+      "start": "2026-04-13T09:30:00",
+      "end": "2026-04-13T10:30:00",
+      "level": "All Levels",
+      "spots_left": null,
+      "color": "#c17a5c"
+    },
+    {
+      "id": "Victor Yoga Studio-23280",
+      "title": "Open Level Yoga",
+      "studio": "Victor Yoga Studio",
+      "instructor": "Mandy W",
+      "start": "2026-04-13T11:00:00",
+      "end": "2026-04-13T12:00:00",
+      "level": "All Levels",
+      "spots_left": null,
+      "color": "#c17a5c"
+    },
+    {
+      "id": "Victor Yoga Studio-2773",
+      "title": "Warm Vinyasa Flow in Studio",
+      "studio": "Victor Yoga Studio",
+      "instructor": "Mandy W",
+      "start": "2026-04-13T17:30:00",
+      "end": "2026-04-13T18:30:00",
+      "level": "All Levels",
+      "spots_left": null,
+      "color": "#c17a5c"
+    },
+    {
+      "id": "Victor Yoga Studio-57206",
+      "title": "Meditation with Bani",
+      "studio": "Victor Yoga Studio",
+      "instructor": "Bani A",
+      "start": "2026-04-13T19:00:00",
+      "end": "2026-04-13T20:00:00",
+      "level": "All Levels",
+      "spots_left": null,
+      "color": "#c17a5c"
+    },
+    {
+      "id": "Victor Yoga Studio-39860",
+      "title": "Warm Vinyasa Flow in Studio",
+      "studio": "Victor Yoga Studio",
+      "instructor": "Kati S",
+      "start": "2026-04-14T06:00:00",
+      "end": "2026-04-14T07:00:00",
+      "level": "All Levels",
+      "spots_left": null,
+      "color": "#c17a5c"
+    },
+    {
+      "id": "Victor Yoga Studio-88566",
       "title": "Gentle Yoga in Studio",
       "studio": "Victor Yoga Studio",
       "instructor": "Mandy W",
-      "start": "2026-04-01T19:00:00",
-      "end": "2026-04-01T20:00:00",
+      "start": "2026-04-14T09:30:00",
+      "end": "2026-04-14T10:30:00",
+      "level": "All Levels",
+      "spots_left": null,
+      "color": "#c17a5c"
+    },
+    {
+      "id": "Victor Yoga Studio-26492",
+      "title": "Warm Vinyasa Flow in Studio",
+      "studio": "Victor Yoga Studio",
+      "instructor": "Beth C",
+      "start": "2026-04-14T18:00:00",
+      "end": "2026-04-14T19:00:00",
+      "level": "All Levels",
+      "spots_left": null,
+      "color": "#c17a5c"
+    },
+    {
+      "id": "Victor Yoga Studio-47745",
+      "title": "Warmer Vinyasa Flow in Studio",
+      "studio": "Victor Yoga Studio",
+      "instructor": "Kati S",
+      "start": "2026-04-15T17:30:00",
+      "end": "2026-04-15T18:30:00",
+      "level": "All Levels",
+      "spots_left": null,
+      "color": "#c17a5c"
+    },
+    {
+      "id": "Victor Yoga Studio-48705",
+      "title": "Gentle Yoga in Studio",
+      "studio": "Victor Yoga Studio",
+      "instructor": "Alex M",
+      "start": "2026-04-15T19:00:00",
+      "end": "2026-04-15T20:00:00",
+      "level": "All Levels",
+      "spots_left": null,
+      "color": "#c17a5c"
+    },
+    {
+      "id": "Victor Yoga Studio-79198",
+      "title": "Gentle Yoga in Studio",
+      "studio": "Victor Yoga Studio",
+      "instructor": "Alex M",
+      "start": "2026-04-17T08:30:00",
+      "end": "2026-04-17T09:30:00",
       "level": "All Levels",
       "spots_left": null,
       "color": "#c17a5c"
