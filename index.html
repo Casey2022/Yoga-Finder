@@ -1067,63 +1067,93 @@ async function searchStudios() {
     return;
   }
 
-  // Reset UI
   document.getElementById("searchBtn").disabled = true;
   document.getElementById("studioResults").innerHTML = "";
   document.getElementById("configSection").style.display = "none";
   document.getElementById("discoveryStatus").textContent =
-    `🔍 Searching for yoga studios within ${radius} miles of ${location}…`;
+    `🔍 Locating "${location}"…`;
   selectedStudios.clear();
   updateSelectedCount();
 
   try {
-    // ── Call Claude API with web search ────────────────────────────
-    // Claude searches the web for real studios near the given location
-    // and returns structured JSON — no Google Places API key needed!
-    const response = await fetch("https://api.anthropic.com/v1/messages", {
+    // ── Step 1: Geocode the location with Nominatim ────────────────
+    // Nominatim is OpenStreetMap's free geocoder — no API key needed,
+    // CORS-friendly, works from any domain.
+    const geoRes = await fetch(
+      `https://nominatim.openstreetmap.org/search?` +
+      `q=${encodeURIComponent(location)}&format=json&limit=1`,
+      { headers: { "Accept-Language": "en" } }
+    );
+    const geoData = await geoRes.json();
+
+    if (!geoData.length) {
+      document.getElementById("discoveryStatus").textContent =
+        `Could not find "${location}". Try a different format, e.g. "Rochester, NY" or "14604".`;
+      return;
+    }
+
+    const lat = parseFloat(geoData[0].lat);
+    const lng = parseFloat(geoData[0].lon);
+    const radiusMeters = radius * 1609; // miles → metres
+    const displayName  = geoData[0].display_name.split(",").slice(0,2).join(",");
+
+    document.getElementById("discoveryStatus").textContent =
+      `📍 Found location: ${displayName}. Searching for yoga studios…`;
+
+    // ── Step 2: Query Overpass for yoga studios ────────────────────
+    // Overpass is OpenStreetMap's data query API — also free, no key,
+    // CORS-friendly. We cast a wide net with multiple tag combinations
+    // to catch as many yoga studios as possible.
+    const query = `
+      [out:json][timeout:30];
+      (
+        node["sport"="yoga"](around:${radiusMeters},${lat},${lng});
+        node["leisure"="fitness_centre"]["name"~"yoga|wellness|pilates|mindful",i]
+             (around:${radiusMeters},${lat},${lng});
+        node["amenity"="studio"]["name"~"yoga|wellness|pilates",i]
+             (around:${radiusMeters},${lat},${lng});
+        way["sport"="yoga"](around:${radiusMeters},${lat},${lng});
+        way["leisure"="fitness_centre"]["name"~"yoga|wellness|pilates|mindful",i]
+             (around:${radiusMeters},${lat},${lng});
+        way["amenity"="studio"]["name"~"yoga|pilates",i]
+             (around:${radiusMeters},${lat},${lng});
+      );
+      out body center;
+    `;
+
+    const overpassRes = await fetch("https://overpass-api.de/api/interpreter", {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        model: "claude-sonnet-4-20250514",
-        max_tokens: 2000,
-        tools: [{ type: "web_search_20250305", name: "web_search" }],
-        system: `You are a studio finder assistant. The user will give you a location and radius.
-Search the web for yoga and fitness studios near that location.
-You MUST return ONLY a valid JSON array — no markdown, no backticks, no explanation.
-Each item must have exactly these fields:
-{
-  "name": "Studio Name",
-  "address": "Full street address",
-  "city": "City, ST",
-  "phone": "phone or empty string",
-  "website": "https://... or empty string",
-  "platform": "Mindbody" | "Zen Planner" | "Pike13" | "Other" | "Unknown",
-  "mindbody_url": "https://www.mindbodyonline.com/explore/locations/slug or empty string",
-  "description": "One sentence about the studio"
-}
-Search specifically for their booking platform. If they use Mindbody, find the exact mindbodyonline.com/explore/locations/... URL.
-Return 5-12 real studios. Return ONLY the JSON array.`,
-        messages: [{
-          role: "user",
-          content: `Find yoga studios within ${radius} miles of ${location}. Return the JSON array only.`
-        }]
-      })
+      body: query
     });
+    const overpassData = await overpassRes.json();
 
-    const data = await response.json();
+    // ── Step 3: Parse and deduplicate results ──────────────────────
+    const seen = new Set();
+    discoveredStudios = overpassData.elements
+      .filter(el => el.tags?.name)
+      .filter(el => {
+        if (seen.has(el.tags.name)) return false;
+        seen.add(el.tags.name);
+        return true;
+      })
+      .map(el => {
+        const t = el.tags;
+        const website = t.website || t["contact:website"] || "";
+        const isMindbody = website.toLowerCase().includes("mindbody");
+        return {
+          name:         t.name,
+          address:      [t["addr:housenumber"], t["addr:street"]].filter(Boolean).join(" "),
+          city:         [t["addr:city"], t["addr:state"]].filter(Boolean).join(", "),
+          phone:        t.phone || t["contact:phone"] || "",
+          website:      website,
+          platform:     isMindbody ? "Mindbody" : (website ? "Other" : "Unknown"),
+          mindbody_url: isMindbody ? website : "",
+          description:  t.description || t["opening_hours"]
+                         ? `Hours: ${t.opening_hours || "see website"}` : ""
+        };
+      });
 
-    // Extract the text content from Claude's response
-    // Claude may use web_search tool first, then return text
-    const textBlock = data.content?.find(b => b.type === "text");
-    if (!textBlock) throw new Error("No text response from Claude");
-
-    // Parse the JSON array Claude returned
-    let raw = textBlock.text.trim();
-    // Strip any accidental markdown fences
-    raw = raw.replace(/^```json?\s*/i, "").replace(/```\s*$/i, "").trim();
-    discoveredStudios = JSON.parse(raw);
-
-    renderStudios(discoveredStudios, location, radius);
+    renderStudios(discoveredStudios, displayName, radius);
 
   } catch (err) {
     console.error(err);
@@ -1139,7 +1169,29 @@ function renderStudios(studios, location, radius) {
   const results = document.getElementById("studioResults");
 
   if (!studios.length) {
-    status.textContent = `No studios found near ${location}. Try a different location or larger radius.`;
+    status.textContent = "";
+    results.innerHTML = `
+      <div class="empty-state">
+        <div class="empty-state-icon">🗺️</div>
+        <p>No studios found in OpenStreetMap near ${location}.<br/>
+        OSM data is community-maintained and may be incomplete.<br/><br/>
+        <strong>Try these instead:</strong><br/>
+        <a href="https://www.mindbodyonline.com/explore/fitness/search/studios?q=${encodeURIComponent(location)}"
+           target="_blank" rel="noopener" style="color:var(--clay)">
+          Search on Mindbody →
+        </a>
+        &nbsp;·&nbsp;
+        <a href="https://www.google.com/search?q=yoga+studios+near+${encodeURIComponent(location)}"
+           target="_blank" rel="noopener" style="color:var(--clay)">
+          Google Search →
+        </a>
+        <br/><br/>
+        <small style="color:var(--ink-soft)">
+          Once you find a studio on Mindbody, copy its URL and add it manually
+          to your <code>studios_config.json</code>.
+        </small>
+        </p>
+      </div>`;
     return;
   }
 
@@ -1167,6 +1219,14 @@ function renderStudios(studios, location, radius) {
       <span class="studio-platform-badge ${badgeClass}">${s.platform}</span>
     </div>`;
   }).join("");
+
+  // Add a helpful tip at the bottom
+  results.innerHTML += `
+    <p style="font-size:0.75rem; color:var(--ink-soft); margin-top:0.5rem; text-align:center;">
+      Not seeing a studio?
+      <a href="https://www.mindbodyonline.com/explore/fitness/search/studios?q=${encodeURIComponent(location)}"
+         target="_blank" rel="noopener" style="color:var(--clay)">Search Mindbody →</a>
+    </p>`;
 }
 
 function toggleStudioSelection(index) {
