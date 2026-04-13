@@ -296,13 +296,49 @@ def scrape_victor_yoga(debug: bool = False) -> list[dict]:
 
                     clicked = page.evaluate("""
                         () => {
-                            const el = Array.from(document.querySelectorAll('*')).find(el => {
-                                const t = (el.innerText || '').trim();
-                                const label = (el.getAttribute('aria-label') || '').toLowerCase();
-                                return t === '>' || t === '›' || t === '→' ||
-                                       label.includes('next') || label.includes('forward');
+                            // Strategy: find the next-week button by its POSITION.
+                            // It should be just to the right of the last day tab.
+                            // Day tabs sit in a horizontal row — the arrow is at
+                            // the same vertical band but beyond the rightmost tab.
+                            const days = ['SUN','MON','TUE','WED','THU','FRI','SAT'];
+                            const all = Array.from(document.querySelectorAll('div, span, li, a'));
+                            const seen = new Set();
+                            const tabs = all.filter(el => {
+                                const t = el.innerText ? el.innerText.trim() : '';
+                                const hasDay = days.some(d => t.startsWith(d));
+                                const hasNum = /\\d{1,2}/.test(t);
+                                if (hasDay && hasNum && t.length < 12 && !seen.has(t)) {
+                                    seen.add(t);
+                                    return true;
+                                }
+                                return false;
                             });
-                            if (el) { el.click(); return true; }
+
+                            if (tabs.length === 0) return false;
+
+                            // Get the bounding box of the last tab
+                            const lastTab = tabs[tabs.length - 1];
+                            const lastRect = lastTab.getBoundingClientRect();
+
+                            // Find any clickable element that is:
+                            // - to the right of the last tab
+                            // - at roughly the same vertical position
+                            // - small enough to be an arrow button
+                            const candidates = Array.from(
+                                document.querySelectorAll('div, span, button, a, svg, path')
+                            ).filter(el => {
+                                const r = el.getBoundingClientRect();
+                                const rightOfLastTab = r.left > lastRect.right;
+                                const sameRow = Math.abs(r.top - lastRect.top) < 60;
+                                const smallEnough = r.width < 80 && r.height < 80;
+                                const visible = r.width > 0 && r.height > 0;
+                                return rightOfLastTab && sameRow && smallEnough && visible;
+                            });
+
+                            if (candidates.length > 0) {
+                                candidates[0].click();
+                                return true;
+                            }
                             return false;
                         }
                     """)
@@ -330,12 +366,13 @@ def scrape_victor_yoga(debug: bool = False) -> list[dict]:
 def extract_classes_from_page(page) -> list[dict]:
     """
     Runs JavaScript in the current browser state to extract class cards.
-    Returns a list of raw dicts with lines, time, and duration.
-    This is called once per day tab.
+    Also captures the booking URL from the Book Now button on each card.
+    Returns a list of raw dicts with lines, time, duration, and booking_url.
     """
     return page.evaluate("""
         () => {
             const results = [];
+            const STUDIO_URL = 'https://www.mindbodyonline.com/explore/locations/victor-yoga-studio';
             const allElements = document.querySelectorAll('div, li, article');
 
             allElements.forEach(el => {
@@ -352,7 +389,24 @@ def extract_classes_from_page(page) -> list[dict]:
                     const duration = durationMatch ? parseInt(durationMatch[1]) : 60;
                     const lines = text.split('\\n').map(l => l.trim()).filter(l => l.length > 0);
 
-                    results.push({ raw_text: text.trim(), lines, time, duration });
+                    // Try to find a booking link — check anchor tags and buttons
+                    // with href attributes inside this card element
+                    let booking_url = null;
+                    const links = el.querySelectorAll('a[href]');
+                    links.forEach(a => {
+                        const href = a.href || '';
+                        if (href.includes('mindbody') || href.includes('book') ||
+                            href.includes('class') || href.includes('schedule')) {
+                            booking_url = href;
+                        }
+                    });
+
+                    // Fallback: link to the studio's main booking page
+                    if (!booking_url) {
+                        booking_url = STUDIO_URL;
+                    }
+
+                    results.push({ raw_text: text.trim(), lines, time, duration, booking_url });
                 }
             });
 
@@ -491,15 +545,17 @@ def build_class_list(all_raw: list[tuple]) -> list[dict]:
                 seen_keys.add(key)
 
                 classes.append({
-                    "id":         f"{STUDIO_NAME}-{hash(key) % 100000}",
-                    "title":      title,
-                    "studio":     STUDIO_NAME,
-                    "instructor": instructor,
-                    "start":      start_dt.isoformat(),
-                    "end":        end_dt.isoformat(),
-                    "level":      "All Levels",
-                    "spots_left": None,
-                    "color":      STUDIO_COLOR
+                    "id":          f"{STUDIO_NAME}-{hash(key) % 100000}",
+                    "title":       title,
+                    "studio":      STUDIO_NAME,
+                    "instructor":  instructor,
+                    "start":       start_dt.isoformat(),
+                    "end":         end_dt.isoformat(),
+                    "level":       "All Levels",
+                    "spots_left":  None,
+                    "color":       STUDIO_COLOR,
+                    "booking_url": item.get("booking_url",
+                                   "https://www.mindbodyonline.com/explore/locations/victor-yoga-studio")
                 })
 
             except Exception as e:
