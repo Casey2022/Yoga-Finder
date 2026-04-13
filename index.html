@@ -291,6 +291,13 @@
       background: rgba(193, 122, 92, 0.06) !important;
     }
 
+    .fc .fc-daygrid-day.selected-day {
+      background: rgba(122, 158, 126, 0.12) !important;
+      outline: 2px solid var(--sage);
+      outline-offset: -2px;
+      border-radius: 4px;
+    }
+
     .fc .fc-daygrid-day.fc-day-today .fc-daygrid-day-number {
       background: var(--clay) !important;
       color: white !important;
@@ -472,9 +479,9 @@
 <!-- ── Main layout ──────────────────────────────────────────────── -->
 <div class="main">
 
-  <!-- Sidebar: today's classes -->
+  <!-- Sidebar: classes for selected day -->
   <aside class="sidebar">
-    <p class="sidebar-section-title">Today's Classes</p>
+    <p class="sidebar-section-title" id="sidebarTitle">Today's Classes</p>
     <div class="class-list" id="todayList">
       <div class="empty-state">
         <div class="empty-state-icon">🧘</div>
@@ -520,9 +527,10 @@
 
 <script>
 // ── App State ──────────────────────────────────────────────────────
-let allClasses = [];         // All scraped classes
-let activeStudios = new Set(); // Studios currently shown
+let allClasses = [];
+let activeStudios = new Set();
 let calendar;
+let selectedDate = new Date(); // tracks which day the sidebar shows
 
 // ── Fetch Data ─────────────────────────────────────────────────────
 async function loadSchedule() {
@@ -586,24 +594,48 @@ function toggleStudio(studio, pill) {
   buildSidebar();
 }
 
-// ── Today's Classes Sidebar ────────────────────────────────────────
+// ── Sidebar ────────────────────────────────────────────────────────
+// buildSidebar() always uses the global selectedDate.
+// Call selectDay(date) to change which day is shown.
+function selectDay(date) {
+  selectedDate = date;
+  buildSidebar();
+
+  // Highlight the selected day on the calendar
+  // Remove any previous highlight, then add to the new one
+  document.querySelectorAll(".fc-day.selected-day").forEach(el => {
+    el.classList.remove("selected-day");
+  });
+  const iso = date.toISOString().slice(0, 10); // "2026-04-13"
+  const dayEl = document.querySelector(`.fc-day[data-date="${iso}"]`);
+  if (dayEl) dayEl.classList.add("selected-day");
+}
+
 function buildSidebar() {
-  const today = new Date().toDateString();
-  const todayClasses = allClasses
-    .filter(c => activeStudios.has(c.studio) && new Date(c.start).toDateString() === today)
+  const dateStr = selectedDate.toDateString();
+  const isToday = dateStr === new Date().toDateString();
+
+  // Update the sidebar title to reflect which day is selected
+  const title = isToday
+    ? "Today's Classes"
+    : selectedDate.toLocaleDateString("en-US", { weekday: "long", month: "long", day: "numeric" });
+  document.getElementById("sidebarTitle").textContent = title;
+
+  const dayClasses = allClasses
+    .filter(c => activeStudios.has(c.studio) && new Date(c.start).toDateString() === dateStr)
     .sort((a, b) => new Date(a.start) - new Date(b.start));
 
   const list = document.getElementById("todayList");
 
-  if (todayClasses.length === 0) {
+  if (dayClasses.length === 0) {
     list.innerHTML = `<div class="empty-state">
       <div class="empty-state-icon">🌿</div>
-      <p>No classes today<br/>for selected studios.</p>
+      <p>No classes ${isToday ? "today" : "on this day"}<br/>for selected studios.</p>
     </div>`;
     return;
   }
 
-  list.innerHTML = todayClasses.map(cls => `
+  list.innerHTML = dayClasses.map(cls => `
     <div class="class-card" style="border-left-color:${cls.color}" onclick="showModal(${JSON.stringify(cls).replace(/"/g, '&quot;')})">
       <div class="class-card-name">${cls.title} <span class="level-badge">${cls.level}</span></div>
       <div class="class-card-meta">
@@ -633,9 +665,14 @@ function initCalendar() {
     height: "auto",
     events: fetchCalendarEvents,
     eventClick: ({ event }) => {
+      // Clicking an event selects that day AND opens the modal
+      selectDay(new Date(event.start));
       showModal(event.extendedProps.rawData);
     },
-    // Update sidebar when navigating to a different week/day
+    dateClick: ({ date }) => {
+      // Clicking any day cell updates the sidebar
+      selectDay(date);
+    },
     datesSet: () => buildSidebar()
   });
   calendar.render();
