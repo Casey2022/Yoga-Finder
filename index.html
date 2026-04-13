@@ -788,6 +788,30 @@
 
       <div class="studio-results" id="studioResults"></div>
 
+      <!-- ── Direct URL add ── -->
+      <div style="margin-top:1.5rem; padding-top:1.25rem; border-top:1px solid var(--border);">
+        <p style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.12em; color:var(--ink-soft); margin-bottom:0.75rem;">
+          Or add a studio directly by URL
+        </p>
+        <p style="font-size:0.8rem; color:var(--ink-mid); margin-bottom:0.75rem; line-height:1.5;">
+          Find a studio on
+          <a href="https://www.mindbodyonline.com/explore" target="_blank" rel="noopener" style="color:var(--clay)">Mindbody's explore page →</a>,
+          then paste its URL here:
+        </p>
+        <div style="display:flex; gap:0.6rem; align-items:center;">
+          <input type="text" id="urlInput"
+                 placeholder="https://www.mindbodyonline.com/explore/locations/..."
+                 style="flex:1; padding:0.55rem 0.85rem; border:1.5px solid var(--border);
+                        border-radius:8px; font-family:var(--font-body); font-size:0.82rem;
+                        background:var(--bg); color:var(--ink); outline:none;"
+                 onfocus="this.style.borderColor='var(--clay)'"
+                 onblur="this.style.borderColor='var(--border)'"
+                 onkeydown="if(event.key==='Enter') addByUrl()"/>
+          <button class="search-btn" onclick="addByUrl()" style="white-space:nowrap;">Add Studio</button>
+        </div>
+        <div id="urlStatus" style="font-size:0.78rem; color:var(--ink-soft); margin-top:0.5rem; min-height:1em;"></div>
+      </div>
+
       <div id="configSection" style="display:none; margin-top:1.5rem;">
         <p style="font-size:0.82rem; color:var(--ink-mid); margin-bottom:0.5rem;">
           Copy this into your <code>studios_config.json</code> under the <code>"studios"</code> array,
@@ -1094,66 +1118,101 @@ async function searchStudios() {
 
     const lat = parseFloat(geoData[0].lat);
     const lng = parseFloat(geoData[0].lon);
-    const radiusMeters = radius * 1609; // miles → metres
-    const displayName  = geoData[0].display_name.split(",").slice(0,2).join(",");
+    const displayName = geoData[0].display_name.split(",").slice(0,2).join(",");
 
     document.getElementById("discoveryStatus").textContent =
-      `📍 Found location: ${displayName}. Searching for yoga studios…`;
+      `📍 Found: ${displayName}. Searching multiple sources…`;
 
-    // ── Step 2: Query Overpass for yoga studios ────────────────────
-    // Overpass is OpenStreetMap's data query API — also free, no key,
-    // CORS-friendly. We cast a wide net with multiple tag combinations
-    // to catch as many yoga studios as possible.
-    const query = `
-      [out:json][timeout:30];
-      (
-        node["sport"="yoga"](around:${radiusMeters},${lat},${lng});
-        node["leisure"="fitness_centre"]["name"~"yoga|wellness|pilates|mindful",i]
-             (around:${radiusMeters},${lat},${lng});
-        node["amenity"="studio"]["name"~"yoga|wellness|pilates",i]
-             (around:${radiusMeters},${lat},${lng});
-        way["sport"="yoga"](around:${radiusMeters},${lat},${lng});
-        way["leisure"="fitness_centre"]["name"~"yoga|wellness|pilates|mindful",i]
-             (around:${radiusMeters},${lat},${lng});
-        way["amenity"="studio"]["name"~"yoga|pilates",i]
-             (around:${radiusMeters},${lat},${lng});
-      );
-      out body center;
-    `;
+    // ── Step 2: Dual search — Nominatim text + Overpass ───────────
+    // Nominatim text search: searches OSM by business name
+    // Overpass: searches by tags (sport=yoga, leisure=fitness_centre etc.)
+    // Combining both gives the best coverage.
 
-    const overpassRes = await fetch("https://overpass-api.de/api/interpreter", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: "data=" + encodeURIComponent(query)
-    });
-    const overpassData = await overpassRes.json();
+    const latDelta = radius / 69;
+    const lngDelta = radius / (69 * Math.cos(lat * Math.PI / 180));
+    const viewbox  = `${lng-lngDelta},${lat+latDelta},${lng+lngDelta},${lat-latDelta}`;
+    const YOGA_RE  = /yoga|pilates|wellness|mindful|meditat|barre/i;
+    const seen     = new Set();
 
-    // ── Step 3: Parse and deduplicate results ──────────────────────
-    const seen = new Set();
-    discoveredStudios = overpassData.elements
-      .filter(el => el.tags?.name)
-      .filter(el => {
-        if (seen.has(el.tags.name)) return false;
-        seen.add(el.tags.name);
-        return true;
+    // Nominatim: try several search terms within bounding box
+    const nmResults = [];
+    for (const term of ["yoga", "yoga studio", "pilates", "wellness"]) {
+      try {
+        const r = await fetch(
+          `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(term)}` +
+          `&format=json&limit=10&addressdetails=1&extratags=1` +
+          `&viewbox=${viewbox}&bounded=1`,
+          { headers: { "Accept-Language": "en" } }
+        );
+        nmResults.push(...(await r.json()));
+      } catch(e) {}
+    }
+
+    const fromNominatim = nmResults
+      .filter(r => r.display_name && YOGA_RE.test(r.display_name.split(",")[0]))
+      .filter(r => {
+        const key = r.display_name.split(",")[0].trim().toLowerCase();
+        if (seen.has(key)) return false;
+        seen.add(key); return true;
       })
-      .map(el => {
-        const t = el.tags;
-        const website = t.website || t["contact:website"] || "";
-        const isMindbody = website.toLowerCase().includes("mindbody");
+      .map(r => {
+        const name = r.display_name.split(",")[0].trim();
+        const web  = r.extratags?.website || r.extratags?.["contact:website"] || "";
         return {
-          name:         t.name,
-          address:      [t["addr:housenumber"], t["addr:street"]].filter(Boolean).join(" "),
-          city:         [t["addr:city"], t["addr:state"]].filter(Boolean).join(", "),
-          phone:        t.phone || t["contact:phone"] || "",
-          website:      website,
-          platform:     isMindbody ? "Mindbody" : (website ? "Other" : "Unknown"),
-          mindbody_url: isMindbody ? website : "",
-          description:  t.description || t["opening_hours"]
-                         ? `Hours: ${t.opening_hours || "see website"}` : ""
+          name, web,
+          address: [r.address?.house_number, r.address?.road].filter(Boolean).join(" "),
+          city:    [r.address?.city||r.address?.town, r.address?.state].filter(Boolean).join(", "),
+          phone:   r.extratags?.phone || "",
+          website: web,
+          platform:     web.includes("mindbody") ? "Mindbody" : (web ? "Other" : "Unknown"),
+          mindbody_url: web.includes("mindbody") ? web : "",
+          description:  r.extratags?.opening_hours ? `Hours: ${r.extratags.opening_hours}` : ""
         };
       });
 
+    // Overpass: name-based search catches studios not tagged by category
+    const radiusMeters = radius * 1609;
+    const query = `[out:json][timeout:30];(` +
+      `node["name"~"yoga",i](around:${radiusMeters},${lat},${lng});` +
+      `node["name"~"pilates",i](around:${radiusMeters},${lat},${lng});` +
+      `node["sport"="yoga"](around:${radiusMeters},${lat},${lng});` +
+      `node["leisure"="fitness_centre"](around:${radiusMeters},${lat},${lng});` +
+      `way["name"~"yoga",i](around:${radiusMeters},${lat},${lng});` +
+      `way["sport"="yoga"](around:${radiusMeters},${lat},${lng});` +
+      `);out body center;`;
+
+    let fromOverpass = [];
+    try {
+      const ovRes = await fetch("https://overpass-api.de/api/interpreter", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: "data=" + encodeURIComponent(query)
+      });
+      const ovData = await ovRes.json();
+      fromOverpass = (ovData.elements || [])
+        .filter(el => el.tags?.name && YOGA_RE.test(el.tags.name))
+        .filter(el => {
+          const key = el.tags.name.toLowerCase();
+          if (seen.has(key)) return false;
+          seen.add(key); return true;
+        })
+        .map(el => {
+          const t = el.tags;
+          const web = t.website || t["contact:website"] || "";
+          return {
+            name: t.name,
+            address: [t["addr:housenumber"], t["addr:street"]].filter(Boolean).join(" "),
+            city:    [t["addr:city"], t["addr:state"]].filter(Boolean).join(", "),
+            phone:   t.phone || "",
+            website: web,
+            platform:     web.includes("mindbody") ? "Mindbody" : (web ? "Other" : "Unknown"),
+            mindbody_url: web.includes("mindbody") ? web : "",
+            description:  t.opening_hours ? `Hours: ${t.opening_hours}` : ""
+          };
+        });
+    } catch(e) { /* Overpass failed, rely on Nominatim only */ }
+
+    discoveredStudios = [...fromNominatim, ...fromOverpass];
     renderStudios(discoveredStudios, displayName, radius);
 
   } catch (err) {
@@ -1283,6 +1342,63 @@ function copyConfig() {
     btn.textContent = "Copied! ✓";
     setTimeout(() => btn.textContent = "Copy to clipboard", 2000);
   });
+}
+
+// ── Add studio by pasting a Mindbody URL directly ──────────────────
+// This is the guaranteed-to-work path for any Mindbody studio.
+// User finds the studio on mindbodyonline.com, pastes the URL here.
+function addByUrl() {
+  const raw = document.getElementById("urlInput").value.trim();
+  const status = document.getElementById("urlStatus");
+
+  if (!raw) {
+    status.textContent = "Please paste a URL first.";
+    status.style.color = "var(--clay)";
+    return;
+  }
+
+  // Validate it looks like a Mindbody explore URL
+  const mindbodyMatch = raw.match(
+    /mindbodyonline\.com\/explore\/locations\/([a-z0-9-]+)/i
+  );
+
+  if (!mindbodyMatch) {
+    status.textContent = "That doesn't look like a Mindbody explore URL. "
+      + "It should look like: mindbodyonline.com/explore/locations/studio-name";
+    status.style.color = "var(--clay)";
+    return;
+  }
+
+  const slug = mindbodyMatch[1];
+  // Convert slug to a readable name: "victor-yoga-studio" → "Victor Yoga Studio"
+  const name = slug.split("-").map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(" ");
+  const cleanUrl = `https://www.mindbodyonline.com/explore/locations/${slug}`;
+
+  // Add to discovered studios list and auto-select it
+  const newStudio = {
+    name,
+    address: "",
+    city: "",
+    phone: "",
+    website: cleanUrl,
+    platform: "Mindbody",
+    mindbody_url: cleanUrl,
+    description: "Added manually via URL"
+  };
+
+  const newIndex = discoveredStudios.length;
+  discoveredStudios.push(newStudio);
+  selectedStudios.add(newIndex);
+
+  // Show a confirmation and generate config immediately
+  status.textContent = `✓ "${name}" added! Generating config…`;
+  status.style.color = "var(--sage)";
+  document.getElementById("urlInput").value = "";
+  updateSelectedCount();
+  generateConfig();
+
+  // Clear status after a moment
+  setTimeout(() => { status.textContent = ""; }, 3000);
 }
 </script>
 </body>
