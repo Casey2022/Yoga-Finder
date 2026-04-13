@@ -457,6 +457,233 @@
       .sidebar { border-right: none; border-bottom: 1px solid var(--border); }
       .calendar-pane { padding: 1rem; }
     }
+
+    /* ── Find Studios modal ──────────────────────────────────────── */
+    .find-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.35rem 0.9rem;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 500;
+      cursor: pointer;
+      border: 1.5px solid var(--clay);
+      color: var(--clay);
+      background: transparent;
+      font-family: var(--font-body);
+      letter-spacing: 0.04em;
+      transition: all 0.18s ease;
+      margin-left: auto;
+    }
+    .find-btn:hover { background: var(--clay); color: white; }
+
+    .discovery-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(44,36,22,0.5);
+      backdrop-filter: blur(4px);
+      z-index: 2000;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 2rem 1rem;
+      overflow-y: auto;
+    }
+    .discovery-overlay.open { display: flex; }
+
+    .discovery-modal {
+      background: var(--bg-card);
+      border-radius: 16px;
+      width: 100%;
+      max-width: 680px;
+      box-shadow: 0 24px 80px rgba(44,36,22,0.25);
+      animation: modalIn 0.22s ease;
+      overflow: hidden;
+    }
+
+    .discovery-header {
+      background: var(--bg-dark);
+      color: var(--bg);
+      padding: 1.5rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .discovery-header h2 {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      font-weight: 400;
+    }
+
+    .discovery-header h2 em { font-style: italic; color: var(--clay-light); }
+
+    .discovery-close {
+      background: none; border: none; color: var(--bg);
+      font-size: 1.2rem; cursor: pointer; opacity: 0.7;
+      padding: 0.25rem;
+    }
+    .discovery-close:hover { opacity: 1; }
+
+    .discovery-body { padding: 1.75rem 2rem; }
+
+    .search-row {
+      display: grid;
+      grid-template-columns: 1fr auto auto;
+      gap: 0.75rem;
+      align-items: end;
+      margin-bottom: 1.25rem;
+    }
+
+    .search-field { display: flex; flex-direction: column; gap: 0.35rem; }
+    .search-field label {
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--ink-soft);
+    }
+    .search-field input, .search-field select {
+      padding: 0.55rem 0.85rem;
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      font-family: var(--font-body);
+      font-size: 0.88rem;
+      background: var(--bg);
+      color: var(--ink);
+      outline: none;
+      transition: border-color 0.15s;
+    }
+    .search-field input:focus, .search-field select:focus {
+      border-color: var(--clay);
+    }
+
+    .search-btn {
+      padding: 0.55rem 1.25rem;
+      background: var(--clay);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.15s;
+      white-space: nowrap;
+    }
+    .search-btn:hover { background: var(--ink); }
+    .search-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+    .discovery-status {
+      font-size: 0.82rem;
+      color: var(--ink-soft);
+      margin-bottom: 1rem;
+      min-height: 1.2em;
+      font-style: italic;
+    }
+
+    .studio-results { display: flex; flex-direction: column; gap: 0.75rem; }
+
+    .studio-result-card {
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      padding: 1rem;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 0.85rem;
+      align-items: start;
+      background: var(--bg);
+      transition: border-color 0.15s;
+    }
+    .studio-result-card:hover { border-color: var(--clay-light); }
+    .studio-result-card.selected { border-color: var(--sage); background: rgba(122,158,126,0.05); }
+
+    .studio-checkbox {
+      width: 18px; height: 18px;
+      accent-color: var(--sage);
+      margin-top: 2px;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+
+    .studio-result-name {
+      font-size: 0.95rem;
+      font-weight: 500;
+      margin-bottom: 0.2rem;
+    }
+
+    .studio-result-meta {
+      font-size: 0.75rem;
+      color: var(--ink-soft);
+      line-height: 1.5;
+    }
+
+    .studio-platform-badge {
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      white-space: nowrap;
+      font-weight: 500;
+    }
+    .badge-mindbody { background: #e8f4fd; color: #2563eb; }
+    .badge-other    { background: var(--border); color: var(--ink-soft); }
+    .badge-unknown  { background: #fef9e7; color: #b45309; }
+
+    .discovery-footer {
+      border-top: 1px solid var(--border);
+      padding: 1.25rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .selected-count { font-size: 0.82rem; color: var(--ink-soft); }
+
+    .add-selected-btn {
+      padding: 0.6rem 1.5rem;
+      background: var(--sage);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    .add-selected-btn:hover { background: var(--ink); }
+    .add-selected-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+    /* Config snippet box */
+    .config-box {
+      background: var(--bg-dark);
+      border-radius: 8px;
+      padding: 1rem;
+      margin-top: 1rem;
+      font-family: monospace;
+      font-size: 0.75rem;
+      color: var(--clay-light);
+      overflow-x: auto;
+      white-space: pre;
+      line-height: 1.6;
+    }
+    .copy-btn {
+      margin-top: 0.75rem;
+      padding: 0.4rem 1rem;
+      background: transparent;
+      border: 1px solid var(--clay-light);
+      color: var(--clay-light);
+      border-radius: 6px;
+      font-size: 0.75rem;
+      cursor: pointer;
+      font-family: var(--font-body);
+      transition: all 0.15s;
+    }
+    .copy-btn:hover { background: var(--clay); border-color: var(--clay); color: white; }
   </style>
 </head>
 <body>
@@ -474,6 +701,7 @@
 <div class="filter-bar" id="filterBar">
   <span class="filter-label">Studios</span>
   <!-- Pills injected here by JS -->
+  <button class="find-btn" onclick="openDiscovery()">＋ Find Studios</button>
 </div>
 
 <!-- ── Main layout ──────────────────────────────────────────────── -->
@@ -522,6 +750,62 @@
     <a id="modalBookBtn" class="modal-book-btn" href="#" target="_blank" rel="noopener">
       Book This Class →
     </a>
+  </div>
+</div>
+
+<!-- ── Studio Discovery Modal ───────────────────────────────────── -->
+<div class="discovery-overlay" id="discoveryOverlay" onclick="closeDiscovery(event)">
+  <div class="discovery-modal">
+
+    <div class="discovery-header">
+      <h2>Find <em>Studios</em></h2>
+      <button class="discovery-close" onclick="closeDiscovery()">✕</button>
+    </div>
+
+    <div class="discovery-body">
+      <div class="search-row">
+        <div class="search-field">
+          <label>Location (city, state or zip code)</label>
+          <input type="text" id="locationInput" placeholder="e.g. Rochester, NY or 14604"
+                 onkeydown="if(event.key==='Enter') searchStudios()"/>
+        </div>
+        <div class="search-field">
+          <label>Radius</label>
+          <select id="radiusSelect">
+            <option value="5">5 miles</option>
+            <option value="10" selected>10 miles</option>
+            <option value="15">15 miles</option>
+            <option value="25">25 miles</option>
+            <option value="50">50 miles</option>
+          </select>
+        </div>
+        <button class="search-btn" id="searchBtn" onclick="searchStudios()">Search</button>
+      </div>
+
+      <div class="discovery-status" id="discoveryStatus">
+        Enter a location above to find nearby yoga studios.
+      </div>
+
+      <div class="studio-results" id="studioResults"></div>
+
+      <div id="configSection" style="display:none; margin-top:1.5rem;">
+        <p style="font-size:0.82rem; color:var(--ink-mid); margin-bottom:0.5rem;">
+          Copy this into your <code>studios_config.json</code> under the <code>"studios"</code> array,
+          then run the scraper or push to GitHub:
+        </p>
+        <div class="config-box" id="configSnippet"></div>
+        <button class="copy-btn" onclick="copyConfig()">Copy to clipboard</button>
+      </div>
+    </div>
+
+    <div class="discovery-footer">
+      <span class="selected-count" id="selectedCount">No studios selected</span>
+      <button class="add-selected-btn" id="addSelectedBtn"
+              onclick="generateConfig()" disabled>
+        Generate Config →
+      </button>
+    </div>
+
   </div>
 </div>
 
@@ -750,6 +1034,195 @@ function hexToRgba(hex, alpha) {
 
 // ── Boot ───────────────────────────────────────────────────────────
 loadSchedule();
+
+// ── Studio Discovery ───────────────────────────────────────────────
+let discoveredStudios = [];   // results from Claude search
+let selectedStudios  = new Set(); // indices of selected studios
+
+function openDiscovery() {
+  document.getElementById("discoveryOverlay").classList.add("open");
+  document.body.style.overflow = "hidden";
+  document.getElementById("locationInput").focus();
+}
+
+function closeDiscovery(e) {
+  if (e && e.target !== e.currentTarget) return;
+  document.getElementById("discoveryOverlay").classList.remove("open");
+  document.body.style.overflow = "";
+}
+
+document.addEventListener("keydown", e => {
+  if (e.key === "Escape") {
+    closeDiscovery();
+    closeModal();
+  }
+});
+
+async function searchStudios() {
+  const location = document.getElementById("locationInput").value.trim();
+  const radius   = document.getElementById("radiusSelect").value;
+  if (!location) {
+    document.getElementById("discoveryStatus").textContent =
+      "Please enter a location first.";
+    return;
+  }
+
+  // Reset UI
+  document.getElementById("searchBtn").disabled = true;
+  document.getElementById("studioResults").innerHTML = "";
+  document.getElementById("configSection").style.display = "none";
+  document.getElementById("discoveryStatus").textContent =
+    `🔍 Searching for yoga studios within ${radius} miles of ${location}…`;
+  selectedStudios.clear();
+  updateSelectedCount();
+
+  try {
+    // ── Call Claude API with web search ────────────────────────────
+    // Claude searches the web for real studios near the given location
+    // and returns structured JSON — no Google Places API key needed!
+    const response = await fetch("https://api.anthropic.com/v1/messages", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        model: "claude-sonnet-4-20250514",
+        max_tokens: 2000,
+        tools: [{ type: "web_search_20250305", name: "web_search" }],
+        system: `You are a studio finder assistant. The user will give you a location and radius.
+Search the web for yoga and fitness studios near that location.
+You MUST return ONLY a valid JSON array — no markdown, no backticks, no explanation.
+Each item must have exactly these fields:
+{
+  "name": "Studio Name",
+  "address": "Full street address",
+  "city": "City, ST",
+  "phone": "phone or empty string",
+  "website": "https://... or empty string",
+  "platform": "Mindbody" | "Zen Planner" | "Pike13" | "Other" | "Unknown",
+  "mindbody_url": "https://www.mindbodyonline.com/explore/locations/slug or empty string",
+  "description": "One sentence about the studio"
+}
+Search specifically for their booking platform. If they use Mindbody, find the exact mindbodyonline.com/explore/locations/... URL.
+Return 5-12 real studios. Return ONLY the JSON array.`,
+        messages: [{
+          role: "user",
+          content: `Find yoga studios within ${radius} miles of ${location}. Return the JSON array only.`
+        }]
+      })
+    });
+
+    const data = await response.json();
+
+    // Extract the text content from Claude's response
+    // Claude may use web_search tool first, then return text
+    const textBlock = data.content?.find(b => b.type === "text");
+    if (!textBlock) throw new Error("No text response from Claude");
+
+    // Parse the JSON array Claude returned
+    let raw = textBlock.text.trim();
+    // Strip any accidental markdown fences
+    raw = raw.replace(/^```json?\s*/i, "").replace(/```\s*$/i, "").trim();
+    discoveredStudios = JSON.parse(raw);
+
+    renderStudios(discoveredStudios, location, radius);
+
+  } catch (err) {
+    console.error(err);
+    document.getElementById("discoveryStatus").textContent =
+      "Search failed — please try again. " + err.message;
+  } finally {
+    document.getElementById("searchBtn").disabled = false;
+  }
+}
+
+function renderStudios(studios, location, radius) {
+  const status = document.getElementById("discoveryStatus");
+  const results = document.getElementById("studioResults");
+
+  if (!studios.length) {
+    status.textContent = `No studios found near ${location}. Try a different location or larger radius.`;
+    return;
+  }
+
+  status.textContent = `Found ${studios.length} studios within ${radius} miles of ${location}.`;
+
+  results.innerHTML = studios.map((s, i) => {
+    const isMindbody = s.platform === "Mindbody";
+    const badgeClass = isMindbody ? "badge-mindbody"
+                     : s.platform === "Unknown" ? "badge-unknown" : "badge-other";
+
+    return `
+    <div class="studio-result-card" id="card-${i}">
+      <input type="checkbox" class="studio-checkbox" id="chk-${i}"
+             onchange="toggleStudioSelection(${i})" />
+      <div>
+        <div class="studio-result-name">${s.name}</div>
+        <div class="studio-result-meta">
+          📍 ${s.address}${s.city ? ", " + s.city : ""}<br/>
+          ${s.phone ? "📞 " + s.phone + "<br/>" : ""}
+          ${s.website ? `🌐 <a href="${s.website}" target="_blank" rel="noopener"
+                           style="color:var(--clay)">${s.website.replace(/^https?:\/\//, "")}</a><br/>` : ""}
+          ${s.description ? `<em style="color:var(--ink-soft)">${s.description}</em>` : ""}
+        </div>
+      </div>
+      <span class="studio-platform-badge ${badgeClass}">${s.platform}</span>
+    </div>`;
+  }).join("");
+}
+
+function toggleStudioSelection(index) {
+  const card = document.getElementById(`card-${index}`);
+  if (selectedStudios.has(index)) {
+    selectedStudios.delete(index);
+    card.classList.remove("selected");
+  } else {
+    selectedStudios.add(index);
+    card.classList.add("selected");
+  }
+  updateSelectedCount();
+}
+
+function updateSelectedCount() {
+  const n = selectedStudios.size;
+  document.getElementById("selectedCount").textContent =
+    n === 0 ? "No studios selected"
+    : `${n} studio${n > 1 ? "s" : ""} selected`;
+  document.getElementById("addSelectedBtn").disabled = n === 0;
+}
+
+function generateConfig() {
+  const selected = [...selectedStudios].map(i => discoveredStudios[i]);
+  const COLORS = ["#c17a5c","#7a9e7e","#8b7fa8","#c4954a","#5c8ab4","#b46b6b","#6b9e8a"];
+
+  const entries = selected.map((s, idx) => {
+    const color = COLORS[idx % COLORS.length];
+    const url   = s.mindbody_url || s.website || "";
+    const isMindbody = s.platform === "Mindbody" && s.mindbody_url;
+    const note  = isMindbody
+      ? "Mindbody studio — scraper should work automatically"
+      : `Platform: ${s.platform} — may need a custom scraper. See README.`;
+    return `  {
+    "name": "${s.name}",
+    "url": "${url}",
+    "color": "${color}",
+    "enabled": ${isMindbody},
+    "notes": "${note}"
+  }`;
+  });
+
+  const snippet = `[\n${entries.join(",\n")}\n]`;
+  document.getElementById("configSnippet").textContent = snippet;
+  document.getElementById("configSection").style.display = "block";
+  document.getElementById("configSection").scrollIntoView({ behavior: "smooth" });
+}
+
+function copyConfig() {
+  const text = document.getElementById("configSnippet").textContent;
+  navigator.clipboard.writeText(text).then(() => {
+    const btn = document.querySelector(".copy-btn");
+    btn.textContent = "Copied! ✓";
+    setTimeout(() => btn.textContent = "Copy to clipboard", 2000);
+  });
+}
 </script>
 </body>
 </html>
