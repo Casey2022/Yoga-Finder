@@ -758,14 +758,21 @@
   <div class="discovery-modal">
 
     <div class="discovery-header">
-      <h2>Find <em>Studios</em></h2>
+      <div>
+        <h2>Find <em>Studios</em></h2>
+        <p style="font-size:0.75rem; letter-spacing:0.1em; color:var(--ink-soft); margin-top:0.25rem;">
+          Browse yoga studios and their class schedules
+        </p>
+      </div>
       <button class="discovery-close" onclick="closeDiscovery()">✕</button>
     </div>
 
     <div class="discovery-body">
+
+      <!-- ── Search bar ── -->
       <div class="search-row">
         <div class="search-field">
-          <label>Location (city, state or zip code)</label>
+          <label>Search by city, state or zip code</label>
           <input type="text" id="locationInput" placeholder="e.g. Rochester, NY or 14604"
                  onkeydown="if(event.key==='Enter') searchStudios()"/>
         </div>
@@ -782,54 +789,27 @@
         <button class="search-btn" id="searchBtn" onclick="searchStudios()">Search</button>
       </div>
 
-      <div class="discovery-status" id="discoveryStatus">
-        Enter a location above to find nearby yoga studios.
+      <!-- ── Status line ── -->
+      <div class="discovery-status" id="discoveryStatus"></div>
+
+      <!-- ── Studio cards ── -->
+      <div class="studio-results" id="studioResults">
+        <!-- Populated by loadStudioDirectory() on open -->
       </div>
 
-      <div class="studio-results" id="studioResults"></div>
-
-      <!-- ── Direct URL add ── -->
-      <div style="margin-top:1.5rem; padding-top:1.25rem; border-top:1px solid var(--border);">
-        <p style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.12em; color:var(--ink-soft); margin-bottom:0.75rem;">
-          Or add a studio directly by URL
+      <!-- ── Request section ── -->
+      <div style="margin-top:1.5rem; padding:1rem; background:var(--bg);
+                  border-radius:10px; border:1px solid var(--border); text-align:center;">
+        <p style="font-size:0.82rem; color:var(--ink-mid); margin-bottom:0.75rem; line-height:1.6;">
+          Don't see your studio? We'd love to add it!
         </p>
-        <p style="font-size:0.8rem; color:var(--ink-mid); margin-bottom:0.75rem; line-height:1.5;">
-          Find a studio on
-          <a href="https://www.mindbodyonline.com/explore" target="_blank" rel="noopener" style="color:var(--clay)">Mindbody's explore page →</a>,
-          then paste its URL here:
-        </p>
-        <div style="display:flex; gap:0.6rem; align-items:center;">
-          <input type="text" id="urlInput"
-                 placeholder="https://www.mindbodyonline.com/explore/locations/..."
-                 style="flex:1; padding:0.55rem 0.85rem; border:1.5px solid var(--border);
-                        border-radius:8px; font-family:var(--font-body); font-size:0.82rem;
-                        background:var(--bg); color:var(--ink); outline:none;"
-                 onfocus="this.style.borderColor='var(--clay)'"
-                 onblur="this.style.borderColor='var(--border)'"
-                 onkeydown="if(event.key==='Enter') addByUrl()"/>
-          <button class="search-btn" onclick="addByUrl()" style="white-space:nowrap;">Add Studio</button>
-        </div>
-        <div id="urlStatus" style="font-size:0.78rem; color:var(--ink-soft); margin-top:0.5rem; min-height:1em;"></div>
+        <button class="search-btn" onclick="requestNewStudio()"
+                style="background:var(--ink); font-size:0.8rem;">
+          📩 Submit a Studio Request
+        </button>
       </div>
 
-      <div id="configSection" style="display:none; margin-top:1.5rem;">
-        <p style="font-size:0.82rem; color:var(--ink-mid); margin-bottom:0.5rem;">
-          Copy this into your <code>studios_config.json</code> under the <code>"studios"</code> array,
-          then run the scraper or push to GitHub:
-        </p>
-        <div class="config-box" id="configSnippet"></div>
-        <button class="copy-btn" onclick="copyConfig()">Copy to clipboard</button>
-      </div>
     </div>
-
-    <div class="discovery-footer">
-      <span class="selected-count" id="selectedCount">No studios selected</span>
-      <button class="add-selected-btn" id="addSelectedBtn"
-              onclick="generateConfig()" disabled>
-        Generate Config →
-      </button>
-    </div>
-
   </div>
 </div>
 
@@ -1060,13 +1040,15 @@ function hexToRgba(hex, alpha) {
 loadSchedule();
 
 // ── Studio Discovery ───────────────────────────────────────────────
-let discoveredStudios = [];   // results from Claude search
-let selectedStudios  = new Set(); // indices of selected studios
+let studioDirectory = [];  // loaded from studio_directory.json
 
 function openDiscovery() {
   document.getElementById("discoveryOverlay").classList.add("open");
   document.body.style.overflow = "hidden";
-  document.getElementById("locationInput").focus();
+  // Load directory and show default (Rochester) on first open
+  if (!studioDirectory.length) {
+    loadStudioDirectory();
+  }
 }
 
 function closeDiscovery(e) {
@@ -1075,330 +1057,293 @@ function closeDiscovery(e) {
   document.body.style.overflow = "";
 }
 
-document.addEventListener("keydown", e => {
-  if (e.key === "Escape") {
-    closeDiscovery();
-    closeModal();
-  }
-});
+// ── Load curated directory ─────────────────────────────────────────
+async function loadStudioDirectory() {
+  try {
+    const res  = await fetch("studio_directory.json");
+    const data = await res.json();
 
+    // Flatten all cities into one array, tagged with city name
+    studioDirectory = [];
+    for (const [city, studios] of Object.entries(data.cities)) {
+      studios.forEach(s => studioDirectory.push({ ...s, city_label: city }));
+    }
+
+    // Default: show Rochester studios
+    renderDirectoryStudios(studioDirectory, "Rochester, NY area");
+  } catch (err) {
+    // Directory file not found yet — show helpful message
+    document.getElementById("discoveryStatus").textContent =
+      "Directory loading… try searching by city above.";
+  }
+}
+
+// ── Render directory studios ───────────────────────────────────────
+function renderDirectoryStudios(studios, locationLabel) {
+  const status  = document.getElementById("discoveryStatus");
+  const results = document.getElementById("studioResults");
+
+  const live        = studios.filter(s => s.integration_status === "live");
+  const comingSoon  = studios.filter(s => s.integration_status === "coming_soon");
+
+  status.innerHTML = `
+    <strong>${studios.length} studios</strong> found near ${locationLabel} —
+    <span style="color:var(--sage)">✅ ${live.length} with live schedules</span>
+    · <span style="color:var(--ink-soft)">🔄 ${comingSoon.length} coming soon</span>
+  `;
+
+  results.innerHTML = studios.map(s => renderStudioCard(s)).join("");
+}
+
+// ── Individual studio card ─────────────────────────────────────────
+function renderStudioCard(s) {
+  const isLive = s.integration_status === "live";
+  const isSoon = s.integration_status === "coming_soon";
+
+  const badge = isLive
+    ? `<span class="studio-platform-badge badge-mindbody">✅ Schedule Live</span>`
+    : `<span class="studio-platform-badge badge-unknown">🔄 Coming Soon</span>`;
+
+  const specialtyTags = (s.specialties || [])
+    .map(sp => `<span style="display:inline-block; font-size:0.65rem; padding:0.1rem 0.4rem;
+                       background:var(--border); border-radius:4px; margin:0.1rem;
+                       color:var(--ink-mid);">${sp}</span>`)
+    .join("");
+
+  const actions = isLive
+    ? `<button onclick="filterToStudio('${s.name.replace(/'/g, "\\'")}')"
+               style="padding:0.4rem 1rem; background:var(--clay); color:white;
+                      border:none; border-radius:6px; font-family:var(--font-body);
+                      font-size:0.78rem; cursor:pointer; transition:background 0.15s;"
+               onmouseover="this.style.background='var(--ink)'"
+               onmouseout="this.style.background='var(--clay)'">
+         View on Calendar →
+       </button>`
+    : `<button onclick="notifyMe('${s.name.replace(/'/g, "\\'")}')"
+               style="padding:0.4rem 1rem; background:transparent;
+                      border:1.5px solid var(--ink-soft); color:var(--ink-soft);
+                      border-radius:6px; font-family:var(--font-body);
+                      font-size:0.78rem; cursor:pointer; transition:all 0.15s;"
+               onmouseover="this.style.borderColor='var(--clay)';this.style.color='var(--clay)'"
+               onmouseout="this.style.borderColor='var(--ink-soft)';this.style.color='var(--ink-soft)'">
+         🔔 Notify Me
+       </button>
+       ${s.website ? `<a href="${s.website}" target="_blank" rel="noopener"
+               style="padding:0.4rem 1rem; color:var(--clay); font-size:0.78rem;
+                      text-decoration:none; font-family:var(--font-body);">
+         Visit Website →
+       </a>` : ""}`;
+
+  return `
+  <div class="studio-result-card" style="grid-template-columns:1fr auto; display:grid; gap:0.75rem;">
+    <div>
+      <div style="display:flex; align-items:center; gap:0.5rem; margin-bottom:0.3rem;">
+        <div class="studio-result-name">${s.name}</div>
+        ${badge}
+      </div>
+      <div class="studio-result-meta">
+        📍 ${s.area}
+        ${s.phone ? ` · 📞 ${s.phone}` : ""}
+        ${s.description ? `<br/><em style="color:var(--ink-soft)">${s.description}</em>` : ""}
+        ${specialtyTags ? `<br/><div style="margin-top:0.3rem;">${specialtyTags}</div>` : ""}
+      </div>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:0.4rem; align-items:flex-end; justify-content:center;">
+      ${actions}
+    </div>
+  </div>`;
+}
+
+// ── Filter calendar to a studio ────────────────────────────────────
+function filterToStudio(studioName) {
+  // Close the discovery modal
+  closeDiscovery();
+
+  // Make only this studio active in the filter pills
+  activeStudios.clear();
+  activeStudios.add(studioName);
+
+  // Update pill UI
+  document.querySelectorAll(".pill").forEach(pill => {
+    const isActive = pill.dataset.studio === studioName;
+    pill.classList.toggle("active", isActive);
+    const color = allClasses.find(c => c.studio === pill.dataset.studio)?.color || "#888";
+    pill.style.background = isActive ? hexToRgba(color, 0.1) : "transparent";
+  });
+
+  calendar.refetchEvents();
+  buildSidebar();
+}
+
+// ── OSM search for other cities ────────────────────────────────────
 async function searchStudios() {
   const location = document.getElementById("locationInput").value.trim();
   const radius   = document.getElementById("radiusSelect").value;
   if (!location) {
-    document.getElementById("discoveryStatus").textContent =
-      "Please enter a location first.";
+    document.getElementById("discoveryStatus").textContent = "Please enter a location first.";
     return;
   }
 
+  // Check if user is searching for a city we already have in the directory
+  const cityMatch = studioDirectory.filter(s =>
+    s.city_label.toLowerCase().includes(location.toLowerCase()) ||
+    location.toLowerCase().includes(s.city_label.split(",")[0].toLowerCase())
+  );
+  if (cityMatch.length > 0) {
+    renderDirectoryStudios(cityMatch, location);
+    return;
+  }
+
+  // Otherwise do an OSM search for that location
   document.getElementById("searchBtn").disabled = true;
   document.getElementById("studioResults").innerHTML = "";
-  document.getElementById("configSection").style.display = "none";
-  document.getElementById("discoveryStatus").textContent =
-    `🔍 Locating "${location}"…`;
-  selectedStudios.clear();
-  updateSelectedCount();
+  document.getElementById("discoveryStatus").textContent = `🔍 Searching for "${location}"…`;
 
   try {
-    // ── Step 1: Geocode the location with Nominatim ────────────────
-    // Nominatim is OpenStreetMap's free geocoder — no API key needed,
-    // CORS-friendly, works from any domain.
-    const geoRes = await fetch(
-      `https://nominatim.openstreetmap.org/search?` +
-      `q=${encodeURIComponent(location)}&format=json&limit=1`,
+    const geoRes  = await fetch(
+      `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(location)}&format=json&limit=1`,
       { headers: { "Accept-Language": "en" } }
     );
     const geoData = await geoRes.json();
 
     if (!geoData.length) {
       document.getElementById("discoveryStatus").textContent =
-        `Could not find "${location}". Try a different format, e.g. "Rochester, NY" or "14604".`;
+        `Could not find "${location}". Try a different format like "Buffalo, NY".`;
       return;
     }
 
-    const lat = parseFloat(geoData[0].lat);
-    const lng = parseFloat(geoData[0].lon);
-    const displayName = geoData[0].display_name.split(",").slice(0,2).join(",");
+    const lat          = parseFloat(geoData[0].lat);
+    const lng          = parseFloat(geoData[0].lon);
+    const radiusM      = radius * 1609;
+    const displayName  = geoData[0].display_name.split(",").slice(0, 2).join(",");
 
     document.getElementById("discoveryStatus").textContent =
-      `📍 Found: ${displayName}. Searching multiple sources…`;
+      `📍 ${displayName} — searching for yoga studios…`;
 
-    // ── Step 2: Dual search — Nominatim text + Overpass ───────────
-    // Nominatim text search: searches OSM by business name
-    // Overpass: searches by tags (sport=yoga, leisure=fitness_centre etc.)
-    // Combining both gives the best coverage.
+    const query = `
+      [out:json][timeout:30];
+      (
+        node["name"~"yoga",i](around:${radiusM},${lat},${lng});
+        node["name"~"pilates",i](around:${radiusM},${lat},${lng});
+        way["name"~"yoga",i](around:${radiusM},${lat},${lng});
+        way["name"~"pilates",i](around:${radiusM},${lat},${lng});
+      );
+      out body center;
+    `;
 
-    const latDelta = radius / 69;
-    const lngDelta = radius / (69 * Math.cos(lat * Math.PI / 180));
-    const viewbox  = `${lng-lngDelta},${lat+latDelta},${lng+lngDelta},${lat-latDelta}`;
-    const YOGA_RE  = /yoga|pilates|wellness|mindful|meditat|barre/i;
-    const seen     = new Set();
+    const ovRes  = await fetch("https://overpass-api.de/api/interpreter", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: "data=" + encodeURIComponent(query)
+    });
+    const ovData = await ovRes.json();
 
-    // Nominatim: try several search terms within bounding box
-    const nmResults = [];
-    for (const term of ["yoga", "yoga studio", "pilates", "wellness"]) {
-      try {
-        const r = await fetch(
-          `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(term)}` +
-          `&format=json&limit=10&addressdetails=1&extratags=1` +
-          `&viewbox=${viewbox}&bounded=1`,
-          { headers: { "Accept-Language": "en" } }
-        );
-        nmResults.push(...(await r.json()));
-      } catch(e) {}
-    }
-
-    const fromNominatim = nmResults
-      .filter(r => r.display_name && YOGA_RE.test(r.display_name.split(",")[0]))
-      .filter(r => {
-        const key = r.display_name.split(",")[0].trim().toLowerCase();
-        if (seen.has(key)) return false;
-        seen.add(key); return true;
-      })
-      .map(r => {
-        const name = r.display_name.split(",")[0].trim();
-        const web  = r.extratags?.website || r.extratags?.["contact:website"] || "";
+    const seen = new Set();
+    const osmStudios = ovData.elements
+      .filter(el => el.tags?.name && !seen.has(el.tags.name) && seen.add(el.tags.name))
+      .map(el => {
+        const t = el.tags;
         return {
-          name, web,
-          address: [r.address?.house_number, r.address?.road].filter(Boolean).join(" "),
-          city:    [r.address?.city||r.address?.town, r.address?.state].filter(Boolean).join(", "),
-          phone:   r.extratags?.phone || "",
-          website: web,
-          platform:     web.includes("mindbody") ? "Mindbody" : (web ? "Other" : "Unknown"),
-          mindbody_url: web.includes("mindbody") ? web : "",
-          description:  r.extratags?.opening_hours ? `Hours: ${r.extratags.opening_hours}` : ""
+          name: t.name,
+          area: [t["addr:city"], t["addr:state"]].filter(Boolean).join(", ") || displayName,
+          address: [t["addr:housenumber"], t["addr:street"]].filter(Boolean).join(" "),
+          phone: t.phone || t["contact:phone"] || "",
+          website: t.website || "",
+          platform: "Unknown",
+          mindbody_url: "",
+          integration_status: "not_integrated",
+          color: "#888",
+          description: t.opening_hours ? `Hours: ${t.opening_hours}` : "",
+          specialties: []
         };
       });
 
-    // Overpass: name-based search catches studios not tagged by category
-    const radiusMeters = radius * 1609;
-    const query = `[out:json][timeout:30];(` +
-      `node["name"~"yoga",i](around:${radiusMeters},${lat},${lng});` +
-      `node["name"~"pilates",i](around:${radiusMeters},${lat},${lng});` +
-      `node["sport"="yoga"](around:${radiusMeters},${lat},${lng});` +
-      `node["leisure"="fitness_centre"](around:${radiusMeters},${lat},${lng});` +
-      `way["name"~"yoga",i](around:${radiusMeters},${lat},${lng});` +
-      `way["sport"="yoga"](around:${radiusMeters},${lat},${lng});` +
-      `);out body center;`;
+    if (!osmStudios.length) {
+      document.getElementById("discoveryStatus").textContent = "";
+      document.getElementById("studioResults").innerHTML = `
+        <div class="empty-state">
+          <div class="empty-state-icon">🗺️</div>
+          <p>No studios found near ${displayName} in our map data.<br/>
+          <a href="https://www.mindbodyonline.com/explore/fitness/yoga-studios-${encodeURIComponent(location.toLowerCase().replace(/\s+/g, '-'))}"
+             target="_blank" style="color:var(--clay)">Search on Mindbody →</a>
+          </p>
+        </div>`;
+      return;
+    }
 
-    let fromOverpass = [];
-    try {
-      const ovRes = await fetch("https://overpass-api.de/api/interpreter", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: "data=" + encodeURIComponent(query)
-      });
-      const ovData = await ovRes.json();
-      fromOverpass = (ovData.elements || [])
-        .filter(el => el.tags?.name && YOGA_RE.test(el.tags.name))
-        .filter(el => {
-          const key = el.tags.name.toLowerCase();
-          if (seen.has(key)) return false;
-          seen.add(key); return true;
-        })
-        .map(el => {
-          const t = el.tags;
-          const web = t.website || t["contact:website"] || "";
-          return {
-            name: t.name,
-            address: [t["addr:housenumber"], t["addr:street"]].filter(Boolean).join(" "),
-            city:    [t["addr:city"], t["addr:state"]].filter(Boolean).join(", "),
-            phone:   t.phone || "",
-            website: web,
-            platform:     web.includes("mindbody") ? "Mindbody" : (web ? "Other" : "Unknown"),
-            mindbody_url: web.includes("mindbody") ? web : "",
-            description:  t.opening_hours ? `Hours: ${t.opening_hours}` : ""
-          };
-        });
-    } catch(e) { /* Overpass failed, rely on Nominatim only */ }
-
-    discoveredStudios = [...fromNominatim, ...fromOverpass];
-    renderStudios(discoveredStudios, displayName, radius);
+    renderOsmStudios(osmStudios, displayName);
 
   } catch (err) {
-    console.error(err);
-    document.getElementById("discoveryStatus").textContent =
-      "Search failed — please try again. " + err.message;
+    document.getElementById("discoveryStatus").textContent = "Search failed — " + err.message;
   } finally {
     document.getElementById("searchBtn").disabled = false;
   }
 }
 
-function renderStudios(studios, location, radius) {
-  const status = document.getElementById("discoveryStatus");
+// ── Render OSM studios (for non-curated cities) ────────────────────
+function renderOsmStudios(studios, locationLabel) {
+  const status  = document.getElementById("discoveryStatus");
   const results = document.getElementById("studioResults");
 
-  if (!studios.length) {
-    status.textContent = "";
-    results.innerHTML = `
-      <div class="empty-state">
-        <div class="empty-state-icon">🗺️</div>
-        <p>No studios found in OpenStreetMap near ${location}.<br/>
-        OSM data is community-maintained and may be incomplete.<br/><br/>
-        <strong>Try these instead:</strong><br/>
-        <a href="https://www.mindbodyonline.com/explore/fitness/search/studios?q=${encodeURIComponent(location)}"
-           target="_blank" rel="noopener" style="color:var(--clay)">
-          Search on Mindbody →
-        </a>
-        &nbsp;·&nbsp;
-        <a href="https://www.google.com/search?q=yoga+studios+near+${encodeURIComponent(location)}"
-           target="_blank" rel="noopener" style="color:var(--clay)">
-          Google Search →
-        </a>
-        <br/><br/>
-        <small style="color:var(--ink-soft)">
-          Once you find a studio on Mindbody, copy its URL and add it manually
-          to your <code>studios_config.json</code>.
-        </small>
-        </p>
-      </div>`;
-    return;
-  }
+  status.innerHTML = `Found <strong>${studios.length} studios</strong> near ${locationLabel}.
+    <span style="color:var(--ink-soft); font-size:0.78rem;">
+      Schedules for these studios are not yet integrated —
+      submit a request below to add them!
+    </span>`;
 
-  status.textContent = `Found ${studios.length} studios within ${radius} miles of ${location}.`;
-
-  results.innerHTML = studios.map((s, i) => {
-    const isMindbody = s.platform === "Mindbody";
-    const badgeClass = isMindbody ? "badge-mindbody"
-                     : s.platform === "Unknown" ? "badge-unknown" : "badge-other";
-
-    return `
-    <div class="studio-result-card" id="card-${i}">
-      <input type="checkbox" class="studio-checkbox" id="chk-${i}"
-             onchange="toggleStudioSelection(${i})" />
+  results.innerHTML = studios.map(s => `
+    <div class="studio-result-card" style="grid-template-columns:1fr auto;">
       <div>
         <div class="studio-result-name">${s.name}</div>
         <div class="studio-result-meta">
-          📍 ${s.address}${s.city ? ", " + s.city : ""}<br/>
-          ${s.phone ? "📞 " + s.phone + "<br/>" : ""}
-          ${s.website ? `🌐 <a href="${s.website}" target="_blank" rel="noopener"
-                           style="color:var(--clay)">${s.website.replace(/^https?:\/\//, "")}</a><br/>` : ""}
-          ${s.description ? `<em style="color:var(--ink-soft)">${s.description}</em>` : ""}
+          📍 ${s.area}${s.address ? ` · ${s.address}` : ""}
+          ${s.phone ? `<br/>📞 ${s.phone}` : ""}
+          ${s.website ? `<br/>🌐 <a href="${s.website}" target="_blank" style="color:var(--clay)">${s.website.replace(/^https?:\/\//, "")}</a>` : ""}
         </div>
       </div>
-      <span class="studio-platform-badge ${badgeClass}">${s.platform}</span>
-    </div>`;
-  }).join("");
-
-  // Add a helpful tip at the bottom
-  results.innerHTML += `
-    <p style="font-size:0.75rem; color:var(--ink-soft); margin-top:0.5rem; text-align:center;">
-      Not seeing a studio?
-      <a href="https://www.mindbodyonline.com/explore/fitness/search/studios?q=${encodeURIComponent(location)}"
-         target="_blank" rel="noopener" style="color:var(--clay)">Search Mindbody →</a>
+      <div style="display:flex; flex-direction:column; align-items:flex-end; gap:0.4rem; justify-content:center;">
+        <span class="studio-platform-badge badge-unknown">Not Integrated</span>
+        <button onclick="requestStudio('${s.name.replace(/'/g, "\\'")}', '${s.website}')"
+                style="padding:0.35rem 0.75rem; background:transparent;
+                       border:1px solid var(--clay); color:var(--clay);
+                       border-radius:6px; font-size:0.72rem; cursor:pointer;
+                       font-family:var(--font-body);">
+          Request →
+        </button>
+      </div>
+    </div>`).join("") + `
+    <p style="font-size:0.75rem; color:var(--ink-soft); text-align:center; margin-top:0.5rem;">
+      Not all studios appear in map data.
+      <a href="https://www.mindbodyonline.com/explore" target="_blank" style="color:var(--clay)">Search Mindbody →</a>
     </p>`;
 }
 
-function toggleStudioSelection(index) {
-  const card = document.getElementById(`card-${index}`);
-  if (selectedStudios.has(index)) {
-    selectedStudios.delete(index);
-    card.classList.remove("selected");
-  } else {
-    selectedStudios.add(index);
-    card.classList.add("selected");
-  }
-  updateSelectedCount();
-}
-
-function updateSelectedCount() {
-  const n = selectedStudios.size;
-  document.getElementById("selectedCount").textContent =
-    n === 0 ? "No studios selected"
-    : `${n} studio${n > 1 ? "s" : ""} selected`;
-  document.getElementById("addSelectedBtn").disabled = n === 0;
-}
-
-function generateConfig() {
-  const selected = [...selectedStudios].map(i => discoveredStudios[i]);
-  const COLORS = ["#c17a5c","#7a9e7e","#8b7fa8","#c4954a","#5c8ab4","#b46b6b","#6b9e8a"];
-
-  const entries = selected.map((s, idx) => {
-    const color = COLORS[idx % COLORS.length];
-    const url   = s.mindbody_url || s.website || "";
-    const isMindbody = s.platform === "Mindbody" && s.mindbody_url;
-    const note  = isMindbody
-      ? "Mindbody studio — scraper should work automatically"
-      : `Platform: ${s.platform} — may need a custom scraper. See README.`;
-    return `  {
-    "name": "${s.name}",
-    "url": "${url}",
-    "color": "${color}",
-    "enabled": ${isMindbody},
-    "notes": "${note}"
-  }`;
-  });
-
-  const snippet = `[\n${entries.join(",\n")}\n]`;
-  document.getElementById("configSnippet").textContent = snippet;
-  document.getElementById("configSection").style.display = "block";
-  document.getElementById("configSection").scrollIntoView({ behavior: "smooth" });
-}
-
-function copyConfig() {
-  const text = document.getElementById("configSnippet").textContent;
-  navigator.clipboard.writeText(text).then(() => {
-    const btn = document.querySelector(".copy-btn");
-    btn.textContent = "Copied! ✓";
-    setTimeout(() => btn.textContent = "Copy to clipboard", 2000);
-  });
-}
-
-// ── Add studio by pasting a Mindbody URL directly ──────────────────
-// This is the guaranteed-to-work path for any Mindbody studio.
-// User finds the studio on mindbodyonline.com, pastes the URL here.
-function addByUrl() {
-  const raw = document.getElementById("urlInput").value.trim();
-  const status = document.getElementById("urlStatus");
-
-  if (!raw) {
-    status.textContent = "Please paste a URL first.";
-    status.style.color = "var(--clay)";
-    return;
-  }
-
-  // Validate it looks like a Mindbody explore URL
-  const mindbodyMatch = raw.match(
-    /mindbodyonline\.com\/explore\/locations\/([a-z0-9-]+)/i
+// ── Notify me ─────────────────────────────────────────────────────
+function notifyMe(studioName) {
+  const subject = encodeURIComponent(`Schedule Request: ${studioName}`);
+  const body    = encodeURIComponent(
+    `Hi,\n\nI'd love to see ${studioName}'s class schedule added to the Local Yoga Calendar!\n\nThanks`
   );
+  // Replace this email with your own
+  window.open(`mailto:YoGoFinder@gmail.com?subject=${subject}&body=${body}`);
+}
 
-  if (!mindbodyMatch) {
-    status.textContent = "That doesn't look like a Mindbody explore URL. "
-      + "It should look like: mindbodyonline.com/explore/locations/studio-name";
-    status.style.color = "var(--clay)";
-    return;
-  }
+// ── Request a studio from OSM results ─────────────────────────────
+function requestStudio(name, website) {
+  const subject = encodeURIComponent(`Studio Integration Request: ${name}`);
+  const body    = encodeURIComponent(
+    `Hi,\n\nI'd like to request that ${name} be added to the Local Yoga Calendar.\n\nWebsite: ${website || 'N/A'}\n\nThanks!`
+  );
+  window.open(`mailto:YoGoFinder@gmail.com?subject=${subject}&body=${body}`);
+}
 
-  const slug = mindbodyMatch[1];
-  // Convert slug to a readable name: "victor-yoga-studio" → "Victor Yoga Studio"
-  const name = slug.split("-").map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(" ");
-  const cleanUrl = `https://www.mindbodyonline.com/explore/locations/${slug}`;
-
-  // Add to discovered studios list and auto-select it
-  const newStudio = {
-    name,
-    address: "",
-    city: "",
-    phone: "",
-    website: cleanUrl,
-    platform: "Mindbody",
-    mindbody_url: cleanUrl,
-    description: "Added manually via URL"
-  };
-
-  const newIndex = discoveredStudios.length;
-  discoveredStudios.push(newStudio);
-  selectedStudios.add(newIndex);
-
-  // Show a confirmation and generate config immediately
-  status.textContent = `✓ "${name}" added! Generating config…`;
-  status.style.color = "var(--sage)";
-  document.getElementById("urlInput").value = "";
-  updateSelectedCount();
-  generateConfig();
-
-  // Clear status after a moment
-  setTimeout(() => { status.textContent = ""; }, 3000);
+// ── Request a new studio (generic) ────────────────────────────────
+function requestNewStudio() {
+  const subject = encodeURIComponent("New Studio Integration Request");
+  const body    = encodeURIComponent(
+    `Hi,\n\nI'd like to request a yoga studio be added to the Local Yoga Calendar.\n\nStudio name:\nWebsite:\nLocation:\n\nThanks!`
+  );
+  window.open(`mailto:YoGoFinder@gmail.com?subject=${subject}&body=${body}`);
 }
 </script>
 </body>
