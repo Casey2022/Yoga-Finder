@@ -1251,7 +1251,7 @@ async function searchStudios() {
     return;
   }
 
-  // Check if user is searching for a city we already have in the directory
+  // Step 1: Direct city name match against directory
   const cityMatch = studioDirectory.filter(s =>
     s.city_label.toLowerCase().includes(location.toLowerCase()) ||
     location.toLowerCase().includes(s.city_label.split(",")[0].toLowerCase())
@@ -1261,32 +1261,69 @@ async function searchStudios() {
     return;
   }
 
-  // Otherwise do an OSM search for that location
+  // Step 2: Geocode the input to get real coordinates and city name
   document.getElementById("searchBtn").disabled = true;
   document.getElementById("studioResults").innerHTML = "";
-  document.getElementById("discoveryStatus").textContent = `🔍 Searching for "${location}"…`;
+  document.getElementById("discoveryStatus").textContent = `🔍 Looking up "${location}"…`;
 
+  let lat, lng, displayName, fullName;
   try {
-    const geoRes  = await fetch(
-      `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(location)}&format=json&limit=1`,
+    const geoRes = await fetch(
+      `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(location)}&format=json&limit=1&addressdetails=1`,
       { headers: { "Accept-Language": "en" } }
     );
     const geoData = await geoRes.json();
-
     if (!geoData.length) {
       document.getElementById("discoveryStatus").textContent =
-        `Could not find "${location}". Try a different format like "Buffalo, NY".`;
+        `Could not find "${location}". Try a format like "Buffalo, NY" or "14604".`;
+      document.getElementById("searchBtn").disabled = false;
       return;
     }
+    lat         = parseFloat(geoData[0].lat);
+    lng         = parseFloat(geoData[0].lon);
+    displayName = geoData[0].display_name.split(",").slice(0, 2).join(",").trim();
+    fullName    = geoData[0].display_name.toLowerCase();
+  } catch (err) {
+    document.getElementById("discoveryStatus").textContent = "Geocoding failed — " + err.message;
+    document.getElementById("searchBtn").disabled = false;
+    return;
+  }
 
-    const lat          = parseFloat(geoData[0].lat);
-    const lng          = parseFloat(geoData[0].lon);
-    const radiusM      = radius * 1609;
-    const displayName  = geoData[0].display_name.split(",").slice(0, 2).join(",");
+  // Step 3: Check if the geocoded location is near a city in our directory.
+  // Compute distance between geocoded point and each known city.
+  // If within ~40 miles, show the directory for that city instead of OSM.
+  const KNOWN_CITY_COORDS = {
+    "Rochester, NY": { lat: 43.1566, lng: -77.6088 }
+    // Add more cities here as the app expands
+  };
 
-    document.getElementById("discoveryStatus").textContent =
-      `📍 ${displayName} — searching for yoga studios…`;
+  function milesApart(lat1, lng1, lat2, lng2) {
+    const R = 3958.8; // Earth radius in miles
+    const dLat = (lat2 - lat1) * Math.PI / 180;
+    const dLng = (lng2 - lng1) * Math.PI / 180;
+    const a = Math.sin(dLat/2)**2 +
+              Math.cos(lat1 * Math.PI/180) * Math.cos(lat2 * Math.PI/180) *
+              Math.sin(dLng/2)**2;
+    return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+  }
 
+  for (const [cityLabel, coords] of Object.entries(KNOWN_CITY_COORDS)) {
+    const dist = milesApart(lat, lng, coords.lat, coords.lng);
+    if (dist <= 40) {
+      // Close enough — show the curated directory for this city
+      const cityStudios = studioDirectory.filter(s => s.city_label === cityLabel);
+      renderDirectoryStudios(cityStudios, `${displayName} (${Math.round(dist)} mi from ${cityLabel})`);
+      document.getElementById("searchBtn").disabled = false;
+      return;
+    }
+  }
+
+  // Step 4: Truly unknown location — try OSM/Overpass
+  document.getElementById("discoveryStatus").textContent =
+    `📍 ${displayName} — searching for yoga studios…`;
+
+  try {
+    const radiusM = radius * 1609;
     const query = `
       [out:json][timeout:30];
       (
@@ -1297,12 +1334,12 @@ async function searchStudios() {
       );
       out body center;
     `;
-
     const ovRes  = await fetch("https://overpass-api.de/api/interpreter", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: "data=" + encodeURIComponent(query)
     });
+    if (!ovRes.ok) throw new Error(`Overpass error ${ovRes.status}`);
     const ovData = await ovRes.json();
 
     const seen = new Set();
@@ -1331,17 +1368,16 @@ async function searchStudios() {
         <div class="empty-state">
           <div class="empty-state-icon">🗺️</div>
           <p>No studios found near ${displayName} in our map data.<br/>
-          <a href="https://www.mindbodyonline.com/explore/fitness/yoga-studios-${encodeURIComponent(location.toLowerCase().replace(/\s+/g, '-'))}"
-             target="_blank" style="color:var(--clay)">Search on Mindbody →</a>
-          </p>
+          <a href="https://www.mindbodyonline.com/explore" target="_blank" style="color:var(--clay)">
+            Search on Mindbody →
+          </a></p>
         </div>`;
-      return;
+    } else {
+      renderOsmStudios(osmStudios, displayName);
     }
-
-    renderOsmStudios(osmStudios, displayName);
-
   } catch (err) {
-    document.getElementById("discoveryStatus").textContent = "Search failed — " + err.message;
+    document.getElementById("discoveryStatus").textContent =
+      "Search failed — " + err.message;
   } finally {
     document.getElementById("searchBtn").disabled = false;
   }
