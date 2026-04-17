@@ -1,0 +1,120 @@
+{
+  "version": "1.0",
+  "last_updated": "2026-04-13",
+  "cities": {
+    "Rochester, NY": [
+      {
+        "id": "victor-yoga-studio",
+        "name": "Victor Yoga Studio",
+        "area": "Victor (East of Rochester)",
+        "address": "23 East Main Street, Victor, NY 14564",
+        "phone": "(585) 732-5502",
+        "website": "https://www.victoryogastudio.com",
+        "platform": "Mindbody",
+        "mindbody_url": "https://www.mindbodyonline.com/explore/locations/victor-yoga-studio",
+        "integration_status": "live",
+        "color": "#c17a5c",
+        "description": "A peaceful studio in the Village of Victor offering yoga and meditation for all levels. Women-owned, LGBTQ+ and senior-friendly.",
+        "specialties": ["Warm Vinyasa", "Gentle Yoga", "Open Level", "Meditation"]
+      },
+      {
+        "id": "barrys-power-yoga",
+        "name": "Barry's Power Yoga",
+        "area": "East Avenue",
+        "address": "Rochester, NY",
+        "phone": "",
+        "website": "https://www.mindbodyonline.com/explore/locations/barry-s-power-yoga-east-avenue-rochester-ny",
+        "platform": "Mindbody",
+        "mindbody_url": "https://www.mindbodyonline.com/explore/locations/barry-s-power-yoga-east-avenue-rochester-ny",
+        "integration_status": "live",
+        "color": "#7a9e7e",
+        "description": "Power yoga studio on East Avenue offering dynamic, energetic vinyasa-style classes for all levels.",
+        "specialties": ["Power Yoga", "Hot Vinyasa", "Strength Flow"]
+      },
+      {
+        "id": "breathe-yoga-rochester",
+        "name": "Breathe Yoga",
+        "area": "Pittsford",
+        "address": "19 South Main Street, Pittsford, NY 14534",
+        "phone": "",
+        "website": "https://www.breatheyoga.com",
+        "platform": "Mindbody",
+        "mindbody_url": "https://www.mindbodyonline.com/explore/locations/breathe-yoga-rochester",
+        "integration_status": "live",
+        "color": "#8b7fa8",
+        "description": "Yoga and meditation studio serving Rochester from Pittsford since 2002. Offers in-person and online classes for all levels.",
+        "specialties": ["Power Vinyasa", "Restorative", "Yin", "Meditation", "Foundations"]
+      },
+      {
+        "id": "hot-yoga-rochester",
+        "name": "Hot Yoga Rochester",
+        "area": "Webster",
+        "address": "680 Ridge Road, Webster, NY 14580",
+        "phone": "(585) 626-2392",
+        "website": "https://www.hotyogarochester.com",
+        "platform": "Mindbody",
+        "mindbody_url": "https://www.mindbodyonline.com/explore/locations/hot-yoga-rochester-webster-ny",
+        "integration_status": "coming_soon",
+        "color": "#c4954a",
+        "description": "Bikram-style hot yoga studio in Webster offering traditional 26-posture and other heated yoga formats.",
+        "specialties": ["Hot Yoga", "Bikram", "26 Posture Series"]
+      },
+      {
+        "id": "open-sky-yoga",
+        "name": "Open Sky Yoga Center",
+        "area": "South Wedge",
+        "address": "7 Arnold Park, Rochester, NY 14607",
+        "phone": "(585) 301-4416",
+        "website": "https://openskyyoga.com",
+        "platform": "WellnessLiving",
+        "mindbody_url": "",
+        "integration_status": "coming_soon",
+        "color": "#5c8ab4",
+        "description": "Rochester's premier traditional yoga center with 500-hour certified instructors offering a full range of classical yoga styles.",
+        "specialties": ["Hatha", "Restorative", "Back Care", "Prenatal", "Teacher Training"]
+      },
+      {
+        "id": "mood-yoga-studio",
+        "name": "Mood Yoga Studio",
+        "area": "West Side",
+        "address": "Rochester, NY",
+        "phone": "",
+        "website": "https://www.moodyogastudio.com",
+        "platform": "Vagaro",
+        "mindbody_url": "",
+        "integration_status": "coming_soon",
+        "color": "#b46b6b",
+        "description": "New studio on the West Side offering inclusive classes for all activity levels and backgrounds.",
+        "specialties": ["Vinyasa", "Beginner Friendly", "All Levels"]
+      },
+      {
+        "id": "nu-movement",
+        "name": "Nu Movement",
+        "area": "Rochester",
+        "address": "Rochester, NY",
+        "phone": "",
+        "website": "https://numvmnt.com",
+        "platform": "Other",
+        "mindbody_url": "",
+        "integration_status": "coming_soon",
+        "color": "#6b9e8a",
+        "description": "Boutique art gallery studio offering yoga, dance, reiki, and gong sound baths taught by local certified instructors.",
+        "specialties": ["Yoga", "Sound Bath", "Yin + Reiki", "Gong Bath", "Art Flow"]
+      },
+      {
+        "id": "free-spirit-yoga",
+        "name": "Free Spirit Yoga & Reiki",
+        "area": "Rochester",
+        "address": "34 Elton St, Rochester, NY",
+        "phone": "",
+        "website": "https://www.freespiritroc.com",
+        "platform": "Other",
+        "mindbody_url": "",
+        "integration_status": "coming_soon",
+        "color": "#9e7a9e",
+        "description": "Mindful movement and energy healing classes at Frequency Wellness Space. Specializes in yoga and reiki.",
+        "specialties": ["Yoga", "Reiki", "Mindfulness", "Wellness"]
+      }
+    ]
+  }
+}

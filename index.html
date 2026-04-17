@@ -298,6 +298,16 @@
       border-radius: 4px;
     }
 
+    /* "+X more" link styling */
+    .fc .fc-daygrid-more-link {
+      font-size: 0.7rem;
+      font-weight: 500;
+      color: var(--clay);
+      font-family: var(--font-body);
+      letter-spacing: 0.03em;
+    }
+    .fc .fc-daygrid-more-link:hover { color: var(--ink); }
+
     .fc .fc-daygrid-day.fc-day-today .fc-daygrid-day-number {
       background: var(--clay) !important;
       color: white !important;
@@ -951,6 +961,8 @@ function initCalendar() {
       day:   "Day"
     },
     height: "auto",
+    dayMaxEvents: 4,       // show max 4 events per day, then "+X more" link
+    moreLinkClick: "day",  // clicking "+X more" switches to day view
     events: fetchCalendarEvents,
     eventClick: ({ event }) => {
       // Clicking an event selects that day AND opens the modal
@@ -1042,12 +1054,69 @@ loadSchedule();
 // ── Studio Discovery ───────────────────────────────────────────────
 let studioDirectory = [];  // loaded from studio_directory.json
 
+// Inline fallback — always shown if the JSON file hasn't loaded yet
+const BUILTIN_STUDIOS = [
+  { id: "victor-yoga-studio", name: "Victor Yoga Studio", area: "Victor (East of Rochester)",
+    address: "23 East Main Street, Victor, NY 14564", phone: "(585) 732-5502",
+    website: "https://www.victoryogastudio.com", platform: "Mindbody",
+    mindbody_url: "https://www.mindbodyonline.com/explore/locations/victor-yoga-studio",
+    integration_status: "live", color: "#c17a5c",
+    description: "Peaceful studio in Victor offering yoga for all levels.",
+    specialties: ["Warm Vinyasa","Gentle Yoga","Meditation"], city_label: "Rochester, NY" },
+  { id: "barrys-power-yoga", name: "Barry's Power Yoga", area: "East Avenue / Fairport",
+    address: "Rochester, NY", phone: "",
+    website: "https://barrysyogastudio.com/fairport-schedule/", platform: "Mindbody",
+    mindbody_url: "https://barrysyogastudio.com/fairport-schedule/",
+    integration_status: "live", color: "#7a9e7e",
+    description: "Power yoga studio offering dynamic vinyasa-style classes.",
+    specialties: ["Power Yoga","Hot Vinyasa","Strength Flow"], city_label: "Rochester, NY" },
+  { id: "breathe-yoga-rochester", name: "Breathe Yoga", area: "Pittsford",
+    address: "19 South Main Street, Pittsford, NY 14534", phone: "",
+    website: "https://www.breatheyoga.com", platform: "Mindbody",
+    mindbody_url: "https://www.breatheyoga.com/class-schedule",
+    integration_status: "live", color: "#8b7fa8",
+    description: "Yoga and meditation studio serving Rochester since 2002.",
+    specialties: ["Power Vinyasa","Restorative","Yin","Meditation"], city_label: "Rochester, NY" },
+  { id: "open-sky-yoga", name: "Open Sky Yoga Center", area: "South Wedge",
+    address: "7 Arnold Park, Rochester, NY 14607", phone: "(585) 301-4416",
+    website: "https://openskyyoga.com", platform: "WellnessLiving", mindbody_url: "",
+    integration_status: "coming_soon", color: "#5c8ab4",
+    description: "Traditional yoga center with 500-hour certified instructors.",
+    specialties: ["Hatha","Restorative","Prenatal","Teacher Training"], city_label: "Rochester, NY" },
+  { id: "mood-yoga-studio", name: "Mood Yoga Studio", area: "West Side",
+    address: "Rochester, NY", phone: "",
+    website: "https://www.moodyogastudio.com", platform: "Vagaro", mindbody_url: "",
+    integration_status: "coming_soon", color: "#b46b6b",
+    description: "Inclusive studio on the West Side for all activity levels.",
+    specialties: ["Vinyasa","Beginner Friendly","All Levels"], city_label: "Rochester, NY" },
+  { id: "nu-movement", name: "Nu Movement", area: "Rochester",
+    address: "Rochester, NY", phone: "",
+    website: "https://numvmnt.com", platform: "Other", mindbody_url: "",
+    integration_status: "coming_soon", color: "#6b9e8a",
+    description: "Art gallery studio offering yoga, dance, and sound baths.",
+    specialties: ["Yoga","Sound Bath","Yin + Reiki","Gong Bath"], city_label: "Rochester, NY" },
+  { id: "free-spirit-yoga", name: "Free Spirit Yoga & Reiki", area: "Rochester",
+    address: "34 Elton St, Rochester, NY", phone: "",
+    website: "https://www.freespiritroc.com", platform: "Other", mindbody_url: "",
+    integration_status: "coming_soon", color: "#9e7a9e",
+    description: "Mindful movement and energy healing classes.",
+    specialties: ["Yoga","Reiki","Mindfulness"], city_label: "Rochester, NY" },
+  { id: "hot-yoga-rochester", name: "Hot Yoga Rochester", area: "Webster",
+    address: "680 Ridge Road, Webster, NY 14580", phone: "(585) 626-2392",
+    website: "https://www.hotyogarochester.com", platform: "Mindbody", mindbody_url: "",
+    integration_status: "coming_soon", color: "#c4954a",
+    description: "Bikram-style hot yoga in Webster.",
+    specialties: ["Hot Yoga","Bikram","26 Posture Series"], city_label: "Rochester, NY" }
+];
+
 function openDiscovery() {
   document.getElementById("discoveryOverlay").classList.add("open");
   document.body.style.overflow = "hidden";
-  // Load directory and show default (Rochester) on first open
+  // Show built-in studios immediately, then try to load the JSON for any updates
   if (!studioDirectory.length) {
-    loadStudioDirectory();
+    studioDirectory = BUILTIN_STUDIOS;
+    renderDirectoryStudios(studioDirectory, "Rochester, NY area");
+    loadStudioDirectory(); // upgrade in background if file exists
   }
 }
 
@@ -1060,21 +1129,19 @@ function closeDiscovery(e) {
 // ── Load curated directory ─────────────────────────────────────────
 async function loadStudioDirectory() {
   try {
-    const res  = await fetch("studio_directory.json");
+    const res = await fetch("studio_directory.json");
+    if (!res.ok) return; // file not found — keep built-in data
     const data = await res.json();
-
-    // Flatten all cities into one array, tagged with city name
     studioDirectory = [];
     for (const [city, studios] of Object.entries(data.cities)) {
       studios.forEach(s => studioDirectory.push({ ...s, city_label: city }));
     }
-
-    // Default: show Rochester studios
-    renderDirectoryStudios(studioDirectory, "Rochester, NY area");
+    // Silently upgrade the display if the modal is still open
+    if (document.getElementById("discoveryOverlay").classList.contains("open")) {
+      renderDirectoryStudios(studioDirectory, "Rochester, NY area");
+    }
   } catch (err) {
-    // Directory file not found yet — show helpful message
-    document.getElementById("discoveryStatus").textContent =
-      "Directory loading… try searching by city above.";
+    // Keep using built-in data silently
   }
 }
 
@@ -1325,7 +1392,7 @@ function notifyMe(studioName) {
     `Hi,\n\nI'd love to see ${studioName}'s class schedule added to the Local Yoga Calendar!\n\nThanks`
   );
   // Replace this email with your own
-  window.open(`mailto:YoGoFinder@gmail.com?subject=${subject}&body=${body}`);
+  window.open(`mailto:your-email@example.com?subject=${subject}&body=${body}`);
 }
 
 // ── Request a studio from OSM results ─────────────────────────────
@@ -1334,7 +1401,7 @@ function requestStudio(name, website) {
   const body    = encodeURIComponent(
     `Hi,\n\nI'd like to request that ${name} be added to the Local Yoga Calendar.\n\nWebsite: ${website || 'N/A'}\n\nThanks!`
   );
-  window.open(`mailto:YoGoFinder@gmail.com?subject=${subject}&body=${body}`);
+  window.open(`mailto:your-email@example.com?subject=${subject}&body=${body}`);
 }
 
 // ── Request a new studio (generic) ────────────────────────────────
@@ -1343,7 +1410,7 @@ function requestNewStudio() {
   const body    = encodeURIComponent(
     `Hi,\n\nI'd like to request a yoga studio be added to the Local Yoga Calendar.\n\nStudio name:\nWebsite:\nLocation:\n\nThanks!`
   );
-  window.open(`mailto:YoGoFinder@gmail.com?subject=${subject}&body=${body}`);
+  window.open(`mailto:your-email@example.com?subject=${subject}&body=${body}`);
 }
 </script>
 </body>
