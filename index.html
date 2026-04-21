@@ -477,24 +477,20 @@
       .find-btn { margin-left: 0; flex-shrink: 0; }
       .pill { flex-shrink: 0; font-size: 0.72rem; padding: 0.28rem 0.7rem; }
 
-      /* Main layout — calendar FIRST on mobile */
+      /* Main layout — calendar only on mobile, sidebar hidden */
       .main {
         grid-template-columns: 1fr;
-        grid-template-rows: auto auto;
+        grid-template-rows: 1fr;
       }
 
-      /* Push calendar to row 1, sidebar to row 2 */
+      /* Calendar takes full space, sidebar hidden on mobile
+         (users navigate via FullCalendar's day view instead) */
       .calendar-pane {
         grid-row: 1;
-        padding: 0.75rem;
+        padding: 0.5rem;
       }
       .sidebar {
-        grid-row: 2;
-        border-right: none;
-        border-top: 1px solid var(--border);
-        padding: 1rem;
-        max-height: 340px;
-        overflow-y: auto;
+        display: none;
       }
 
       /* Shrink calendar text on small screens */
@@ -966,6 +962,7 @@ function selectDay(date) {
 function buildSidebar() {
   const dateStr = selectedDate.toDateString();
   const isToday = dateStr === new Date().toDateString();
+  const now     = new Date();
 
   // Update the sidebar title to reflect which day is selected
   const title = isToday
@@ -973,8 +970,10 @@ function buildSidebar() {
     : selectedDate.toLocaleDateString("en-US", { weekday: "long", month: "long", day: "numeric" });
   document.getElementById("sidebarTitle").textContent = title;
 
+  // Only show classes that haven't happened yet (start time in the future)
   const dayClasses = allClasses
     .filter(c => activeStudios.has(c.studio) && new Date(c.start).toDateString() === dateStr)
+    .filter(c => new Date(c.start) >= now)
     .sort((a, b) => new Date(a.start) - new Date(b.start));
 
   const list = document.getElementById("todayList");
@@ -1024,8 +1023,12 @@ function initCalendar() {
       showModal(event.extendedProps.rawData);
     },
     dateClick: ({ date }) => {
-      // Clicking any day cell updates the sidebar
       selectDay(date);
+      // On mobile, clicking a day opens the full day view
+      // since the sidebar is hidden
+      if (window.innerWidth <= 768) {
+        calendar.changeView("timeGridDay", date);
+      }
     },
     datesSet: () => buildSidebar()
   });
@@ -1033,8 +1036,12 @@ function initCalendar() {
 }
 
 function fetchCalendarEvents(info, successCallback) {
+  const now = new Date();
+  // Only show classes whose start time is in the future.
+  // Past classes get filtered out everywhere they're displayed.
   const events = allClasses
     .filter(c => activeStudios.has(c.studio))
+    .filter(c => new Date(c.start) >= now)
     .map(c => ({
       id:    c.id,
       title: c.title,
