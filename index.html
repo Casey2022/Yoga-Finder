@@ -459,13 +459,67 @@
       line-height: 1.6;
     }
 
-    /* ── Responsive ─────────────────────────────────────────────── */
+    /* ── Responsive / Mobile ────────────────────────────────────── */
     @media (max-width: 768px) {
-      header { padding: 1.5rem; }
-      .filter-bar { padding: 0.75rem 1.5rem; }
-      .main { grid-template-columns: 1fr; }
-      .sidebar { border-right: none; border-bottom: 1px solid var(--border); }
-      .calendar-pane { padding: 1rem; }
+      /* Header */
+      header { padding: 1rem 1.25rem; }
+      header h1 { font-size: 1.6rem; }
+
+      /* Filter bar — scroll horizontally on small screens */
+      .filter-bar {
+        padding: 0.6rem 1rem;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        gap: 0.4rem;
+      }
+      .filter-label { display: none; }
+      .find-btn { margin-left: 0; flex-shrink: 0; }
+      .pill { flex-shrink: 0; font-size: 0.72rem; padding: 0.28rem 0.7rem; }
+
+      /* Main layout — calendar FIRST on mobile */
+      .main {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+      }
+
+      /* Push calendar to row 1, sidebar to row 2 */
+      .calendar-pane {
+        grid-row: 1;
+        padding: 0.75rem;
+      }
+      .sidebar {
+        grid-row: 2;
+        border-right: none;
+        border-top: 1px solid var(--border);
+        padding: 1rem;
+        max-height: 340px;
+        overflow-y: auto;
+      }
+
+      /* Shrink calendar text on small screens */
+      .fc .fc-toolbar-title { font-size: 1.1rem !important; }
+      .fc .fc-toolbar { flex-wrap: wrap; gap: 0.4rem; }
+      .fc .fc-button { font-size: 0.7rem !important; padding: 0.28rem 0.55rem !important; }
+      .fc .fc-daygrid-day-number { font-size: 0.7rem !important; }
+      .fc .fc-event-title { font-size: 0.65rem; }
+      .fc .fc-col-header-cell-cushion { font-size: 0.65rem !important; letter-spacing: 0.05em !important; }
+
+      /* Discovery modal full-screen on mobile */
+      .discovery-overlay { padding: 0; align-items: flex-end; }
+      .discovery-modal { border-radius: 16px 16px 0 0; max-height: 92vh; overflow-y: auto; }
+      .discovery-body { padding: 1.25rem; }
+
+      /* Class cards more compact */
+      .class-card { padding: 0.6rem 0.75rem; }
+      .class-card-name { font-size: 0.82rem; }
+      .class-card-meta { font-size: 0.72rem; }
+    }
+
+    /* Extra small phones */
+    @media (max-width: 400px) {
+      header h1 { font-size: 1.35rem; }
+      .fc .fc-toolbar-title { font-size: 0.95rem !important; }
     }
 
     /* ── Find Studios modal ──────────────────────────────────────── */
@@ -1060,51 +1114,51 @@ const BUILTIN_STUDIOS = [
     address: "23 East Main Street, Victor, NY 14564", phone: "(585) 732-5502",
     website: "https://www.victoryogastudio.com", platform: "Mindbody",
     mindbody_url: "https://www.mindbodyonline.com/explore/locations/victor-yoga-studio",
-    integration_status: "live", color: "#c17a5c",
+    integration_status: "live", color: "#c17a5c", lat: 43.0006, lng: -77.4097,
     description: "Peaceful studio in Victor offering yoga for all levels.",
     specialties: ["Warm Vinyasa","Gentle Yoga","Meditation"], city_label: "Rochester, NY" },
   { id: "barrys-power-yoga", name: "Barry's Power Yoga", area: "East Avenue / Fairport",
-    address: "Rochester, NY", phone: "",
+    address: "930 East Avenue, Rochester, NY 14607", phone: "",
     website: "https://barrysyogastudio.com/fairport-schedule/", platform: "Mindbody",
     mindbody_url: "https://barrysyogastudio.com/fairport-schedule/",
-    integration_status: "live", color: "#7a9e7e",
+    integration_status: "live", color: "#7a9e7e", lat: 43.1566, lng: -77.5713,
     description: "Power yoga studio offering dynamic vinyasa-style classes.",
     specialties: ["Power Yoga","Hot Vinyasa","Strength Flow"], city_label: "Rochester, NY" },
   { id: "breathe-yoga-rochester", name: "Breathe Yoga", area: "Pittsford",
     address: "19 South Main Street, Pittsford, NY 14534", phone: "",
     website: "https://www.breatheyoga.com", platform: "Mindbody",
     mindbody_url: "https://www.breatheyoga.com/class-schedule",
-    integration_status: "live", color: "#8b7fa8",
+    integration_status: "live", color: "#8b7fa8", lat: 43.0887, lng: -77.5188,
     description: "Yoga and meditation studio serving Rochester since 2002.",
     specialties: ["Power Vinyasa","Restorative","Yin","Meditation"], city_label: "Rochester, NY" },
   { id: "open-sky-yoga", name: "Open Sky Yoga Center", area: "South Wedge",
     address: "7 Arnold Park, Rochester, NY 14607", phone: "(585) 301-4416",
     website: "https://openskyyoga.com", platform: "WellnessLiving", mindbody_url: "",
-    integration_status: "coming_soon", color: "#5c8ab4",
+    integration_status: "coming_soon", color: "#5c8ab4", lat: 43.1460, lng: -77.6050,
     description: "Traditional yoga center with 500-hour certified instructors.",
     specialties: ["Hatha","Restorative","Prenatal","Teacher Training"], city_label: "Rochester, NY" },
   { id: "mood-yoga-studio", name: "Mood Yoga Studio", area: "West Side",
     address: "Rochester, NY", phone: "",
     website: "https://www.moodyogastudio.com", platform: "Vagaro", mindbody_url: "",
-    integration_status: "coming_soon", color: "#b46b6b",
+    integration_status: "coming_soon", color: "#b46b6b", lat: 43.1580, lng: -77.6430,
     description: "Inclusive studio on the West Side for all activity levels.",
     specialties: ["Vinyasa","Beginner Friendly","All Levels"], city_label: "Rochester, NY" },
   { id: "nu-movement", name: "Nu Movement", area: "Rochester",
     address: "Rochester, NY", phone: "",
     website: "https://numvmnt.com", platform: "Other", mindbody_url: "",
-    integration_status: "coming_soon", color: "#6b9e8a",
+    integration_status: "coming_soon", color: "#6b9e8a", lat: 43.1610, lng: -77.6088,
     description: "Art gallery studio offering yoga, dance, and sound baths.",
     specialties: ["Yoga","Sound Bath","Yin + Reiki","Gong Bath"], city_label: "Rochester, NY" },
   { id: "free-spirit-yoga", name: "Free Spirit Yoga & Reiki", area: "Rochester",
     address: "34 Elton St, Rochester, NY", phone: "",
     website: "https://www.freespiritroc.com", platform: "Other", mindbody_url: "",
-    integration_status: "coming_soon", color: "#9e7a9e",
+    integration_status: "coming_soon", color: "#9e7a9e", lat: 43.1648, lng: -77.6101,
     description: "Mindful movement and energy healing classes.",
     specialties: ["Yoga","Reiki","Mindfulness"], city_label: "Rochester, NY" },
   { id: "hot-yoga-rochester", name: "Hot Yoga Rochester", area: "Webster",
     address: "680 Ridge Road, Webster, NY 14580", phone: "(585) 626-2392",
     website: "https://www.hotyogarochester.com", platform: "Mindbody", mindbody_url: "",
-    integration_status: "coming_soon", color: "#c4954a",
+    integration_status: "coming_soon", color: "#c4954a", lat: 43.2120, lng: -77.4388,
     description: "Bikram-style hot yoga in Webster.",
     specialties: ["Hot Yoga","Bikram","26 Posture Series"], city_label: "Rochester, NY" }
 ];
@@ -1146,30 +1200,39 @@ async function loadStudioDirectory() {
 }
 
 // ── Render directory studios ───────────────────────────────────────
-function renderDirectoryStudios(studios, locationLabel) {
+function renderDirectoryStudios(studios, locationLabel, searchCoords) {
   const status  = document.getElementById("discoveryStatus");
   const results = document.getElementById("studioResults");
 
-  const live        = studios.filter(s => s.integration_status === "live");
-  const comingSoon  = studios.filter(s => s.integration_status === "coming_soon");
+  const live       = studios.filter(s => s.integration_status === "live");
+  const comingSoon = studios.filter(s => s.integration_status === "coming_soon");
 
   status.innerHTML = `
-    <strong>${studios.length} studios</strong> found near ${locationLabel} —
+    <strong>${studios.length} studios</strong> near ${locationLabel} —
     <span style="color:var(--sage)">✅ ${live.length} with live schedules</span>
     · <span style="color:var(--ink-soft)">🔄 ${comingSoon.length} coming soon</span>
   `;
 
-  results.innerHTML = studios.map(s => renderStudioCard(s)).join("");
+  results.innerHTML = studios.map(s => renderStudioCard(s, searchCoords)).join("");
 }
 
 // ── Individual studio card ─────────────────────────────────────────
-function renderStudioCard(s) {
+function renderStudioCard(s, searchCoords) {
   const isLive = s.integration_status === "live";
-  const isSoon = s.integration_status === "coming_soon";
 
   const badge = isLive
     ? `<span class="studio-platform-badge badge-mindbody">✅ Schedule Live</span>`
     : `<span class="studio-platform-badge badge-unknown">🔄 Coming Soon</span>`;
+
+  // Calculate approximate distance if we have search coordinates
+  // and the studio has known coordinates
+  let distanceTag = "";
+  if (searchCoords && s.lat && s.lng) {
+    const d = milesApart(searchCoords.lat, searchCoords.lng, s.lat, s.lng);
+    distanceTag = `<span style="font-size:0.7rem; color:var(--ink-soft); margin-left:0.4rem;">
+      📍 ~${d < 1 ? "< 1" : Math.round(d)} mi away
+    </span>`;
+  }
 
   const specialtyTags = (s.specialties || [])
     .map(sp => `<span style="display:inline-block; font-size:0.65rem; padding:0.1rem 0.4rem;
@@ -1204,9 +1267,10 @@ function renderStudioCard(s) {
   return `
   <div class="studio-result-card" style="grid-template-columns:1fr auto; display:grid; gap:0.75rem;">
     <div>
-      <div style="display:flex; align-items:center; gap:0.5rem; margin-bottom:0.3rem;">
+      <div style="display:flex; align-items:center; gap:0.5rem; margin-bottom:0.3rem; flex-wrap:wrap;">
         <div class="studio-result-name">${s.name}</div>
         ${badge}
+        ${distanceTag}
       </div>
       <div class="studio-result-meta">
         📍 ${s.area}
@@ -1310,9 +1374,13 @@ async function searchStudios() {
   for (const [cityLabel, coords] of Object.entries(KNOWN_CITY_COORDS)) {
     const dist = milesApart(lat, lng, coords.lat, coords.lng);
     if (dist <= 40) {
-      // Close enough — show the curated directory for this city
       const cityStudios = studioDirectory.filter(s => s.city_label === cityLabel);
-      renderDirectoryStudios(cityStudios, `${displayName} (${Math.round(dist)} mi from ${cityLabel})`);
+      const searchCoords = { lat, lng };
+      renderDirectoryStudios(
+        cityStudios,
+        `${displayName} (${Math.round(dist)} mi from ${cityLabel})`,
+        searchCoords
+      );
       document.getElementById("searchBtn").disabled = false;
       return;
     }
