@@ -1,18 +1,37 @@
 {
   "studios": [
     {
-      "name": "Example Yoga Studio",
-      "url": "https://www.exampleyoga.com/schedule",
+      "name": "Victor Yoga Studio",
+      "url": "https://www.mindbodyonline.com/explore/locations/victor-yoga-studio",
       "color": "#c17a5c",
       "enabled": true,
-      "notes": "Replace this with a real studio URL. See README for scraping setup."
+      "platform": "Mindbody",
+      "notes": "Victor, NY — fully integrated"
     },
     {
-      "name": "Sunrise Wellness Center",
-      "url": "https://www.sunrisewellness.com/classes",
+      "name": "Barry's Power Yoga",
+      "url": "https://barrysyogastudio.com/fairport-schedule/"
+,
       "color": "#7a9e7e",
+      "enabled": true,
+      "platform": "Mindbody",
+      "notes": "Fairport, NY — fully integrated"
+    },
+    {
+      "name": "Breathe Yoga",
+      "url": "https://www.breatheyoga.com/class-schedule",
+      "color": "#8b7fa8",
+      "enabled": true,
+      "platform": "Mindbody",
+      "notes": "Pittsford, NY — fully integrated"
+    },
+    {
+      "name": "Hot Yoga Rochester",
+      "url": "https://www.mindbodyonline.com/explore/locations/hot-yoga-rochester-webster-ny",
+      "color": "#c4954a",
       "enabled": false,
-      "notes": "Set enabled: true once you've configured the scraper for this site."
+      "platform": "Mindbody",
+      "notes": "Webster, NY — Mindbody URL currently redirects, needs investigation"
     }
   ]
 }
