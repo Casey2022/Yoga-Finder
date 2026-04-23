@@ -3,7 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Local Yoga — Class Calendar</title>
+  <title>Yo-Go — Local Yoga Class Calendar</title>
+
+  <!-- Favicon: use the logo -->
+  <link rel="icon" type="image/png" href="assets/yogo-logo.png"/>
+  <link rel="apple-touch-icon" href="assets/yogo-logo.png"/>
 
   <!-- FullCalendar: renders the Google Calendar-style view -->
   <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js"></script>
@@ -481,6 +485,8 @@
       /* Header */
       header { padding: 1rem 1.25rem; }
       header h1 { font-size: 1.6rem; }
+      .header-brand { gap: 0.75rem; }
+      .header-logo { width: 52px; height: 52px; }
 
       /* Filter bar — scroll horizontally on small screens */
       .filter-bar {
@@ -635,6 +641,54 @@
       border-color: var(--clay);
     }
 
+    /* ── Autocomplete suggestions dropdown ──────────────────────── */
+    .suggestions-dropdown {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: var(--bg-card);
+      border: 1.5px solid var(--clay);
+      border-top: none;
+      border-radius: 0 0 8px 8px;
+      max-height: 260px;
+      overflow-y: auto;
+      z-index: 2100;
+      display: none;
+      box-shadow: 0 10px 30px rgba(44,36,22,0.12);
+    }
+
+    .suggestions-dropdown.open { display: block; }
+
+    .suggestion-item {
+      padding: 0.65rem 0.85rem;
+      cursor: pointer;
+      font-size: 0.85rem;
+      color: var(--ink);
+      font-family: var(--font-body);
+      border-bottom: 1px solid var(--border);
+      transition: background 0.1s;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .suggestion-item:last-child { border-bottom: none; }
+    .suggestion-item:hover,
+    .suggestion-item.highlighted {
+      background: rgba(193, 122, 92, 0.08);
+    }
+    .suggestion-icon {
+      font-size: 0.8rem;
+      opacity: 0.5;
+      flex-shrink: 0;
+    }
+    .suggestion-text {
+      flex: 1;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
     .search-btn {
       padding: 0.55rem 1.25rem;
       background: var(--clay);
@@ -768,8 +822,11 @@
 <!-- ── Header ─────────────────────────────────────────────────────── -->
 <header>
   <div class="header-brand">
-    <h1>Local <em>Yoga</em></h1>
-    <p>Unified class calendar</p>
+    <img src="assets/yogo-logo.png" alt="Yo-Go logo" class="header-logo"/>
+    <div>
+      <h1>Yo-<em>Go</em></h1>
+      <p>Your local yoga class guide</p>
+    </div>
   </div>
   <div class="last-updated" id="lastUpdated">Loading...</div>
 </header>
@@ -848,10 +905,15 @@
 
       <!-- ── Search bar ── -->
       <div class="search-row">
-        <div class="search-field">
+        <div class="search-field" style="position:relative;">
           <label>Search by city, state or zip code</label>
           <input type="text" id="locationInput" placeholder="e.g. Rochester, NY or 14604"
-                 onkeydown="if(event.key==='Enter') searchStudios()"/>
+                 autocomplete="off"
+                 oninput="handleLocationInput()"
+                 onkeydown="handleLocationKeydown(event)"
+                 onfocus="handleLocationInput()"
+                 onblur="setTimeout(hideSuggestions, 200)"/>
+          <div id="locationSuggestions" class="suggestions-dropdown"></div>
         </div>
         <div class="search-field">
           <label>Radius</label>
@@ -1331,6 +1393,172 @@ function filterToStudio(studioName) {
   buildSidebar();
 }
 
+// ── Location autocomplete ──────────────────────────────────────────
+// Uses Nominatim (OpenStreetMap) to suggest cities as the user types.
+// Debounces keystrokes so we don't hammer the API on every keypress.
+let autocompleteTimer = null;
+let autocompleteHighlight = -1;
+let currentSuggestions = [];
+
+// Local cities that always show first for instant feedback
+// (before the network request even completes)
+const LOCAL_CITY_HINTS = [
+  "Rochester, NY",
+  "Pittsford, NY",
+  "Fairport, NY",
+  "Webster, NY",
+  "Victor, NY",
+  "Penfield, NY"
+];
+
+function handleLocationInput() {
+  const input = document.getElementById("locationInput");
+  const query = input.value.trim();
+
+  // Hide dropdown if empty
+  if (!query) {
+    hideSuggestions();
+    return;
+  }
+
+  // Step 1: Show instant local hints that match what they've typed
+  const instantMatches = LOCAL_CITY_HINTS
+    .filter(c => c.toLowerCase().includes(query.toLowerCase()))
+    .map(name => ({ name, type: "local" }));
+  if (instantMatches.length) {
+    renderSuggestions(instantMatches);
+  }
+
+  // Step 2: Debounced network call to Nominatim for broader suggestions
+  clearTimeout(autocompleteTimer);
+  autocompleteTimer = setTimeout(() => fetchLocationSuggestions(query), 250);
+}
+
+async function fetchLocationSuggestions(query) {
+  if (query.length < 2) return;
+  try {
+    // Nominatim endpoint — limit to cities/towns/zips in the US for relevance
+    const url = `https://nominatim.openstreetmap.org/search?` +
+      `q=${encodeURIComponent(query)}&format=json&limit=8&addressdetails=1&countrycodes=us`;
+    const res  = await fetch(url, { headers: { "Accept-Language": "en" } });
+    const data = await res.json();
+
+    // Keep only city/town/village/zip-style hits, dedupe by display name
+    const seen = new Set();
+    const networkHits = data
+      .filter(d => {
+        const type = d.type || "";
+        const cls  = d.class || "";
+        return (
+          ["city", "town", "village", "hamlet", "administrative", "postcode"].includes(type) ||
+          cls === "place" || cls === "boundary"
+        );
+      })
+      .map(d => {
+        // Build a clean "City, State" or "Zip — City, State" label
+        const a = d.address || {};
+        const city  = a.city || a.town || a.village || a.hamlet || a.suburb || a.county;
+        const state = a.state;
+        const zip   = a.postcode;
+        let label;
+        if (d.type === "postcode" && zip) {
+          label = `${zip}${city ? " — " + city : ""}${state ? ", " + state : ""}`;
+        } else if (city && state) {
+          label = `${city}, ${state}`;
+        } else {
+          label = d.display_name.split(",").slice(0, 2).join(",").trim();
+        }
+        return { name: label, type: "remote" };
+      })
+      .filter(s => {
+        if (seen.has(s.name)) return false;
+        seen.add(s.name);
+        return true;
+      });
+
+    // Merge local hints (top) with network hits, dedupe
+    const locals = LOCAL_CITY_HINTS
+      .filter(c => c.toLowerCase().includes(query.toLowerCase()))
+      .map(name => ({ name, type: "local" }));
+
+    const combined = [...locals];
+    for (const hit of networkHits) {
+      if (!combined.some(c => c.name.toLowerCase() === hit.name.toLowerCase())) {
+        combined.push(hit);
+      }
+    }
+    renderSuggestions(combined.slice(0, 8));
+  } catch (err) {
+    // Silent fail — keep whatever local hints are already showing
+  }
+}
+
+function renderSuggestions(suggestions) {
+  const dropdown = document.getElementById("locationSuggestions");
+  currentSuggestions = suggestions;
+  autocompleteHighlight = -1;
+
+  if (!suggestions.length) {
+    hideSuggestions();
+    return;
+  }
+
+  dropdown.innerHTML = suggestions.map((s, i) => `
+    <div class="suggestion-item" data-index="${i}"
+         onmousedown="selectSuggestion(${i})"
+         onmouseenter="highlightSuggestion(${i})">
+      <span class="suggestion-icon">${s.type === "local" ? "⭐" : "📍"}</span>
+      <span class="suggestion-text">${s.name}</span>
+    </div>
+  `).join("");
+  dropdown.classList.add("open");
+}
+
+function hideSuggestions() {
+  document.getElementById("locationSuggestions").classList.remove("open");
+  autocompleteHighlight = -1;
+}
+
+function selectSuggestion(index) {
+  const s = currentSuggestions[index];
+  if (!s) return;
+  document.getElementById("locationInput").value = s.name;
+  hideSuggestions();
+  searchStudios();
+}
+
+function highlightSuggestion(index) {
+  autocompleteHighlight = index;
+  document.querySelectorAll(".suggestion-item").forEach((el, i) => {
+    el.classList.toggle("highlighted", i === index);
+  });
+}
+
+function handleLocationKeydown(e) {
+  const open = document.getElementById("locationSuggestions").classList.contains("open");
+
+  if (e.key === "Enter") {
+    if (open && autocompleteHighlight >= 0) {
+      e.preventDefault();
+      selectSuggestion(autocompleteHighlight);
+    } else {
+      searchStudios();
+    }
+    return;
+  }
+  if (!open) return;
+
+  if (e.key === "ArrowDown") {
+    e.preventDefault();
+    highlightSuggestion(Math.min(autocompleteHighlight + 1, currentSuggestions.length - 1));
+  } else if (e.key === "ArrowUp") {
+    e.preventDefault();
+    highlightSuggestion(Math.max(autocompleteHighlight - 1, 0));
+  } else if (e.key === "Escape") {
+    hideSuggestions();
+  }
+}
+
 // ── OSM search for other cities ────────────────────────────────────
 async function searchStudios() {
   const location = document.getElementById("locationInput").value.trim();
@@ -1518,7 +1746,7 @@ function renderOsmStudios(studios, locationLabel) {
 function notifyMe(studioName) {
   const subject = encodeURIComponent(`Schedule Request: ${studioName}`);
   const body    = encodeURIComponent(
-    `Hi,\n\nI'd love to see ${studioName}'s class schedule added to the Local Yoga Calendar!\n\nThanks`
+    `Hi,\n\nI'd love to see ${studioName}'s class schedule added to the Yo-Go — Local Yoga Calendar!\n\nThanks`
   );
   // Replace this email with your own
   window.open(`mailto:your-email@example.com?subject=${subject}&body=${body}`);
@@ -1528,7 +1756,7 @@ function notifyMe(studioName) {
 function requestStudio(name, website) {
   const subject = encodeURIComponent(`Studio Integration Request: ${name}`);
   const body    = encodeURIComponent(
-    `Hi,\n\nI'd like to request that ${name} be added to the Local Yoga Calendar.\n\nWebsite: ${website || 'N/A'}\n\nThanks!`
+    `Hi,\n\nI'd like to request that ${name} be added to the Yo-Go — Local Yoga Calendar.\n\nWebsite: ${website || 'N/A'}\n\nThanks!`
   );
   window.open(`mailto:your-email@example.com?subject=${subject}&body=${body}`);
 }
@@ -1537,7 +1765,7 @@ function requestStudio(name, website) {
 function requestNewStudio() {
   const subject = encodeURIComponent("New Studio Integration Request");
   const body    = encodeURIComponent(
-    `Hi,\n\nI'd like to request a yoga studio be added to the Local Yoga Calendar.\n\nStudio name:\nWebsite:\nLocation:\n\nThanks!`
+    `Hi,\n\nI'd like to request a yoga studio be added to the Yo-Go — Local Yoga Calendar.\n\nStudio name:\nWebsite:\nLocation:\n\nThanks!`
   );
   window.open(`mailto:your-email@example.com?subject=${subject}&body=${body}`);
 }
