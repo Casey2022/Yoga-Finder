@@ -839,16 +839,30 @@ def build_class_list(
 
 def save_all_output(all_classes: list[dict], scraped_studios: list[str]) -> None:
     """
-    Merges freshly scraped classes with any existing data for other studios.
-    Only replaces data for studios that were just scraped.
+    Merges freshly scraped classes with existing data for other studios
+    that are still listed in studios_config.json.
+
+    This prevents stale test data (studios that were removed from the
+    config) from lingering in schedule_data.json forever.
     """
     existing = {"classes": []}
     if OUTPUT_FILE.exists():
         with open(OUTPUT_FILE) as f:
             existing = json.load(f)
 
-    # Keep classes from studios we didn't scrape this run
-    kept = [c for c in existing["classes"] if c["studio"] not in scraped_studios]
+    # Read the full list of valid studios from the config
+    # Any studio NOT in this list is treated as stale and removed
+    with open(CONFIG_FILE) as f:
+        config = json.load(f)
+    valid_studios = {s["name"] for s in config["studios"]}
+
+    # Keep classes only if:
+    #   (a) they belong to a studio we didn't scrape this run AND
+    #   (b) that studio is still in the config (not stale test data)
+    kept = [
+        c for c in existing["classes"]
+        if c["studio"] not in scraped_studios and c["studio"] in valid_studios
+    ]
     merged = kept + all_classes
     merged.sort(key=lambda c: c["start"])
 

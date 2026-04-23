@@ -9,13 +9,12 @@
       "notes": "Victor, NY — fully integrated"
     },
     {
-      "name": "Barry's Power Yoga",
-      "url": "https://barrysyogastudio.com/fairport-schedule/"
-,
-      "color": "#7a9e7e",
+      "name": "Barry's Yoga Studio",
+      "url": "https://barrysyogastudio.com/fairport-schedule/",
+      "color": "#3d7a8c",
       "enabled": true,
       "platform": "Mindbody",
-      "notes": "Fairport, NY — fully integrated"
+      "notes": "Fairport, NY — uses Mindbody branded widget on their own site"
     },
     {
       "name": "Breathe Yoga",
@@ -23,7 +22,7 @@
       "color": "#8b7fa8",
       "enabled": true,
       "platform": "Mindbody",
-      "notes": "Pittsford, NY — fully integrated"
+      "notes": "Pittsford, NY — uses Mindbody branded widget on their own site"
     },
     {
       "name": "Hot Yoga Rochester",
