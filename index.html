@@ -60,24 +60,24 @@
     header {
       background: var(--bg-dark);
       color: #f5f0e8;
-      padding: 2.5rem 3rem 2rem;
+      padding: 2rem 3rem;
       display: flex;
-      flex-direction: column;
       align-items: center;
-      text-align: center;
-      gap: 0.75rem;
+      justify-content: center;
+      gap: 2rem;
       position: relative;
     }
 
     .header-brand {
       display: flex;
-      align-items: center;
-      gap: 1.25rem;
+      flex-direction: column;
+      align-items: flex-start;
+      text-align: left;
     }
 
     .header-logo {
-      width: 72px;
-      height: 72px;
+      width: 120px;
+      height: 120px;
       flex-shrink: 0;
       background: #faf6ee;
       border-radius: 50%;
@@ -87,7 +87,7 @@
 
     .header-brand h1 {
       font-family: var(--font-display);
-      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-size: clamp(2.4rem, 6vw, 4rem);
       font-weight: 400;
       letter-spacing: -0.02em;
       line-height: 1;
@@ -99,7 +99,7 @@
     }
 
     .header-brand p {
-      margin-top: 0.4rem;
+      margin-top: 0.5rem;
       font-size: 0.85rem;
       font-weight: 300;
       letter-spacing: 0.12em;
@@ -485,10 +485,9 @@
     /* ── Responsive / Mobile ────────────────────────────────────── */
     @media (max-width: 768px) {
       /* Header */
-      header { padding: 1rem 1.25rem; }
-      header h1 { font-size: 1.6rem; }
-      .header-brand { gap: 0.75rem; }
-      .header-logo { width: 52px; height: 52px; }
+      header { padding: 1.25rem 1rem; gap: 1rem; }
+      header h1 { font-size: 1.8rem; }
+      .header-logo { width: 72px; height: 72px; }
 
       /* Filter bar — scroll horizontally on small screens */
       .filter-bar {
@@ -824,12 +823,10 @@
 <!-- ── Header ─────────────────────────────────────────────────────── -->
 <header>
   <div class="header-brand">
-    <img src="assets/yogo-logo.png" alt="Yo-Go logo" class="header-logo"/>
-    <div>
-      <h1>Yo-<em>Go</em></h1>
-      <p>Your local yoga class guide</p>
-    </div>
+    <h1>Yo-<em>Go</em></h1>
+    <p>Your local yoga class guide</p>
   </div>
+  <img src="assets/yogo-logo.png" alt="Yo-Go logo" class="header-logo"/>
   <div class="last-updated" id="lastUpdated">Loading...</div>
 </header>
 
