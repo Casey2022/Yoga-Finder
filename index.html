@@ -64,6 +64,23 @@
       flex-wrap: wrap;
     }
 
+    .header-brand {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+    }
+
+    .header-logo {
+      width: 72px;
+      height: 72px;
+      flex-shrink: 0;
+      /* The logo has a light background; on dark header we add subtle glow */
+      background: #faf6ee;
+      border-radius: 50%;
+      padding: 4px;
+      object-fit: contain;
+    }
+
     .header-brand h1 {
       font-family: var(--font-display);
       font-size: clamp(2rem, 5vw, 3.5rem);
@@ -970,10 +987,11 @@ function buildSidebar() {
     : selectedDate.toLocaleDateString("en-US", { weekday: "long", month: "long", day: "numeric" });
   document.getElementById("sidebarTitle").textContent = title;
 
-  // Only show classes that haven't happened yet (start time in the future)
+  // Only show classes that haven't ended yet (keeps running classes
+  // visible for late walk-ins — filter by end time, not start)
   const dayClasses = allClasses
     .filter(c => activeStudios.has(c.studio) && new Date(c.start).toDateString() === dateStr)
-    .filter(c => new Date(c.start) >= now)
+    .filter(c => new Date(c.end) >= now)
     .sort((a, b) => new Date(a.start) - new Date(b.start));
 
   const list = document.getElementById("todayList");
@@ -1037,11 +1055,11 @@ function initCalendar() {
 
 function fetchCalendarEvents(info, successCallback) {
   const now = new Date();
-  // Only show classes whose start time is in the future.
-  // Past classes get filtered out everywhere they're displayed.
+  // Only show classes that haven't ended yet (keeps in-progress classes
+  // visible for late walk-ins — filter by end time, not start time)
   const events = allClasses
     .filter(c => activeStudios.has(c.studio))
-    .filter(c => new Date(c.start) >= now)
+    .filter(c => new Date(c.end) >= now)
     .map(c => ({
       id:    c.id,
       title: c.title,
