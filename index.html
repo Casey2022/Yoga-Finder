@@ -57,13 +57,16 @@
     }
 
     /* ── Header ────────────────────────────────────────────────── */
+    /* Wordmark on the left, logo centered in the banner.
+       Uses a 1fr-auto-1fr grid so the logo is always perfectly centered
+       regardless of the wordmark width. */
     header {
       background: var(--bg-dark);
       color: #f5f0e8;
       padding: 2rem 3rem;
-      display: flex;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
       align-items: center;
-      justify-content: space-between;
       gap: 2rem;
       position: relative;
     }
@@ -73,6 +76,8 @@
       flex-direction: column;
       align-items: flex-start;
       text-align: left;
+      grid-column: 1;
+      justify-self: start;
     }
 
     .header-logo {
@@ -83,6 +88,7 @@
       border-radius: 50%;
       padding: 4px;
       object-fit: contain;
+      grid-column: 2;
     }
 
     .header-brand h1 {
