@@ -911,8 +911,8 @@
       <!-- ── Search bar ── -->
       <div class="search-row">
         <div class="search-field" style="position:relative;">
-          <label>Search by city, state or zip code</label>
-          <input type="text" id="locationInput" placeholder="e.g. Rochester, NY or 14604"
+          <label>Search by studio name, city, or zip code</label>
+          <input type="text" id="locationInput" placeholder="e.g. Victor Yoga, Rochester NY, or 14604"
                  autocomplete="off"
                  oninput="handleLocationInput()"
                  onkeydown="handleLocationKeydown(event)"
@@ -1426,15 +1426,31 @@ function handleLocationInput() {
     return;
   }
 
-  // Step 1: Show instant local hints that match what they've typed
-  const instantMatches = LOCAL_CITY_HINTS
-    .filter(c => c.toLowerCase().includes(query.toLowerCase()))
+  const lowerQuery = query.toLowerCase();
+
+  // Step 1a: Match directly against known studio names first
+  // (so typing "Victor" instantly surfaces Victor Yoga Studio)
+  const studioMatches = studioDirectory
+    .filter(s => s.name.toLowerCase().includes(lowerQuery))
+    .map(s => ({
+      name: s.name,
+      subtitle: `${s.area} · ${s.city_label}`,
+      type: "studio",
+      studio: s
+    }));
+
+  // Step 1b: Add local city hints that match
+  const instantCityMatches = LOCAL_CITY_HINTS
+    .filter(c => c.toLowerCase().includes(lowerQuery))
     .map(name => ({ name, type: "local" }));
-  if (instantMatches.length) {
-    renderSuggestions(instantMatches);
+
+  // Combine — studios come first, cities after
+  const combined = [...studioMatches, ...instantCityMatches];
+  if (combined.length) {
+    renderSuggestions(combined);
   }
 
-  // Step 2: Debounced network call to Nominatim for broader suggestions
+  // Step 2: Debounced network call for broader city suggestions
   clearTimeout(autocompleteTimer);
   autocompleteTimer = setTimeout(() => fetchLocationSuggestions(query), 250);
 }
@@ -1508,14 +1524,21 @@ function renderSuggestions(suggestions) {
     return;
   }
 
-  dropdown.innerHTML = suggestions.map((s, i) => `
-    <div class="suggestion-item" data-index="${i}"
-         onmousedown="selectSuggestion(${i})"
-         onmouseenter="highlightSuggestion(${i})">
-      <span class="suggestion-icon">${s.type === "local" ? "⭐" : "📍"}</span>
-      <span class="suggestion-text">${s.name}</span>
-    </div>
-  `).join("");
+  dropdown.innerHTML = suggestions.map((s, i) => {
+    const icon = s.type === "studio" ? "🧘"
+               : s.type === "local"  ? "⭐"
+               : "📍";
+    const subtitle = s.subtitle
+      ? `<br/><span style="font-size:0.72rem; color:var(--ink-soft);">${s.subtitle}</span>`
+      : "";
+    return `
+      <div class="suggestion-item" data-index="${i}"
+           onmousedown="selectSuggestion(${i})"
+           onmouseenter="highlightSuggestion(${i})">
+        <span class="suggestion-icon">${icon}</span>
+        <span class="suggestion-text">${s.name}${subtitle}</span>
+      </div>`;
+  }).join("");
   dropdown.classList.add("open");
 }
 
@@ -1529,6 +1552,14 @@ function selectSuggestion(index) {
   if (!s) return;
   document.getElementById("locationInput").value = s.name;
   hideSuggestions();
+
+  // If they picked a studio, show just that studio highlighted
+  if (s.type === "studio" && s.studio) {
+    renderDirectoryStudios([s.studio], `Matched studio: ${s.name}`);
+    return;
+  }
+
+  // Otherwise do the normal city/zip search flow
   searchStudios();
 }
 
@@ -1573,10 +1604,28 @@ async function searchStudios() {
     return;
   }
 
+  const lowerQuery = location.toLowerCase();
+
+  // Step 0: Try matching against studio names first
+  // (so "Victor Yoga" typed and Enter'd goes straight to that studio)
+  const studioHits = studioDirectory.filter(s =>
+    s.name.toLowerCase().includes(lowerQuery) ||
+    lowerQuery.includes(s.name.toLowerCase())
+  );
+  if (studioHits.length > 0) {
+    renderDirectoryStudios(
+      studioHits,
+      studioHits.length === 1
+        ? `Matched studio: ${studioHits[0].name}`
+        : `Studios matching "${location}"`
+    );
+    return;
+  }
+
   // Step 1: Direct city name match against directory
   const cityMatch = studioDirectory.filter(s =>
-    s.city_label.toLowerCase().includes(location.toLowerCase()) ||
-    location.toLowerCase().includes(s.city_label.split(",")[0].toLowerCase())
+    s.city_label.toLowerCase().includes(lowerQuery) ||
+    lowerQuery.includes(s.city_label.split(",")[0].toLowerCase())
   );
   if (cityMatch.length > 0) {
     renderDirectoryStudios(cityMatch, location);
