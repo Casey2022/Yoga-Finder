@@ -1305,7 +1305,36 @@ function renderDirectoryStudios(studios, locationLabel, searchCoords) {
     · <span style="color:var(--ink-soft)">🔄 ${comingSoon.length} coming soon</span>
   `;
 
-  results.innerHTML = studios.map(s => renderStudioCard(s, searchCoords)).join("");
+  // Build the Google Maps "see more" link
+  // Use the search coords if we have them, otherwise the city's center
+  let mapsLat, mapsLng;
+  if (searchCoords) {
+    mapsLat = searchCoords.lat;
+    mapsLng = searchCoords.lng;
+  } else if (studios[0]?.lat && studios[0]?.lng) {
+    mapsLat = studios[0].lat;
+    mapsLng = studios[0].lng;
+  }
+  const googleMapsLink = (mapsLat && mapsLng)
+    ? `<div style="margin-top:1rem; padding:1rem; background:var(--bg);
+                   border:1px solid var(--border); border-radius:8px; text-align:center;">
+         <p style="font-size:0.8rem; color:var(--ink-mid); margin-bottom:0.5rem;">
+           <strong>Looking for more studios?</strong>
+         </p>
+         <p style="font-size:0.75rem; color:var(--ink-soft); margin-bottom:0.75rem;">
+           Our directory may not include every studio in the area.
+         </p>
+         <a href="https://www.google.com/maps/search/yoga/@${mapsLat},${mapsLng},13z"
+            target="_blank" rel="noopener"
+            style="display:inline-block; padding:0.5rem 1rem;
+                   background:var(--clay); color:white; text-decoration:none;
+                   border-radius:6px; font-size:0.8rem; font-family:var(--font-body);">
+           🔍 View yoga studios on Google Maps →
+         </a>
+       </div>`
+    : "";
+
+  results.innerHTML = studios.map(s => renderStudioCard(s, searchCoords)).join("") + googleMapsLink;
 }
 
 // ── Individual studio card ─────────────────────────────────────────
@@ -1699,13 +1728,19 @@ async function searchStudios() {
 
   try {
     const radiusM = radius * 1609;
+    // Cast a wide net but score-filter results below.
+    // We pull anything that might be yoga-adjacent, then rank by relevance.
     const query = `
       [out:json][timeout:30];
       (
-        node["name"~"yoga",i](around:${radiusM},${lat},${lng});
-        node["name"~"pilates",i](around:${radiusM},${lat},${lng});
-        way["name"~"yoga",i](around:${radiusM},${lat},${lng});
-        way["name"~"pilates",i](around:${radiusM},${lat},${lng});
+        node["sport"="yoga"](around:${radiusM},${lat},${lng});
+        way["sport"="yoga"](around:${radiusM},${lat},${lng});
+        node["leisure"="fitness_centre"](around:${radiusM},${lat},${lng});
+        way["leisure"="fitness_centre"](around:${radiusM},${lat},${lng});
+        node["amenity"="studio"](around:${radiusM},${lat},${lng});
+        way["amenity"="studio"](around:${radiusM},${lat},${lng});
+        node["name"~"yoga|pilates|barre|meditation|mindful|breathe",i](around:${radiusM},${lat},${lng});
+        way["name"~"yoga|pilates|barre|meditation|mindful|breathe",i](around:${radiusM},${lat},${lng});
       );
       out body center;
     `;
@@ -1717,23 +1752,77 @@ async function searchStudios() {
     if (!ovRes.ok) throw new Error(`Overpass error ${ovRes.status}`);
     const ovData = await ovRes.json();
 
+    // Score each result for "is this actually a yoga studio?"
+    // Higher score = more likely to be relevant. We reject anything below 1.
+    const GYM_BLOCKLIST = [
+      "planet fitness","anytime fitness","crossfit","la fitness","gold's gym",
+      "ymca","retro fitness","blink fitness","equinox","orange theory","orangetheory",
+      "f45","9round","snap fitness","lifetime","life time","powerhouse gym",
+      "world gym","24 hour fitness","esporta","fitness 19"
+    ];
+
+    function scoreStudio(t) {
+      const name = (t.name || "").toLowerCase();
+      let score = 0;
+
+      // Strong yoga signals
+      if (t.sport === "yoga") score += 10;
+      if (/\byoga\b/.test(name)) score += 5;
+      if (/\bpilates\b/.test(name)) score += 3;
+      if (/\bbarre\b/.test(name)) score += 3;
+      if (/\bmeditation\b/.test(name)) score += 2;
+      if (/\bmindful/.test(name)) score += 2;
+      if (/\bbreathe\b/.test(name)) score += 2;
+      if (/\bzen\b/.test(name)) score += 1;
+      if (/\bflow\b/.test(name)) score += 1;
+      if (/\blotus\b/.test(name)) score += 1;
+      if (/\bnamaste\b/.test(name)) score += 1;
+
+      // Soft signals
+      if (t.leisure === "fitness_centre" && score === 0) score += 0.5;
+      if (t.amenity === "studio") score += 1;
+
+      // Reject big-box gyms
+      for (const blocked of GYM_BLOCKLIST) {
+        if (name.includes(blocked)) return 0;
+      }
+      return score;
+    }
+
     const seen = new Set();
     const osmStudios = ovData.elements
-      .filter(el => el.tags?.name && !seen.has(el.tags.name) && seen.add(el.tags.name))
+      .filter(el => el.tags?.name)
+      .map(el => ({ ...el, _score: scoreStudio(el.tags) }))
+      .filter(el => el._score >= 1)
+      .filter(el => {
+        const key = el.tags.name.toLowerCase();
+        if (seen.has(key)) return false;
+        seen.add(key);
+        return true;
+      })
+      .sort((a, b) => b._score - a._score)
       .map(el => {
         const t = el.tags;
+        // Capture coords so we can show distance from search location
+        const coords = el.lat && el.lon
+          ? { lat: el.lat, lng: el.lon }
+          : el.center
+            ? { lat: el.center.lat, lng: el.center.lon }
+            : null;
         return {
           name: t.name,
           area: [t["addr:city"], t["addr:state"]].filter(Boolean).join(", ") || displayName,
           address: [t["addr:housenumber"], t["addr:street"]].filter(Boolean).join(" "),
           phone: t.phone || t["contact:phone"] || "",
-          website: t.website || "",
+          website: t.website || t["contact:website"] || "",
           platform: "Unknown",
           mindbody_url: "",
           integration_status: "not_integrated",
           color: "#888",
           description: t.opening_hours ? `Hours: ${t.opening_hours}` : "",
-          specialties: []
+          specialties: [],
+          lat: coords?.lat,
+          lng: coords?.lng
         };
       });
 
@@ -1742,13 +1831,20 @@ async function searchStudios() {
       document.getElementById("studioResults").innerHTML = `
         <div class="empty-state">
           <div class="empty-state-icon">🗺️</div>
-          <p>No studios found near ${displayName} in our map data.<br/>
-          <a href="https://www.mindbodyonline.com/explore" target="_blank" style="color:var(--clay)">
-            Search on Mindbody →
-          </a></p>
+          <p>No studios found in our map data near ${displayName}.<br/><br/>
+          <strong>Try a wider search:</strong><br/>
+          <a href="https://www.google.com/maps/search/yoga/@${lat},${lng},13z"
+             target="_blank" rel="noopener"
+             style="color:var(--clay); font-weight:500;">
+            🔍 View yoga studios on Google Maps →
+          </a>
+          <br/><br/>
+          <span style="font-size:0.78rem; color:var(--ink-soft);">
+            Find a studio you love? Use the button below to request we add it.
+          </span></p>
         </div>`;
     } else {
-      renderOsmStudios(osmStudios, displayName);
+      renderOsmStudios(osmStudios, displayName, lat, lng);
     }
   } catch (err) {
     document.getElementById("discoveryStatus").textContent =
@@ -1759,7 +1855,7 @@ async function searchStudios() {
 }
 
 // ── Render OSM studios (for non-curated cities) ────────────────────
-function renderOsmStudios(studios, locationLabel) {
+function renderOsmStudios(studios, locationLabel, lat, lng) {
   const status  = document.getElementById("discoveryStatus");
   const results = document.getElementById("studioResults");
 
@@ -1768,6 +1864,8 @@ function renderOsmStudios(studios, locationLabel) {
       Schedules for these studios are not yet integrated —
       submit a request below to add them!
     </span>`;
+
+  const googleMapsUrl = `https://www.google.com/maps/search/yoga/@${lat},${lng},13z`;
 
   results.innerHTML = studios.map(s => `
     <div class="studio-result-card" style="grid-template-columns:1fr auto;">
@@ -1790,10 +1888,21 @@ function renderOsmStudios(studios, locationLabel) {
         </button>
       </div>
     </div>`).join("") + `
-    <p style="font-size:0.75rem; color:var(--ink-soft); text-align:center; margin-top:0.5rem;">
-      Not all studios appear in map data.
-      <a href="https://www.mindbodyonline.com/explore" target="_blank" style="color:var(--clay)">Search Mindbody →</a>
-    </p>`;
+    <div style="margin-top:1rem; padding:1rem; background:var(--bg);
+                border:1px solid var(--border); border-radius:8px; text-align:center;">
+      <p style="font-size:0.8rem; color:var(--ink-mid); margin-bottom:0.5rem;">
+        <strong>Looking for more studios?</strong>
+      </p>
+      <p style="font-size:0.75rem; color:var(--ink-soft); margin-bottom:0.75rem;">
+        Our map data may not include every studio in the area.
+      </p>
+      <a href="${googleMapsUrl}" target="_blank" rel="noopener"
+         style="display:inline-block; padding:0.5rem 1rem;
+                background:var(--clay); color:white; text-decoration:none;
+                border-radius:6px; font-size:0.8rem; font-family:var(--font-body);">
+        🔍 View yoga studios on Google Maps →
+      </a>
+    </div>`;
 }
 
 // ── Notify me ─────────────────────────────────────────────────────
