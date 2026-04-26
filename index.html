@@ -977,13 +977,28 @@
       </div>
 
       <!-- ── Request section ── -->
-      <div style="margin-top:1.5rem; padding:1rem; background:var(--bg);
-                  border-radius:10px; border:1px solid var(--border); text-align:center;">
-        <p style="font-size:0.82rem; color:var(--ink-mid); margin-bottom:0.75rem; line-height:1.6;">
+      <div style="margin-top:1.5rem; padding:1.25rem;
+                  background:rgba(255,255,255,0.05);
+                  border-radius:14px;
+                  border:1px solid var(--glass-border);
+                  text-align:center;">
+        <p style="font-size:0.82rem; color:var(--text-mid); margin-bottom:0.75rem; line-height:1.6;">
           Don't see your studio? We'd love to add it!
         </p>
-        <button class="search-btn" onclick="requestNewStudio()"
-                style="background:var(--ink); font-size:0.8rem;">
+        <button onclick="requestNewStudio()"
+                style="padding:0.6rem 1.4rem;
+                       background:rgba(255,255,255,0.08);
+                       color:var(--text-bright);
+                       border:1px solid var(--glass-border-2);
+                       border-radius:10px;
+                       font-family:var(--font-body);
+                       font-size:0.8rem;
+                       font-weight:500;
+                       cursor:pointer;
+                       letter-spacing:0.04em;
+                       transition:all 0.22s ease;"
+                onmouseover="this.style.background='linear-gradient(135deg,#6b4ea8,#b88fc4)';this.style.borderColor='transparent';"
+                onmouseout="this.style.background='rgba(255,255,255,0.08)';this.style.borderColor='var(--glass-border-2)';">
           📩 Submit a Studio Request
         </button>
       </div>
