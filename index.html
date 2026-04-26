@@ -1102,8 +1102,19 @@ function initCalendar() {
     dayMaxEvents: 4,       // show max 4 events per day, then "+X more" link
     moreLinkClick: "day",  // clicking "+X more" switches to day view
     events: fetchCalendarEvents,
-    eventClick: ({ event }) => {
-      // Clicking an event selects that day AND opens the modal
+    eventClick: ({ event, jsEvent, view }) => {
+      // On mobile in month view, treat event taps as day taps — open the
+      // day view instead of the class modal. This avoids the situation
+      // where users trying to "view this day" accidentally hit a class
+      // and get a class detail modal instead.
+      if (window.innerWidth <= 768 && view.type === "dayGridMonth") {
+        jsEvent.preventDefault();
+        const date = new Date(event.start);
+        selectDay(date);
+        calendar.changeView("timeGridDay", date);
+        return;
+      }
+      // Desktop, or any non-month mobile view: open the class detail modal
       selectDay(new Date(event.start));
       showModal(event.extendedProps.rawData);
     },
