@@ -1305,8 +1305,11 @@ function renderDirectoryStudios(studios, locationLabel, searchCoords) {
     · <span style="color:var(--ink-soft)">🔄 ${comingSoon.length} coming soon</span>
   `;
 
-  // Build the Google Maps "see more" link
-  // Use the search coords if we have them, otherwise the city's center
+  // Build the Google Maps "see more" link.
+  // Find the best lat/lng to center the map on — try in this order:
+  //   1. searchCoords if given (most accurate)
+  //   2. The first studio's coordinates
+  //   3. Rochester, NY as a last resort (since that's our service area)
   let mapsLat, mapsLng;
   if (searchCoords) {
     mapsLat = searchCoords.lat;
@@ -1314,25 +1317,29 @@ function renderDirectoryStudios(studios, locationLabel, searchCoords) {
   } else if (studios[0]?.lat && studios[0]?.lng) {
     mapsLat = studios[0].lat;
     mapsLng = studios[0].lng;
+  } else {
+    // Default to Rochester, NY (our primary service area)
+    mapsLat = 43.1566;
+    mapsLng = -77.6088;
   }
-  const googleMapsLink = (mapsLat && mapsLng)
-    ? `<div style="margin-top:1rem; padding:1rem; background:var(--bg);
-                   border:1px solid var(--border); border-radius:8px; text-align:center;">
-         <p style="font-size:0.8rem; color:var(--ink-mid); margin-bottom:0.5rem;">
-           <strong>Looking for more studios?</strong>
-         </p>
-         <p style="font-size:0.75rem; color:var(--ink-soft); margin-bottom:0.75rem;">
-           Our directory may not include every studio in the area.
-         </p>
-         <a href="https://www.google.com/maps/search/yoga/@${mapsLat},${mapsLng},13z"
-            target="_blank" rel="noopener"
-            style="display:inline-block; padding:0.5rem 1rem;
-                   background:var(--clay); color:white; text-decoration:none;
-                   border-radius:6px; font-size:0.8rem; font-family:var(--font-body);">
-           🔍 View yoga studios on Google Maps →
-         </a>
-       </div>`
-    : "";
+
+  const googleMapsLink = `
+    <div style="margin-top:1rem; padding:1rem; background:var(--bg);
+                border:1px solid var(--border); border-radius:8px; text-align:center;">
+      <p style="font-size:0.8rem; color:var(--ink-mid); margin-bottom:0.5rem;">
+        <strong>Looking for more studios?</strong>
+      </p>
+      <p style="font-size:0.75rem; color:var(--ink-soft); margin-bottom:0.75rem;">
+        Our directory may not include every studio in the area.
+      </p>
+      <a href="https://www.google.com/maps/search/yoga/@${mapsLat},${mapsLng},13z"
+         target="_blank" rel="noopener"
+         style="display:inline-block; padding:0.5rem 1rem;
+                background:var(--clay); color:white; text-decoration:none;
+                border-radius:6px; font-size:0.8rem; font-family:var(--font-body);">
+        🔍 View yoga studios on Google Maps →
+      </a>
+    </div>`;
 
   results.innerHTML = studios.map(s => renderStudioCard(s, searchCoords)).join("") + googleMapsLink;
 }
