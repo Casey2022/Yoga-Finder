@@ -1,731 +1,11 @@
 {
-  "last_updated": "2026-09-30T11:04:59",
+  "last_updated": "2026-10-01T11:31:21",
   "classes": [
     {
-      "id": "Barry's Yoga Studio-9516",
+      "id": "Barry's Yoga Studio-59384",
       "title": "5:45 AM \u2013 6:30 AM EDT",
       "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Conditioning",
-      "start": "2026-09-28T05:45:00",
-      "end": "2026-09-28T06:30:00",
-      "level": "All Levels",
-      "spots_left": null,
-      "color": "#3d7a8c",
-      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
-    },
-    {
-      "id": "Barry's Yoga Studio-48844",
-      "title": "5:45 AM \u2013 6:45 AM EDT",
-      "studio": "Barry's Yoga Studio",
       "instructor": "Hot Power",
-      "start": "2026-09-28T05:45:00",
-      "end": "2026-09-28T06:45:00",
-      "level": "All Levels",
-      "spots_left": null,
-      "color": "#3d7a8c",
-      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
-    },
-    {
-      "id": "Barry's Yoga Studio-31397",
-      "title": "Lisa Laluk (substitute)",
-      "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Conditioning",
-      "start": "2026-09-28T05:45:00",
-      "end": "2026-09-28T06:30:00",
-      "level": "All Levels",
-      "spots_left": null,
-      "color": "#3d7a8c",
-      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
-    },
-    {
-      "id": "Barry's Yoga Studio-66497",
-      "title": "7:00 AM \u2013 8:00 AM EDT",
-      "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Power",
-      "start": "2026-09-28T07:00:00",
-      "end": "2026-09-28T08:00:00",
-      "level": "All Levels",
-      "spots_left": null,
-      "color": "#3d7a8c",
-      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
-    },
-    {
-      "id": "Barry's Yoga Studio-37183",
-      "title": "7:00 AM \u2013 7:45 AM EDT",
-      "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Conditioning",
-      "start": "2026-09-28T07:00:00",
-      "end": "2026-09-28T07:45:00",
-      "level": "All Levels",
-      "spots_left": null,
-      "color": "#3d7a8c",
-      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
-    },
-    {
-      "id": "Barry's Yoga Studio-69551",
-      "title": "8:00 AM \u2013 8:45 AM EDT",
-      "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Combo",
-      "start": "2026-09-28T08:00:00",
-      "end": "2026-09-28T08:45:00",
-      "level": "All Levels",
-      "spots_left": null,
-      "color": "#3d7a8c",
-      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
-    },
-    {
-      "id": "Barry's Yoga Studio-70365",
-      "title": "9:00 AM \u2013 10:15 AM EDT",
-      "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Power",
-      "start": "2026-09-28T09:00:00",
-      "end": "2026-09-28T10:15:00",
-      "level": "All Levels",
-      "spots_left": null,
-      "color": "#3d7a8c",
-      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
-    },
-    {
-      "id": "Barry's Yoga Studio-62596",
-      "title": "9:30 AM \u2013 10:30 AM EDT",
-      "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Power",
-      "start": "2026-09-28T09:30:00",
-      "end": "2026-09-28T10:30:00",
-      "level": "All Levels",
-      "spots_left": null,
-      "color": "#3d7a8c",
-      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
-    },
-    {
-      "id": "Barry's Yoga Studio-28106",
-      "title": "9:30 AM \u2013 10:15 AM EDT",
-      "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Conditioning",
-      "start": "2026-09-28T09:30:00",
-      "end": "2026-09-28T10:15:00",
-      "level": "All Levels",
-      "spots_left": null,
-      "color": "#3d7a8c",
-      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
-    },
-    {
-      "id": "Barry's Yoga Studio-96834",
-      "title": "10:00 AM \u2013 11:15 AM EDT",
-      "studio": "Barry's Yoga Studio",
-      "instructor": "Sunday Service",
-      "start": "2026-09-28T10:00:00",
-      "end": "2026-09-28T11:15:00",
-      "level": "All Levels",
-      "spots_left": null,
-      "color": "#3d7a8c",
-      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
-    },
-    {
-      "id": "Barry's Yoga Studio-91964",
-      "title": "10:30 AM \u2013 11:30 AM EDT",
-      "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Vinyasa",
-      "start": "2026-09-28T10:30:00",
-      "end": "2026-09-28T11:30:00",
-      "level": "All Levels",
-      "spots_left": null,
-      "color": "#3d7a8c",
-      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
-    },
-    {
-      "id": "Barry's Yoga Studio-93260",
-      "title": "12:00 PM \u2013 12:45 PM EDT",
-      "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Combo",
-      "start": "2026-09-28T12:00:00",
-      "end": "2026-09-28T12:45:00",
-      "level": "All Levels",
-      "spots_left": null,
-      "color": "#3d7a8c",
-      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
-    },
-    {
-      "id": "Barry's Yoga Studio-52770",
-      "title": "4:30 PM \u2013 5:15 PM EDT",
-      "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Combo",
-      "start": "2026-09-28T16:30:00",
-      "end": "2026-09-28T17:15:00",
-      "level": "All Levels",
-      "spots_left": null,
-      "color": "#3d7a8c",
-      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
-    },
-    {
-      "id": "Barry's Yoga Studio-77153",
-      "title": "4:30 PM \u2013 5:30 PM EDT",
-      "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Power",
-      "start": "2026-09-28T16:30:00",
-      "end": "2026-09-28T17:30:00",
-      "level": "All Levels",
-      "spots_left": null,
-      "color": "#3d7a8c",
-      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
-    },
-    {
-      "id": "Barry's Yoga Studio-39951",
-      "title": "6:00 PM \u2013 7:15 PM EDT",
-      "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Power",
-      "start": "2026-09-28T18:00:00",
-      "end": "2026-09-28T19:15:00",
-      "level": "All Levels",
-      "spots_left": null,
-      "color": "#3d7a8c",
-      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
-    },
-    {
-      "id": "Barry's Yoga Studio-22540",
-      "title": "6:00 PM \u2013 6:45 PM EDT",
-      "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Conditioning",
-      "start": "2026-09-28T18:00:00",
-      "end": "2026-09-28T18:45:00",
-      "level": "All Levels",
-      "spots_left": null,
-      "color": "#3d7a8c",
-      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
-    },
-    {
-      "id": "Barry's Yoga Studio-22425",
-      "title": "7:15 PM \u2013 8:30 PM EDT",
-      "studio": "Barry's Yoga Studio",
-      "instructor": "Yin to Restorative",
-      "start": "2026-09-28T19:15:00",
-      "end": "2026-09-28T20:30:00",
-      "level": "All Levels",
-      "spots_left": null,
-      "color": "#3d7a8c",
-      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
-    },
-    {
-      "id": "Barry's Yoga Studio-88077",
-      "title": "Lindsey Hill (substitute)",
-      "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Conditioning",
-      "start": "2026-09-28T19:30:00",
-      "end": "2026-09-28T20:15:00",
-      "level": "All Levels",
-      "spots_left": null,
-      "color": "#3d7a8c",
-      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
-    },
-    {
-      "id": "Barry's Yoga Studio-51119",
-      "title": "7:30 PM \u2013 8:15 PM EDT",
-      "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Conditioning",
-      "start": "2026-09-28T19:30:00",
-      "end": "2026-09-28T20:15:00",
-      "level": "All Levels",
-      "spots_left": null,
-      "color": "#3d7a8c",
-      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
-    },
-    {
-      "id": "Barry's Yoga Studio-50182",
-      "title": "5:45 AM \u2013 6:30 AM EDT",
-      "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Conditioning",
-      "start": "2026-09-29T05:45:00",
-      "end": "2026-09-29T06:30:00",
-      "level": "All Levels",
-      "spots_left": null,
-      "color": "#3d7a8c",
-      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
-    },
-    {
-      "id": "Barry's Yoga Studio-53992",
-      "title": "5:45 AM \u2013 6:45 AM EDT",
-      "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Power",
-      "start": "2026-09-29T05:45:00",
-      "end": "2026-09-29T06:45:00",
-      "level": "All Levels",
-      "spots_left": null,
-      "color": "#3d7a8c",
-      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
-    },
-    {
-      "id": "Barry's Yoga Studio-14142",
-      "title": "Lisa Laluk (substitute)",
-      "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Conditioning",
-      "start": "2026-09-29T05:45:00",
-      "end": "2026-09-29T06:30:00",
-      "level": "All Levels",
-      "spots_left": null,
-      "color": "#3d7a8c",
-      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
-    },
-    {
-      "id": "Barry's Yoga Studio-89508",
-      "title": "7:00 AM \u2013 8:00 AM EDT",
-      "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Power",
-      "start": "2026-09-29T07:00:00",
-      "end": "2026-09-29T08:00:00",
-      "level": "All Levels",
-      "spots_left": null,
-      "color": "#3d7a8c",
-      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
-    },
-    {
-      "id": "Barry's Yoga Studio-73795",
-      "title": "7:00 AM \u2013 7:45 AM EDT",
-      "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Conditioning",
-      "start": "2026-09-29T07:00:00",
-      "end": "2026-09-29T07:45:00",
-      "level": "All Levels",
-      "spots_left": null,
-      "color": "#3d7a8c",
-      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
-    },
-    {
-      "id": "Barry's Yoga Studio-37322",
-      "title": "8:00 AM \u2013 8:45 AM EDT",
-      "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Combo",
-      "start": "2026-09-29T08:00:00",
-      "end": "2026-09-29T08:45:00",
-      "level": "All Levels",
-      "spots_left": null,
-      "color": "#3d7a8c",
-      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
-    },
-    {
-      "id": "Barry's Yoga Studio-45777",
-      "title": "9:00 AM \u2013 10:15 AM EDT",
-      "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Power",
-      "start": "2026-09-29T09:00:00",
-      "end": "2026-09-29T10:15:00",
-      "level": "All Levels",
-      "spots_left": null,
-      "color": "#3d7a8c",
-      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
-    },
-    {
-      "id": "Barry's Yoga Studio-37681",
-      "title": "9:30 AM \u2013 10:30 AM EDT",
-      "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Power",
-      "start": "2026-09-29T09:30:00",
-      "end": "2026-09-29T10:30:00",
-      "level": "All Levels",
-      "spots_left": null,
-      "color": "#3d7a8c",
-      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
-    },
-    {
-      "id": "Barry's Yoga Studio-12024",
-      "title": "9:30 AM \u2013 10:15 AM EDT",
-      "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Conditioning",
-      "start": "2026-09-29T09:30:00",
-      "end": "2026-09-29T10:15:00",
-      "level": "All Levels",
-      "spots_left": null,
-      "color": "#3d7a8c",
-      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
-    },
-    {
-      "id": "Barry's Yoga Studio-62907",
-      "title": "10:00 AM \u2013 11:15 AM EDT",
-      "studio": "Barry's Yoga Studio",
-      "instructor": "Sunday Service",
-      "start": "2026-09-29T10:00:00",
-      "end": "2026-09-29T11:15:00",
-      "level": "All Levels",
-      "spots_left": null,
-      "color": "#3d7a8c",
-      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
-    },
-    {
-      "id": "Barry's Yoga Studio-41587",
-      "title": "10:30 AM \u2013 11:30 AM EDT",
-      "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Vinyasa",
-      "start": "2026-09-29T10:30:00",
-      "end": "2026-09-29T11:30:00",
-      "level": "All Levels",
-      "spots_left": null,
-      "color": "#3d7a8c",
-      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
-    },
-    {
-      "id": "Barry's Yoga Studio-14425",
-      "title": "12:00 PM \u2013 12:45 PM EDT",
-      "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Combo",
-      "start": "2026-09-29T12:00:00",
-      "end": "2026-09-29T12:45:00",
-      "level": "All Levels",
-      "spots_left": null,
-      "color": "#3d7a8c",
-      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
-    },
-    {
-      "id": "Barry's Yoga Studio-57851",
-      "title": "4:30 PM \u2013 5:15 PM EDT",
-      "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Combo",
-      "start": "2026-09-29T16:30:00",
-      "end": "2026-09-29T17:15:00",
-      "level": "All Levels",
-      "spots_left": null,
-      "color": "#3d7a8c",
-      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
-    },
-    {
-      "id": "Barry's Yoga Studio-54026",
-      "title": "4:30 PM \u2013 5:30 PM EDT",
-      "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Power",
-      "start": "2026-09-29T16:30:00",
-      "end": "2026-09-29T17:30:00",
-      "level": "All Levels",
-      "spots_left": null,
-      "color": "#3d7a8c",
-      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
-    },
-    {
-      "id": "Barry's Yoga Studio-241",
-      "title": "6:00 PM \u2013 7:15 PM EDT",
-      "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Power",
-      "start": "2026-09-29T18:00:00",
-      "end": "2026-09-29T19:15:00",
-      "level": "All Levels",
-      "spots_left": null,
-      "color": "#3d7a8c",
-      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
-    },
-    {
-      "id": "Barry's Yoga Studio-96839",
-      "title": "6:00 PM \u2013 6:45 PM EDT",
-      "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Conditioning",
-      "start": "2026-09-29T18:00:00",
-      "end": "2026-09-29T18:45:00",
-      "level": "All Levels",
-      "spots_left": null,
-      "color": "#3d7a8c",
-      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
-    },
-    {
-      "id": "Barry's Yoga Studio-15591",
-      "title": "7:15 PM \u2013 8:30 PM EDT",
-      "studio": "Barry's Yoga Studio",
-      "instructor": "Yin to Restorative",
-      "start": "2026-09-29T19:15:00",
-      "end": "2026-09-29T20:30:00",
-      "level": "All Levels",
-      "spots_left": null,
-      "color": "#3d7a8c",
-      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
-    },
-    {
-      "id": "Barry's Yoga Studio-42873",
-      "title": "Lindsey Hill (substitute)",
-      "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Conditioning",
-      "start": "2026-09-29T19:30:00",
-      "end": "2026-09-29T20:15:00",
-      "level": "All Levels",
-      "spots_left": null,
-      "color": "#3d7a8c",
-      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
-    },
-    {
-      "id": "Barry's Yoga Studio-35885",
-      "title": "7:30 PM \u2013 8:15 PM EDT",
-      "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Conditioning",
-      "start": "2026-09-29T19:30:00",
-      "end": "2026-09-29T20:15:00",
-      "level": "All Levels",
-      "spots_left": null,
-      "color": "#3d7a8c",
-      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
-    },
-    {
-      "id": "Barry's Yoga Studio-7256",
-      "title": "5:45 AM \u2013 6:30 AM EDT",
-      "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Conditioning",
-      "start": "2026-09-30T05:45:00",
-      "end": "2026-09-30T06:30:00",
-      "level": "All Levels",
-      "spots_left": null,
-      "color": "#3d7a8c",
-      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
-    },
-    {
-      "id": "Barry's Yoga Studio-29183",
-      "title": "5:45 AM \u2013 6:45 AM EDT",
-      "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Power",
-      "start": "2026-09-30T05:45:00",
-      "end": "2026-09-30T06:45:00",
-      "level": "All Levels",
-      "spots_left": null,
-      "color": "#3d7a8c",
-      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
-    },
-    {
-      "id": "Barry's Yoga Studio-39355",
-      "title": "Lisa Laluk (substitute)",
-      "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Conditioning",
-      "start": "2026-09-30T05:45:00",
-      "end": "2026-09-30T06:30:00",
-      "level": "All Levels",
-      "spots_left": null,
-      "color": "#3d7a8c",
-      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
-    },
-    {
-      "id": "Barry's Yoga Studio-39153",
-      "title": "7:00 AM \u2013 8:00 AM EDT",
-      "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Power",
-      "start": "2026-09-30T07:00:00",
-      "end": "2026-09-30T08:00:00",
-      "level": "All Levels",
-      "spots_left": null,
-      "color": "#3d7a8c",
-      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
-    },
-    {
-      "id": "Barry's Yoga Studio-88132",
-      "title": "7:00 AM \u2013 7:45 AM EDT",
-      "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Conditioning",
-      "start": "2026-09-30T07:00:00",
-      "end": "2026-09-30T07:45:00",
-      "level": "All Levels",
-      "spots_left": null,
-      "color": "#3d7a8c",
-      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
-    },
-    {
-      "id": "Barry's Yoga Studio-79281",
-      "title": "8:00 AM \u2013 8:45 AM EDT",
-      "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Combo",
-      "start": "2026-09-30T08:00:00",
-      "end": "2026-09-30T08:45:00",
-      "level": "All Levels",
-      "spots_left": null,
-      "color": "#3d7a8c",
-      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
-    },
-    {
-      "id": "Barry's Yoga Studio-43070",
-      "title": "9:00 AM \u2013 10:15 AM EDT",
-      "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Power",
-      "start": "2026-09-30T09:00:00",
-      "end": "2026-09-30T10:15:00",
-      "level": "All Levels",
-      "spots_left": null,
-      "color": "#3d7a8c",
-      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
-    },
-    {
-      "id": "Barry's Yoga Studio-22756",
-      "title": "9:30 AM \u2013 10:30 AM EDT",
-      "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Power",
-      "start": "2026-09-30T09:30:00",
-      "end": "2026-09-30T10:30:00",
-      "level": "All Levels",
-      "spots_left": null,
-      "color": "#3d7a8c",
-      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
-    },
-    {
-      "id": "Barry's Yoga Studio-73766",
-      "title": "9:30 AM \u2013 10:15 AM EDT",
-      "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Conditioning",
-      "start": "2026-09-30T09:30:00",
-      "end": "2026-09-30T10:15:00",
-      "level": "All Levels",
-      "spots_left": null,
-      "color": "#3d7a8c",
-      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
-    },
-    {
-      "id": "Victor Yoga Studio-60526",
-      "title": "Sunset Yoga on the Grasslands at Ganondagan",
-      "studio": "Victor Yoga Studio",
-      "instructor": "Stretch and Strengthen",
-      "start": "2026-09-30T09:45:00",
-      "end": "2026-09-30T10:45:00",
-      "level": "All Levels",
-      "spots_left": null,
-      "color": "#c17a5c",
-      "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/mandy-w"
-    },
-    {
-      "id": "Victor Yoga Studio-62425",
-      "title": "Stretch and Strengthen",
-      "studio": "Victor Yoga Studio",
-      "instructor": "Mandy W",
-      "start": "2026-09-30T09:45:00",
-      "end": "2026-09-30T10:45:00",
-      "level": "All Levels",
-      "spots_left": null,
-      "color": "#c17a5c",
-      "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/mandy-w"
-    },
-    {
-      "id": "Barry's Yoga Studio-21672",
-      "title": "10:00 AM \u2013 11:15 AM EDT",
-      "studio": "Barry's Yoga Studio",
-      "instructor": "Sunday Service",
-      "start": "2026-09-30T10:00:00",
-      "end": "2026-09-30T11:15:00",
-      "level": "All Levels",
-      "spots_left": null,
-      "color": "#3d7a8c",
-      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
-    },
-    {
-      "id": "Barry's Yoga Studio-53829",
-      "title": "10:30 AM \u2013 11:30 AM EDT",
-      "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Vinyasa",
-      "start": "2026-09-30T10:30:00",
-      "end": "2026-09-30T11:30:00",
-      "level": "All Levels",
-      "spots_left": null,
-      "color": "#3d7a8c",
-      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
-    },
-    {
-      "id": "Barry's Yoga Studio-22100",
-      "title": "12:00 PM \u2013 12:45 PM EDT",
-      "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Combo",
-      "start": "2026-09-30T12:00:00",
-      "end": "2026-09-30T12:45:00",
-      "level": "All Levels",
-      "spots_left": null,
-      "color": "#3d7a8c",
-      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
-    },
-    {
-      "id": "Barry's Yoga Studio-98370",
-      "title": "4:30 PM \u2013 5:15 PM EDT",
-      "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Combo",
-      "start": "2026-09-30T16:30:00",
-      "end": "2026-09-30T17:15:00",
-      "level": "All Levels",
-      "spots_left": null,
-      "color": "#3d7a8c",
-      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
-    },
-    {
-      "id": "Barry's Yoga Studio-88732",
-      "title": "4:30 PM \u2013 5:30 PM EDT",
-      "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Power",
-      "start": "2026-09-30T16:30:00",
-      "end": "2026-09-30T17:30:00",
-      "level": "All Levels",
-      "spots_left": null,
-      "color": "#3d7a8c",
-      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
-    },
-    {
-      "id": "Victor Yoga Studio-19627",
-      "title": "Sunset Yoga on the Grasslands at Ganondagan",
-      "studio": "Victor Yoga Studio",
-      "instructor": "Mandy W",
-      "start": "2026-09-30T18:00:00",
-      "end": "2026-09-30T18:45:00",
-      "level": "All Levels",
-      "spots_left": null,
-      "color": "#c17a5c",
-      "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/mandy-w"
-    },
-    {
-      "id": "Barry's Yoga Studio-56181",
-      "title": "6:00 PM \u2013 7:15 PM EDT",
-      "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Power",
-      "start": "2026-09-30T18:00:00",
-      "end": "2026-09-30T19:15:00",
-      "level": "All Levels",
-      "spots_left": null,
-      "color": "#3d7a8c",
-      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
-    },
-    {
-      "id": "Barry's Yoga Studio-70245",
-      "title": "6:00 PM \u2013 6:45 PM EDT",
-      "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Conditioning",
-      "start": "2026-09-30T18:00:00",
-      "end": "2026-09-30T18:45:00",
-      "level": "All Levels",
-      "spots_left": null,
-      "color": "#3d7a8c",
-      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
-    },
-    {
-      "id": "Barry's Yoga Studio-79603",
-      "title": "7:15 PM \u2013 8:30 PM EDT",
-      "studio": "Barry's Yoga Studio",
-      "instructor": "Yin to Restorative",
-      "start": "2026-09-30T19:15:00",
-      "end": "2026-09-30T20:30:00",
-      "level": "All Levels",
-      "spots_left": null,
-      "color": "#3d7a8c",
-      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
-    },
-    {
-      "id": "Barry's Yoga Studio-31756",
-      "title": "Lindsey Hill (substitute)",
-      "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Conditioning",
-      "start": "2026-09-30T19:30:00",
-      "end": "2026-09-30T20:15:00",
-      "level": "All Levels",
-      "spots_left": null,
-      "color": "#3d7a8c",
-      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
-    },
-    {
-      "id": "Barry's Yoga Studio-3073",
-      "title": "7:30 PM \u2013 8:15 PM EDT",
-      "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Conditioning",
-      "start": "2026-09-30T19:30:00",
-      "end": "2026-09-30T20:15:00",
-      "level": "All Levels",
-      "spots_left": null,
-      "color": "#3d7a8c",
-      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
-    },
-    {
-      "id": "Barry's Yoga Studio-80480",
-      "title": "5:45 AM \u2013 6:30 AM EDT",
-      "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Conditioning",
       "start": "2026-10-01T05:45:00",
       "end": "2026-10-01T06:30:00",
       "level": "All Levels",
@@ -734,7 +14,7 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-46482",
+      "id": "Barry's Yoga Studio-86880",
       "title": "5:45 AM \u2013 6:45 AM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Hot Power",
@@ -746,7 +26,7 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-18935",
+      "id": "Barry's Yoga Studio-81410",
       "title": "Lisa Laluk (substitute)",
       "studio": "Barry's Yoga Studio",
       "instructor": "Hot Conditioning",
@@ -758,19 +38,19 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-76001",
-      "title": "7:00 AM \u2013 8:00 AM EDT",
+      "id": "Barry's Yoga Studio-86693",
+      "title": "Kirsten Weeks (substitute)",
       "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Power",
-      "start": "2026-10-01T07:00:00",
-      "end": "2026-10-01T08:00:00",
+      "instructor": "Hot Combo",
+      "start": "2026-10-01T05:45:00",
+      "end": "2026-10-01T06:30:00",
       "level": "All Levels",
       "spots_left": null,
       "color": "#3d7a8c",
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-68334",
+      "id": "Barry's Yoga Studio-89483",
       "title": "7:00 AM \u2013 7:45 AM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Hot Conditioning",
@@ -782,7 +62,7 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-70587",
+      "id": "Barry's Yoga Studio-41591",
       "title": "8:00 AM \u2013 8:45 AM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Hot Combo",
@@ -794,7 +74,7 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-60189",
+      "id": "Barry's Yoga Studio-14685",
       "title": "9:00 AM \u2013 10:15 AM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Hot Power",
@@ -806,19 +86,19 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-67000",
-      "title": "9:30 AM \u2013 10:30 AM EDT",
+      "id": "Barry's Yoga Studio-17484",
+      "title": "Kirsten Weeks (substitute)",
       "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Power",
+      "instructor": "Thursday, October 1",
       "start": "2026-10-01T09:30:00",
-      "end": "2026-10-01T10:30:00",
+      "end": "2026-10-01T10:15:00",
       "level": "All Levels",
       "spots_left": null,
       "color": "#3d7a8c",
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-62463",
+      "id": "Barry's Yoga Studio-83979",
       "title": "9:30 AM \u2013 10:15 AM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Hot Conditioning",
@@ -830,7 +110,19 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Victor Yoga Studio-99371",
+      "id": "Barry's Yoga Studio-52442",
+      "title": "9:30 AM \u2013 10:30 AM EDT",
+      "studio": "Barry's Yoga Studio",
+      "instructor": "Hot Power",
+      "start": "2026-10-01T09:30:00",
+      "end": "2026-10-01T10:30:00",
+      "level": "All Levels",
+      "spots_left": null,
+      "color": "#3d7a8c",
+      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
+    },
+    {
+      "id": "Victor Yoga Studio-72267",
       "title": "A little Slower Vinyasa Flow",
       "studio": "Victor Yoga Studio",
       "instructor": "Mandy W",
@@ -842,7 +134,7 @@
       "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/mandy-w"
     },
     {
-      "id": "Barry's Yoga Studio-87357",
+      "id": "Barry's Yoga Studio-45448",
       "title": "10:00 AM \u2013 11:15 AM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Sunday Service",
@@ -854,7 +146,7 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-69581",
+      "id": "Barry's Yoga Studio-84723",
       "title": "10:30 AM \u2013 11:30 AM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Hot Vinyasa",
@@ -866,10 +158,10 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-54165",
-      "title": "12:00 PM \u2013 12:45 PM EDT",
+      "id": "Barry's Yoga Studio-58765",
+      "title": "Ashley Whipkey (substitute)",
       "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Combo",
+      "instructor": "Hot Conditioning",
       "start": "2026-10-01T12:00:00",
       "end": "2026-10-01T12:45:00",
       "level": "All Levels",
@@ -878,19 +170,19 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-88857",
-      "title": "4:30 PM \u2013 5:15 PM EDT",
+      "id": "Barry's Yoga Studio-39067",
+      "title": "12:00 PM \u2013 12:45 PM EDT",
       "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Combo",
-      "start": "2026-10-01T16:30:00",
-      "end": "2026-10-01T17:15:00",
+      "instructor": "Hot Conditioning",
+      "start": "2026-10-01T12:00:00",
+      "end": "2026-10-01T12:45:00",
       "level": "All Levels",
       "spots_left": null,
       "color": "#3d7a8c",
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-46480",
+      "id": "Barry's Yoga Studio-42816",
       "title": "4:30 PM \u2013 5:30 PM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Hot Power",
@@ -902,7 +194,19 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Victor Yoga Studio-83120",
+      "id": "Barry's Yoga Studio-2414",
+      "title": "4:30 PM \u2013 5:15 PM EDT",
+      "studio": "Barry's Yoga Studio",
+      "instructor": "Hot Conditioning",
+      "start": "2026-10-01T16:30:00",
+      "end": "2026-10-01T17:15:00",
+      "level": "All Levels",
+      "spots_left": null,
+      "color": "#3d7a8c",
+      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
+    },
+    {
+      "id": "Victor Yoga Studio-18038",
       "title": "Vinyasa Flow",
       "studio": "Victor Yoga Studio",
       "instructor": "Mandy W",
@@ -914,7 +218,19 @@
       "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/mandy-w"
     },
     {
-      "id": "Barry's Yoga Studio-45254",
+      "id": "Barry's Yoga Studio-39815",
+      "title": "Kirsten Weeks (substitute)",
+      "studio": "Barry's Yoga Studio",
+      "instructor": "Hot Conditioning",
+      "start": "2026-10-01T18:00:00",
+      "end": "2026-10-01T18:45:00",
+      "level": "All Levels",
+      "spots_left": null,
+      "color": "#3d7a8c",
+      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
+    },
+    {
+      "id": "Barry's Yoga Studio-21681",
       "title": "6:00 PM \u2013 7:15 PM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Hot Power",
@@ -926,19 +242,7 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-29691",
-      "title": "6:00 PM \u2013 6:45 PM EDT",
-      "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Conditioning",
-      "start": "2026-10-01T18:00:00",
-      "end": "2026-10-01T18:45:00",
-      "level": "All Levels",
-      "spots_left": null,
-      "color": "#3d7a8c",
-      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
-    },
-    {
-      "id": "Barry's Yoga Studio-19620",
+      "id": "Barry's Yoga Studio-85235",
       "title": "7:15 PM \u2013 8:30 PM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Yin to Restorative",
@@ -950,19 +254,7 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-5142",
-      "title": "Lindsey Hill (substitute)",
-      "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Conditioning",
-      "start": "2026-10-01T19:30:00",
-      "end": "2026-10-01T20:15:00",
-      "level": "All Levels",
-      "spots_left": null,
-      "color": "#3d7a8c",
-      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
-    },
-    {
-      "id": "Barry's Yoga Studio-13839",
+      "id": "Barry's Yoga Studio-18652",
       "title": "7:30 PM \u2013 8:15 PM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Hot Conditioning",
@@ -974,10 +266,10 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-66918",
+      "id": "Barry's Yoga Studio-78392",
       "title": "5:45 AM \u2013 6:30 AM EDT",
       "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Conditioning",
+      "instructor": "Hot Power",
       "start": "2026-10-02T05:45:00",
       "end": "2026-10-02T06:30:00",
       "level": "All Levels",
@@ -986,7 +278,7 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-33276",
+      "id": "Barry's Yoga Studio-1012",
       "title": "5:45 AM \u2013 6:45 AM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Hot Power",
@@ -998,7 +290,7 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-58948",
+      "id": "Barry's Yoga Studio-58166",
       "title": "Lisa Laluk (substitute)",
       "studio": "Barry's Yoga Studio",
       "instructor": "Hot Conditioning",
@@ -1010,19 +302,19 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-75610",
-      "title": "7:00 AM \u2013 8:00 AM EDT",
+      "id": "Barry's Yoga Studio-32935",
+      "title": "Kirsten Weeks (substitute)",
       "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Power",
-      "start": "2026-10-02T07:00:00",
-      "end": "2026-10-02T08:00:00",
+      "instructor": "Hot Combo",
+      "start": "2026-10-02T05:45:00",
+      "end": "2026-10-02T06:30:00",
       "level": "All Levels",
       "spots_left": null,
       "color": "#3d7a8c",
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-54503",
+      "id": "Barry's Yoga Studio-12448",
       "title": "7:00 AM \u2013 7:45 AM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Hot Conditioning",
@@ -1034,7 +326,7 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-98286",
+      "id": "Barry's Yoga Studio-15415",
       "title": "8:00 AM \u2013 8:45 AM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Hot Combo",
@@ -1046,7 +338,7 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Victor Yoga Studio-88688",
+      "id": "Victor Yoga Studio-82766",
       "title": "Gentle Yoga in Studio",
       "studio": "Victor Yoga Studio",
       "instructor": "Bani A",
@@ -1058,7 +350,7 @@
       "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/mandy-w"
     },
     {
-      "id": "Barry's Yoga Studio-17568",
+      "id": "Barry's Yoga Studio-56770",
       "title": "9:00 AM \u2013 10:15 AM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Hot Power",
@@ -1070,19 +362,19 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-62509",
-      "title": "9:30 AM \u2013 10:30 AM EDT",
+      "id": "Barry's Yoga Studio-57780",
+      "title": "Kirsten Weeks (substitute)",
       "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Power",
+      "instructor": "Thursday, October 1",
       "start": "2026-10-02T09:30:00",
-      "end": "2026-10-02T10:30:00",
+      "end": "2026-10-02T10:15:00",
       "level": "All Levels",
       "spots_left": null,
       "color": "#3d7a8c",
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-87787",
+      "id": "Barry's Yoga Studio-49722",
       "title": "9:30 AM \u2013 10:15 AM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Hot Conditioning",
@@ -1094,7 +386,19 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Victor Yoga Studio-72921",
+      "id": "Barry's Yoga Studio-57528",
+      "title": "9:30 AM \u2013 10:30 AM EDT",
+      "studio": "Barry's Yoga Studio",
+      "instructor": "Hot Power",
+      "start": "2026-10-02T09:30:00",
+      "end": "2026-10-02T10:30:00",
+      "level": "All Levels",
+      "spots_left": null,
+      "color": "#3d7a8c",
+      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
+    },
+    {
+      "id": "Victor Yoga Studio-56133",
       "title": "Yoga Fusion",
       "studio": "Victor Yoga Studio",
       "instructor": "Mandy W",
@@ -1106,7 +410,7 @@
       "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/mandy-w"
     },
     {
-      "id": "Barry's Yoga Studio-5453",
+      "id": "Barry's Yoga Studio-51282",
       "title": "10:00 AM \u2013 11:15 AM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Sunday Service",
@@ -1118,7 +422,7 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-73770",
+      "id": "Barry's Yoga Studio-31812",
       "title": "10:30 AM \u2013 11:30 AM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Hot Vinyasa",
@@ -1130,10 +434,10 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-53931",
-      "title": "12:00 PM \u2013 12:45 PM EDT",
+      "id": "Barry's Yoga Studio-90009",
+      "title": "Ashley Whipkey (substitute)",
       "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Combo",
+      "instructor": "Hot Conditioning",
       "start": "2026-10-02T12:00:00",
       "end": "2026-10-02T12:45:00",
       "level": "All Levels",
@@ -1142,19 +446,19 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-62389",
-      "title": "4:30 PM \u2013 5:15 PM EDT",
+      "id": "Barry's Yoga Studio-89455",
+      "title": "12:00 PM \u2013 12:45 PM EDT",
       "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Combo",
-      "start": "2026-10-02T16:30:00",
-      "end": "2026-10-02T17:15:00",
+      "instructor": "Hot Conditioning",
+      "start": "2026-10-02T12:00:00",
+      "end": "2026-10-02T12:45:00",
       "level": "All Levels",
       "spots_left": null,
       "color": "#3d7a8c",
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-76150",
+      "id": "Barry's Yoga Studio-83880",
       "title": "4:30 PM \u2013 5:30 PM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Hot Power",
@@ -1166,7 +470,31 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-21153",
+      "id": "Barry's Yoga Studio-42709",
+      "title": "4:30 PM \u2013 5:15 PM EDT",
+      "studio": "Barry's Yoga Studio",
+      "instructor": "Hot Conditioning",
+      "start": "2026-10-02T16:30:00",
+      "end": "2026-10-02T17:15:00",
+      "level": "All Levels",
+      "spots_left": null,
+      "color": "#3d7a8c",
+      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
+    },
+    {
+      "id": "Barry's Yoga Studio-62484",
+      "title": "Kirsten Weeks (substitute)",
+      "studio": "Barry's Yoga Studio",
+      "instructor": "Hot Conditioning",
+      "start": "2026-10-02T18:00:00",
+      "end": "2026-10-02T18:45:00",
+      "level": "All Levels",
+      "spots_left": null,
+      "color": "#3d7a8c",
+      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
+    },
+    {
+      "id": "Barry's Yoga Studio-33938",
       "title": "6:00 PM \u2013 7:15 PM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Hot Power",
@@ -1178,19 +506,7 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-91060",
-      "title": "6:00 PM \u2013 6:45 PM EDT",
-      "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Conditioning",
-      "start": "2026-10-02T18:00:00",
-      "end": "2026-10-02T18:45:00",
-      "level": "All Levels",
-      "spots_left": null,
-      "color": "#3d7a8c",
-      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
-    },
-    {
-      "id": "Barry's Yoga Studio-24429",
+      "id": "Barry's Yoga Studio-86753",
       "title": "7:15 PM \u2013 8:30 PM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Yin to Restorative",
@@ -1202,19 +518,7 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-37679",
-      "title": "Lindsey Hill (substitute)",
-      "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Conditioning",
-      "start": "2026-10-02T19:30:00",
-      "end": "2026-10-02T20:15:00",
-      "level": "All Levels",
-      "spots_left": null,
-      "color": "#3d7a8c",
-      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
-    },
-    {
-      "id": "Barry's Yoga Studio-28934",
+      "id": "Barry's Yoga Studio-1414",
       "title": "7:30 PM \u2013 8:15 PM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Hot Conditioning",
@@ -1226,10 +530,10 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-29804",
+      "id": "Barry's Yoga Studio-85018",
       "title": "5:45 AM \u2013 6:30 AM EDT",
       "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Conditioning",
+      "instructor": "Hot Power",
       "start": "2026-10-03T05:45:00",
       "end": "2026-10-03T06:30:00",
       "level": "All Levels",
@@ -1238,7 +542,7 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-27895",
+      "id": "Barry's Yoga Studio-5794",
       "title": "5:45 AM \u2013 6:45 AM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Hot Power",
@@ -1250,7 +554,7 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-77543",
+      "id": "Barry's Yoga Studio-18604",
       "title": "Lisa Laluk (substitute)",
       "studio": "Barry's Yoga Studio",
       "instructor": "Hot Conditioning",
@@ -1262,19 +566,19 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-9492",
-      "title": "7:00 AM \u2013 8:00 AM EDT",
+      "id": "Barry's Yoga Studio-63061",
+      "title": "Kirsten Weeks (substitute)",
       "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Power",
-      "start": "2026-10-03T07:00:00",
-      "end": "2026-10-03T08:00:00",
+      "instructor": "Hot Combo",
+      "start": "2026-10-03T05:45:00",
+      "end": "2026-10-03T06:30:00",
       "level": "All Levels",
       "spots_left": null,
       "color": "#3d7a8c",
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-79872",
+      "id": "Barry's Yoga Studio-30146",
       "title": "7:00 AM \u2013 7:45 AM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Hot Conditioning",
@@ -1286,7 +590,7 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-10627",
+      "id": "Barry's Yoga Studio-40592",
       "title": "8:00 AM \u2013 8:45 AM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Hot Combo",
@@ -1298,7 +602,7 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-56250",
+      "id": "Barry's Yoga Studio-14875",
       "title": "9:00 AM \u2013 10:15 AM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Hot Power",
@@ -1310,7 +614,7 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Victor Yoga Studio-50917",
+      "id": "Victor Yoga Studio-39112",
       "title": "Open Level Yoga",
       "studio": "Victor Yoga Studio",
       "instructor": "Bani A",
@@ -1322,19 +626,19 @@
       "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/bani-a"
     },
     {
-      "id": "Barry's Yoga Studio-98173",
-      "title": "9:30 AM \u2013 10:30 AM EDT",
+      "id": "Barry's Yoga Studio-31609",
+      "title": "Kirsten Weeks (substitute)",
       "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Power",
+      "instructor": "Thursday, October 1",
       "start": "2026-10-03T09:30:00",
-      "end": "2026-10-03T10:30:00",
+      "end": "2026-10-03T10:15:00",
       "level": "All Levels",
       "spots_left": null,
       "color": "#3d7a8c",
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-41810",
+      "id": "Barry's Yoga Studio-11912",
       "title": "9:30 AM \u2013 10:15 AM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Hot Conditioning",
@@ -1346,7 +650,19 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-45860",
+      "id": "Barry's Yoga Studio-97815",
+      "title": "9:30 AM \u2013 10:30 AM EDT",
+      "studio": "Barry's Yoga Studio",
+      "instructor": "Hot Power",
+      "start": "2026-10-03T09:30:00",
+      "end": "2026-10-03T10:30:00",
+      "level": "All Levels",
+      "spots_left": null,
+      "color": "#3d7a8c",
+      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
+    },
+    {
+      "id": "Barry's Yoga Studio-79361",
       "title": "10:00 AM \u2013 11:15 AM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Sunday Service",
@@ -1358,7 +674,7 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-96524",
+      "id": "Barry's Yoga Studio-90675",
       "title": "10:30 AM \u2013 11:30 AM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Hot Vinyasa",
@@ -1370,10 +686,10 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-43564",
-      "title": "12:00 PM \u2013 12:45 PM EDT",
+      "id": "Barry's Yoga Studio-76751",
+      "title": "Ashley Whipkey (substitute)",
       "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Combo",
+      "instructor": "Hot Conditioning",
       "start": "2026-10-03T12:00:00",
       "end": "2026-10-03T12:45:00",
       "level": "All Levels",
@@ -1382,19 +698,19 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-41608",
-      "title": "4:30 PM \u2013 5:15 PM EDT",
+      "id": "Barry's Yoga Studio-61253",
+      "title": "12:00 PM \u2013 12:45 PM EDT",
       "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Combo",
-      "start": "2026-10-03T16:30:00",
-      "end": "2026-10-03T17:15:00",
+      "instructor": "Hot Conditioning",
+      "start": "2026-10-03T12:00:00",
+      "end": "2026-10-03T12:45:00",
       "level": "All Levels",
       "spots_left": null,
       "color": "#3d7a8c",
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-92317",
+      "id": "Barry's Yoga Studio-11907",
       "title": "4:30 PM \u2013 5:30 PM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Hot Power",
@@ -1406,7 +722,31 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-80444",
+      "id": "Barry's Yoga Studio-83995",
+      "title": "4:30 PM \u2013 5:15 PM EDT",
+      "studio": "Barry's Yoga Studio",
+      "instructor": "Hot Conditioning",
+      "start": "2026-10-03T16:30:00",
+      "end": "2026-10-03T17:15:00",
+      "level": "All Levels",
+      "spots_left": null,
+      "color": "#3d7a8c",
+      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
+    },
+    {
+      "id": "Barry's Yoga Studio-12049",
+      "title": "Kirsten Weeks (substitute)",
+      "studio": "Barry's Yoga Studio",
+      "instructor": "Hot Conditioning",
+      "start": "2026-10-03T18:00:00",
+      "end": "2026-10-03T18:45:00",
+      "level": "All Levels",
+      "spots_left": null,
+      "color": "#3d7a8c",
+      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
+    },
+    {
+      "id": "Barry's Yoga Studio-65903",
       "title": "6:00 PM \u2013 7:15 PM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Hot Power",
@@ -1418,19 +758,7 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-50002",
-      "title": "6:00 PM \u2013 6:45 PM EDT",
-      "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Conditioning",
-      "start": "2026-10-03T18:00:00",
-      "end": "2026-10-03T18:45:00",
-      "level": "All Levels",
-      "spots_left": null,
-      "color": "#3d7a8c",
-      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
-    },
-    {
-      "id": "Barry's Yoga Studio-81542",
+      "id": "Barry's Yoga Studio-52382",
       "title": "7:15 PM \u2013 8:30 PM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Yin to Restorative",
@@ -1442,19 +770,7 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-65016",
-      "title": "Lindsey Hill (substitute)",
-      "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Conditioning",
-      "start": "2026-10-03T19:30:00",
-      "end": "2026-10-03T20:15:00",
-      "level": "All Levels",
-      "spots_left": null,
-      "color": "#3d7a8c",
-      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
-    },
-    {
-      "id": "Barry's Yoga Studio-86171",
+      "id": "Barry's Yoga Studio-57803",
       "title": "7:30 PM \u2013 8:15 PM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Hot Conditioning",
@@ -1466,10 +782,10 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-51850",
+      "id": "Barry's Yoga Studio-27612",
       "title": "5:45 AM \u2013 6:30 AM EDT",
       "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Conditioning",
+      "instructor": "Hot Power",
       "start": "2026-10-04T05:45:00",
       "end": "2026-10-04T06:30:00",
       "level": "All Levels",
@@ -1478,7 +794,7 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-25747",
+      "id": "Barry's Yoga Studio-10928",
       "title": "5:45 AM \u2013 6:45 AM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Hot Power",
@@ -1490,7 +806,7 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-56373",
+      "id": "Barry's Yoga Studio-98180",
       "title": "Lisa Laluk (substitute)",
       "studio": "Barry's Yoga Studio",
       "instructor": "Hot Conditioning",
@@ -1502,19 +818,19 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-41312",
-      "title": "7:00 AM \u2013 8:00 AM EDT",
+      "id": "Barry's Yoga Studio-55525",
+      "title": "Kirsten Weeks (substitute)",
       "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Power",
-      "start": "2026-10-04T07:00:00",
-      "end": "2026-10-04T08:00:00",
+      "instructor": "Hot Combo",
+      "start": "2026-10-04T05:45:00",
+      "end": "2026-10-04T06:30:00",
       "level": "All Levels",
       "spots_left": null,
       "color": "#3d7a8c",
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-53777",
+      "id": "Barry's Yoga Studio-18806",
       "title": "7:00 AM \u2013 7:45 AM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Hot Conditioning",
@@ -1526,7 +842,7 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-78313",
+      "id": "Barry's Yoga Studio-19714",
       "title": "8:00 AM \u2013 8:45 AM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Hot Combo",
@@ -1538,7 +854,7 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-16651",
+      "id": "Barry's Yoga Studio-25085",
       "title": "9:00 AM \u2013 10:15 AM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Hot Power",
@@ -1550,7 +866,7 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Victor Yoga Studio-89512",
+      "id": "Victor Yoga Studio-61846",
       "title": "Warm Vinyasa in Studio",
       "studio": "Victor Yoga Studio",
       "instructor": "Mandy W",
@@ -1562,19 +878,19 @@
       "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/mandy-w"
     },
     {
-      "id": "Barry's Yoga Studio-66962",
-      "title": "9:30 AM \u2013 10:30 AM EDT",
+      "id": "Barry's Yoga Studio-4474",
+      "title": "Kirsten Weeks (substitute)",
       "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Power",
+      "instructor": "Thursday, October 1",
       "start": "2026-10-04T09:30:00",
-      "end": "2026-10-04T10:30:00",
+      "end": "2026-10-04T10:15:00",
       "level": "All Levels",
       "spots_left": null,
       "color": "#3d7a8c",
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-14524",
+      "id": "Barry's Yoga Studio-7223",
       "title": "9:30 AM \u2013 10:15 AM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Hot Conditioning",
@@ -1586,7 +902,19 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-30586",
+      "id": "Barry's Yoga Studio-29523",
+      "title": "9:30 AM \u2013 10:30 AM EDT",
+      "studio": "Barry's Yoga Studio",
+      "instructor": "Hot Power",
+      "start": "2026-10-04T09:30:00",
+      "end": "2026-10-04T10:30:00",
+      "level": "All Levels",
+      "spots_left": null,
+      "color": "#3d7a8c",
+      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
+    },
+    {
+      "id": "Barry's Yoga Studio-796",
       "title": "10:00 AM \u2013 11:15 AM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Sunday Service",
@@ -1598,7 +926,7 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-49079",
+      "id": "Barry's Yoga Studio-90951",
       "title": "10:30 AM \u2013 11:30 AM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Hot Vinyasa",
@@ -1610,10 +938,10 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-86384",
-      "title": "12:00 PM \u2013 12:45 PM EDT",
+      "id": "Barry's Yoga Studio-66307",
+      "title": "Ashley Whipkey (substitute)",
       "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Combo",
+      "instructor": "Hot Conditioning",
       "start": "2026-10-04T12:00:00",
       "end": "2026-10-04T12:45:00",
       "level": "All Levels",
@@ -1622,19 +950,19 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Victor Yoga Studio-36700",
-      "title": "Stretch and Strengthen",
-      "studio": "Victor Yoga Studio",
-      "instructor": "Mandy W",
-      "start": "2026-10-04T12:30:00",
-      "end": "2026-10-04T13:30:00",
+      "id": "Barry's Yoga Studio-35099",
+      "title": "12:00 PM \u2013 12:45 PM EDT",
+      "studio": "Barry's Yoga Studio",
+      "instructor": "Hot Conditioning",
+      "start": "2026-10-04T12:00:00",
+      "end": "2026-10-04T12:45:00",
       "level": "All Levels",
       "spots_left": null,
-      "color": "#c17a5c",
-      "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/mandy-w"
+      "color": "#3d7a8c",
+      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Victor Yoga Studio-44306",
+      "id": "Victor Yoga Studio-28550",
       "title": "Gentle Yoga in Studio",
       "studio": "Victor Yoga Studio",
       "instructor": "Mandy W",
@@ -1646,19 +974,7 @@
       "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/mandy-w"
     },
     {
-      "id": "Barry's Yoga Studio-53765",
-      "title": "4:30 PM \u2013 5:15 PM EDT",
-      "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Combo",
-      "start": "2026-10-04T16:30:00",
-      "end": "2026-10-04T17:15:00",
-      "level": "All Levels",
-      "spots_left": null,
-      "color": "#3d7a8c",
-      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
-    },
-    {
-      "id": "Barry's Yoga Studio-6095",
+      "id": "Barry's Yoga Studio-56470",
       "title": "4:30 PM \u2013 5:30 PM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Hot Power",
@@ -1670,7 +986,31 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-10030",
+      "id": "Barry's Yoga Studio-70154",
+      "title": "4:30 PM \u2013 5:15 PM EDT",
+      "studio": "Barry's Yoga Studio",
+      "instructor": "Hot Conditioning",
+      "start": "2026-10-04T16:30:00",
+      "end": "2026-10-04T17:15:00",
+      "level": "All Levels",
+      "spots_left": null,
+      "color": "#3d7a8c",
+      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
+    },
+    {
+      "id": "Barry's Yoga Studio-49087",
+      "title": "Kirsten Weeks (substitute)",
+      "studio": "Barry's Yoga Studio",
+      "instructor": "Hot Conditioning",
+      "start": "2026-10-04T18:00:00",
+      "end": "2026-10-04T18:45:00",
+      "level": "All Levels",
+      "spots_left": null,
+      "color": "#3d7a8c",
+      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
+    },
+    {
+      "id": "Barry's Yoga Studio-96721",
       "title": "6:00 PM \u2013 7:15 PM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Hot Power",
@@ -1682,19 +1022,7 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-13726",
-      "title": "6:00 PM \u2013 6:45 PM EDT",
-      "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Conditioning",
-      "start": "2026-10-04T18:00:00",
-      "end": "2026-10-04T18:45:00",
-      "level": "All Levels",
-      "spots_left": null,
-      "color": "#3d7a8c",
-      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
-    },
-    {
-      "id": "Barry's Yoga Studio-58781",
+      "id": "Barry's Yoga Studio-20459",
       "title": "7:15 PM \u2013 8:30 PM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Yin to Restorative",
@@ -1706,19 +1034,7 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-75487",
-      "title": "Lindsey Hill (substitute)",
-      "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Conditioning",
-      "start": "2026-10-04T19:30:00",
-      "end": "2026-10-04T20:15:00",
-      "level": "All Levels",
-      "spots_left": null,
-      "color": "#3d7a8c",
-      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
-    },
-    {
-      "id": "Barry's Yoga Studio-38750",
+      "id": "Barry's Yoga Studio-29361",
       "title": "7:30 PM \u2013 8:15 PM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Hot Conditioning",
@@ -1730,10 +1046,10 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-54799",
+      "id": "Barry's Yoga Studio-33233",
       "title": "5:45 AM \u2013 6:30 AM EDT",
       "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Conditioning",
+      "instructor": "Hot Power",
       "start": "2026-10-05T05:45:00",
       "end": "2026-10-05T06:30:00",
       "level": "All Levels",
@@ -1742,7 +1058,7 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-71763",
+      "id": "Barry's Yoga Studio-2598",
       "title": "5:45 AM \u2013 6:45 AM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Hot Power",
@@ -1754,7 +1070,7 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-24313",
+      "id": "Barry's Yoga Studio-12994",
       "title": "Lisa Laluk (substitute)",
       "studio": "Barry's Yoga Studio",
       "instructor": "Hot Conditioning",
@@ -1766,19 +1082,19 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-1461",
-      "title": "7:00 AM \u2013 8:00 AM EDT",
+      "id": "Barry's Yoga Studio-23375",
+      "title": "Kirsten Weeks (substitute)",
       "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Power",
-      "start": "2026-10-05T07:00:00",
-      "end": "2026-10-05T08:00:00",
+      "instructor": "Hot Combo",
+      "start": "2026-10-05T05:45:00",
+      "end": "2026-10-05T06:30:00",
       "level": "All Levels",
       "spots_left": null,
       "color": "#3d7a8c",
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-19303",
+      "id": "Barry's Yoga Studio-74806",
       "title": "7:00 AM \u2013 7:45 AM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Hot Conditioning",
@@ -1790,7 +1106,7 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-22473",
+      "id": "Barry's Yoga Studio-63131",
       "title": "8:00 AM \u2013 8:45 AM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Hot Combo",
@@ -1802,7 +1118,7 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-32077",
+      "id": "Barry's Yoga Studio-30761",
       "title": "9:00 AM \u2013 10:15 AM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Hot Power",
@@ -1814,7 +1130,7 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Victor Yoga Studio-32799",
+      "id": "Victor Yoga Studio-34012",
       "title": "Warm Vinyasa Flow in Studio",
       "studio": "Victor Yoga Studio",
       "instructor": "Alex M",
@@ -1826,19 +1142,19 @@
       "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/alex-m-bec6605c"
     },
     {
-      "id": "Barry's Yoga Studio-16739",
-      "title": "9:30 AM \u2013 10:30 AM EDT",
+      "id": "Barry's Yoga Studio-24066",
+      "title": "Kirsten Weeks (substitute)",
       "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Power",
+      "instructor": "Thursday, October 1",
       "start": "2026-10-05T09:30:00",
-      "end": "2026-10-05T10:30:00",
+      "end": "2026-10-05T10:15:00",
       "level": "All Levels",
       "spots_left": null,
       "color": "#3d7a8c",
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-45702",
+      "id": "Barry's Yoga Studio-16828",
       "title": "9:30 AM \u2013 10:15 AM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Hot Conditioning",
@@ -1850,7 +1166,19 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-39998",
+      "id": "Barry's Yoga Studio-7512",
+      "title": "9:30 AM \u2013 10:30 AM EDT",
+      "studio": "Barry's Yoga Studio",
+      "instructor": "Hot Power",
+      "start": "2026-10-05T09:30:00",
+      "end": "2026-10-05T10:30:00",
+      "level": "All Levels",
+      "spots_left": null,
+      "color": "#3d7a8c",
+      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
+    },
+    {
+      "id": "Barry's Yoga Studio-5398",
       "title": "10:00 AM \u2013 11:15 AM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Sunday Service",
@@ -1862,7 +1190,7 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-78875",
+      "id": "Barry's Yoga Studio-10528",
       "title": "10:30 AM \u2013 11:30 AM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Hot Vinyasa",
@@ -1874,7 +1202,7 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Victor Yoga Studio-61858",
+      "id": "Victor Yoga Studio-76982",
       "title": "Open Level Yoga",
       "studio": "Victor Yoga Studio",
       "instructor": "Bani A",
@@ -1886,10 +1214,10 @@
       "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/bani-a"
     },
     {
-      "id": "Barry's Yoga Studio-19174",
-      "title": "12:00 PM \u2013 12:45 PM EDT",
+      "id": "Barry's Yoga Studio-97959",
+      "title": "Ashley Whipkey (substitute)",
       "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Combo",
+      "instructor": "Hot Conditioning",
       "start": "2026-10-05T12:00:00",
       "end": "2026-10-05T12:45:00",
       "level": "All Levels",
@@ -1898,19 +1226,19 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-44791",
-      "title": "4:30 PM \u2013 5:15 PM EDT",
+      "id": "Barry's Yoga Studio-27065",
+      "title": "12:00 PM \u2013 12:45 PM EDT",
       "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Combo",
-      "start": "2026-10-05T16:30:00",
-      "end": "2026-10-05T17:15:00",
+      "instructor": "Hot Conditioning",
+      "start": "2026-10-05T12:00:00",
+      "end": "2026-10-05T12:45:00",
       "level": "All Levels",
       "spots_left": null,
       "color": "#3d7a8c",
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-22277",
+      "id": "Barry's Yoga Studio-11294",
       "title": "4:30 PM \u2013 5:30 PM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Hot Power",
@@ -1922,7 +1250,19 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Victor Yoga Studio-8151",
+      "id": "Barry's Yoga Studio-45240",
+      "title": "4:30 PM \u2013 5:15 PM EDT",
+      "studio": "Barry's Yoga Studio",
+      "instructor": "Hot Conditioning",
+      "start": "2026-10-05T16:30:00",
+      "end": "2026-10-05T17:15:00",
+      "level": "All Levels",
+      "spots_left": null,
+      "color": "#3d7a8c",
+      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
+    },
+    {
+      "id": "Victor Yoga Studio-96364",
       "title": "Warm Vinyasa Flow in Studio",
       "studio": "Victor Yoga Studio",
       "instructor": "Mandy W",
@@ -1934,7 +1274,19 @@
       "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/mandy-w"
     },
     {
-      "id": "Barry's Yoga Studio-89833",
+      "id": "Barry's Yoga Studio-89259",
+      "title": "Kirsten Weeks (substitute)",
+      "studio": "Barry's Yoga Studio",
+      "instructor": "Hot Conditioning",
+      "start": "2026-10-05T18:00:00",
+      "end": "2026-10-05T18:45:00",
+      "level": "All Levels",
+      "spots_left": null,
+      "color": "#3d7a8c",
+      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
+    },
+    {
+      "id": "Barry's Yoga Studio-75213",
       "title": "6:00 PM \u2013 7:15 PM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Hot Power",
@@ -1946,19 +1298,7 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-39130",
-      "title": "6:00 PM \u2013 6:45 PM EDT",
-      "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Conditioning",
-      "start": "2026-10-05T18:00:00",
-      "end": "2026-10-05T18:45:00",
-      "level": "All Levels",
-      "spots_left": null,
-      "color": "#3d7a8c",
-      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
-    },
-    {
-      "id": "Victor Yoga Studio-49254",
+      "id": "Victor Yoga Studio-69585",
       "title": "Alternating Instructors",
       "studio": "Victor Yoga Studio",
       "instructor": "Mindful Mondays",
@@ -1970,7 +1310,7 @@
       "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/alternating-instructors-4"
     },
     {
-      "id": "Barry's Yoga Studio-63688",
+      "id": "Barry's Yoga Studio-86445",
       "title": "7:15 PM \u2013 8:30 PM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Yin to Restorative",
@@ -1982,19 +1322,7 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-79604",
-      "title": "Lindsey Hill (substitute)",
-      "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Conditioning",
-      "start": "2026-10-05T19:30:00",
-      "end": "2026-10-05T20:15:00",
-      "level": "All Levels",
-      "spots_left": null,
-      "color": "#3d7a8c",
-      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
-    },
-    {
-      "id": "Barry's Yoga Studio-29843",
+      "id": "Barry's Yoga Studio-3319",
       "title": "7:30 PM \u2013 8:15 PM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Hot Conditioning",
@@ -2006,10 +1334,10 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-89653",
+      "id": "Barry's Yoga Studio-9255",
       "title": "5:45 AM \u2013 6:30 AM EDT",
       "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Conditioning",
+      "instructor": "Hot Power",
       "start": "2026-10-06T05:45:00",
       "end": "2026-10-06T06:30:00",
       "level": "All Levels",
@@ -2018,7 +1346,7 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-43776",
+      "id": "Barry's Yoga Studio-25640",
       "title": "5:45 AM \u2013 6:45 AM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Hot Power",
@@ -2030,7 +1358,7 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-72922",
+      "id": "Barry's Yoga Studio-13598",
       "title": "Lisa Laluk (substitute)",
       "studio": "Barry's Yoga Studio",
       "instructor": "Hot Conditioning",
@@ -2042,19 +1370,19 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-13343",
-      "title": "7:00 AM \u2013 8:00 AM EDT",
+      "id": "Barry's Yoga Studio-94745",
+      "title": "Kirsten Weeks (substitute)",
       "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Power",
-      "start": "2026-10-06T07:00:00",
-      "end": "2026-10-06T08:00:00",
+      "instructor": "Hot Combo",
+      "start": "2026-10-06T05:45:00",
+      "end": "2026-10-06T06:30:00",
       "level": "All Levels",
       "spots_left": null,
       "color": "#3d7a8c",
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-87995",
+      "id": "Barry's Yoga Studio-78102",
       "title": "7:00 AM \u2013 7:45 AM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Hot Conditioning",
@@ -2066,7 +1394,7 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-72242",
+      "id": "Barry's Yoga Studio-79305",
       "title": "8:00 AM \u2013 8:45 AM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Hot Combo",
@@ -2078,7 +1406,7 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-89634",
+      "id": "Barry's Yoga Studio-87423",
       "title": "9:00 AM \u2013 10:15 AM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Hot Power",
@@ -2090,7 +1418,7 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Victor Yoga Studio-83062",
+      "id": "Victor Yoga Studio-9925",
       "title": "Gentle Yoga on the Grasslands of Ganondagan",
       "studio": "Victor Yoga Studio",
       "instructor": "Gentle Yoga in Studio",
@@ -2102,7 +1430,7 @@
       "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/mandy-w"
     },
     {
-      "id": "Victor Yoga Studio-9503",
+      "id": "Victor Yoga Studio-98899",
       "title": "Gentle Yoga in Studio",
       "studio": "Victor Yoga Studio",
       "instructor": "Mandy W",
@@ -2114,19 +1442,19 @@
       "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/mandy-w"
     },
     {
-      "id": "Barry's Yoga Studio-27743",
-      "title": "9:30 AM \u2013 10:30 AM EDT",
+      "id": "Barry's Yoga Studio-89556",
+      "title": "Kirsten Weeks (substitute)",
       "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Power",
+      "instructor": "Thursday, October 1",
       "start": "2026-10-06T09:30:00",
-      "end": "2026-10-06T10:30:00",
+      "end": "2026-10-06T10:15:00",
       "level": "All Levels",
       "spots_left": null,
       "color": "#3d7a8c",
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-31238",
+      "id": "Barry's Yoga Studio-83976",
       "title": "9:30 AM \u2013 10:15 AM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Hot Conditioning",
@@ -2138,7 +1466,19 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-61834",
+      "id": "Barry's Yoga Studio-15526",
+      "title": "9:30 AM \u2013 10:30 AM EDT",
+      "studio": "Barry's Yoga Studio",
+      "instructor": "Hot Power",
+      "start": "2026-10-06T09:30:00",
+      "end": "2026-10-06T10:30:00",
+      "level": "All Levels",
+      "spots_left": null,
+      "color": "#3d7a8c",
+      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
+    },
+    {
+      "id": "Barry's Yoga Studio-20674",
       "title": "10:00 AM \u2013 11:15 AM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Sunday Service",
@@ -2150,7 +1490,7 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-79524",
+      "id": "Barry's Yoga Studio-69343",
       "title": "10:30 AM \u2013 11:30 AM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Hot Vinyasa",
@@ -2162,10 +1502,10 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-64048",
-      "title": "12:00 PM \u2013 12:45 PM EDT",
+      "id": "Barry's Yoga Studio-86003",
+      "title": "Ashley Whipkey (substitute)",
       "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Combo",
+      "instructor": "Hot Conditioning",
       "start": "2026-10-06T12:00:00",
       "end": "2026-10-06T12:45:00",
       "level": "All Levels",
@@ -2174,19 +1514,19 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-51452",
-      "title": "4:30 PM \u2013 5:15 PM EDT",
+      "id": "Barry's Yoga Studio-16648",
+      "title": "12:00 PM \u2013 12:45 PM EDT",
       "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Combo",
-      "start": "2026-10-06T16:30:00",
-      "end": "2026-10-06T17:15:00",
+      "instructor": "Hot Conditioning",
+      "start": "2026-10-06T12:00:00",
+      "end": "2026-10-06T12:45:00",
       "level": "All Levels",
       "spots_left": null,
       "color": "#3d7a8c",
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-68980",
+      "id": "Barry's Yoga Studio-43451",
       "title": "4:30 PM \u2013 5:30 PM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Hot Power",
@@ -2198,7 +1538,19 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Victor Yoga Studio-14644",
+      "id": "Barry's Yoga Studio-8302",
+      "title": "4:30 PM \u2013 5:15 PM EDT",
+      "studio": "Barry's Yoga Studio",
+      "instructor": "Hot Conditioning",
+      "start": "2026-10-06T16:30:00",
+      "end": "2026-10-06T17:15:00",
+      "level": "All Levels",
+      "spots_left": null,
+      "color": "#3d7a8c",
+      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
+    },
+    {
+      "id": "Victor Yoga Studio-24141",
       "title": "Warm Vinyasa Flow in Studio",
       "studio": "Victor Yoga Studio",
       "instructor": "Beth C",
@@ -2210,7 +1562,7 @@
       "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/beth-c-2"
     },
     {
-      "id": "Victor Yoga Studio-77641",
+      "id": "Victor Yoga Studio-12049",
       "title": "Gentle Yoga on the Grasslands of Ganondagan",
       "studio": "Victor Yoga Studio",
       "instructor": "Mandy W",
@@ -2222,7 +1574,19 @@
       "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/mandy-w"
     },
     {
-      "id": "Barry's Yoga Studio-56584",
+      "id": "Barry's Yoga Studio-2077",
+      "title": "Kirsten Weeks (substitute)",
+      "studio": "Barry's Yoga Studio",
+      "instructor": "Hot Conditioning",
+      "start": "2026-10-06T18:00:00",
+      "end": "2026-10-06T18:45:00",
+      "level": "All Levels",
+      "spots_left": null,
+      "color": "#3d7a8c",
+      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
+    },
+    {
+      "id": "Barry's Yoga Studio-30979",
       "title": "6:00 PM \u2013 7:15 PM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Hot Power",
@@ -2234,19 +1598,7 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-21565",
-      "title": "6:00 PM \u2013 6:45 PM EDT",
-      "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Conditioning",
-      "start": "2026-10-06T18:00:00",
-      "end": "2026-10-06T18:45:00",
-      "level": "All Levels",
-      "spots_left": null,
-      "color": "#3d7a8c",
-      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
-    },
-    {
-      "id": "Barry's Yoga Studio-67568",
+      "id": "Barry's Yoga Studio-91668",
       "title": "7:15 PM \u2013 8:30 PM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Yin to Restorative",
@@ -2258,19 +1610,7 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-3543",
-      "title": "Lindsey Hill (substitute)",
-      "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Conditioning",
-      "start": "2026-10-06T19:30:00",
-      "end": "2026-10-06T20:15:00",
-      "level": "All Levels",
-      "spots_left": null,
-      "color": "#3d7a8c",
-      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
-    },
-    {
-      "id": "Barry's Yoga Studio-37830",
+      "id": "Barry's Yoga Studio-18269",
       "title": "7:30 PM \u2013 8:15 PM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Hot Conditioning",
@@ -2282,10 +1622,10 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-55199",
+      "id": "Barry's Yoga Studio-87573",
       "title": "5:45 AM \u2013 6:30 AM EDT",
       "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Conditioning",
+      "instructor": "Hot Power",
       "start": "2026-10-07T05:45:00",
       "end": "2026-10-07T06:30:00",
       "level": "All Levels",
@@ -2294,7 +1634,7 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-43016",
+      "id": "Barry's Yoga Studio-70894",
       "title": "5:45 AM \u2013 6:45 AM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Hot Power",
@@ -2306,7 +1646,7 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-49509",
+      "id": "Barry's Yoga Studio-6194",
       "title": "Lisa Laluk (substitute)",
       "studio": "Barry's Yoga Studio",
       "instructor": "Hot Conditioning",
@@ -2318,19 +1658,19 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-40951",
-      "title": "7:00 AM \u2013 8:00 AM EDT",
+      "id": "Barry's Yoga Studio-6720",
+      "title": "Kirsten Weeks (substitute)",
       "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Power",
-      "start": "2026-10-07T07:00:00",
-      "end": "2026-10-07T08:00:00",
+      "instructor": "Hot Combo",
+      "start": "2026-10-07T05:45:00",
+      "end": "2026-10-07T06:30:00",
       "level": "All Levels",
       "spots_left": null,
       "color": "#3d7a8c",
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-89680",
+      "id": "Barry's Yoga Studio-10656",
       "title": "7:00 AM \u2013 7:45 AM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Hot Conditioning",
@@ -2342,7 +1682,7 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-66636",
+      "id": "Barry's Yoga Studio-10832",
       "title": "8:00 AM \u2013 8:45 AM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Hot Combo",
@@ -2354,7 +1694,7 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-23422",
+      "id": "Barry's Yoga Studio-79561",
       "title": "9:00 AM \u2013 10:15 AM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Hot Power",
@@ -2366,19 +1706,19 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-52627",
-      "title": "9:30 AM \u2013 10:30 AM EDT",
+      "id": "Barry's Yoga Studio-86658",
+      "title": "Kirsten Weeks (substitute)",
       "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Power",
+      "instructor": "Thursday, October 1",
       "start": "2026-10-07T09:30:00",
-      "end": "2026-10-07T10:30:00",
+      "end": "2026-10-07T10:15:00",
       "level": "All Levels",
       "spots_left": null,
       "color": "#3d7a8c",
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-47070",
+      "id": "Barry's Yoga Studio-39841",
       "title": "9:30 AM \u2013 10:15 AM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Hot Conditioning",
@@ -2390,7 +1730,19 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Victor Yoga Studio-33649",
+      "id": "Barry's Yoga Studio-86112",
+      "title": "9:30 AM \u2013 10:30 AM EDT",
+      "studio": "Barry's Yoga Studio",
+      "instructor": "Hot Power",
+      "start": "2026-10-07T09:30:00",
+      "end": "2026-10-07T10:30:00",
+      "level": "All Levels",
+      "spots_left": null,
+      "color": "#3d7a8c",
+      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
+    },
+    {
+      "id": "Victor Yoga Studio-53591",
       "title": "Sunset Yoga on the Grasslands at Ganondagan",
       "studio": "Victor Yoga Studio",
       "instructor": "Stretch and Strengthen",
@@ -2402,7 +1754,7 @@
       "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/mandy-w"
     },
     {
-      "id": "Victor Yoga Studio-27948",
+      "id": "Victor Yoga Studio-1976",
       "title": "Stretch and Strengthen",
       "studio": "Victor Yoga Studio",
       "instructor": "Mandy W",
@@ -2414,7 +1766,7 @@
       "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/mandy-w"
     },
     {
-      "id": "Barry's Yoga Studio-84163",
+      "id": "Barry's Yoga Studio-97918",
       "title": "10:00 AM \u2013 11:15 AM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Sunday Service",
@@ -2426,7 +1778,7 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-85452",
+      "id": "Barry's Yoga Studio-74440",
       "title": "10:30 AM \u2013 11:30 AM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Hot Vinyasa",
@@ -2438,10 +1790,10 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-63570",
-      "title": "12:00 PM \u2013 12:45 PM EDT",
+      "id": "Barry's Yoga Studio-10729",
+      "title": "Ashley Whipkey (substitute)",
       "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Combo",
+      "instructor": "Hot Conditioning",
       "start": "2026-10-07T12:00:00",
       "end": "2026-10-07T12:45:00",
       "level": "All Levels",
@@ -2450,19 +1802,19 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-53540",
-      "title": "4:30 PM \u2013 5:15 PM EDT",
+      "id": "Barry's Yoga Studio-29080",
+      "title": "12:00 PM \u2013 12:45 PM EDT",
       "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Combo",
-      "start": "2026-10-07T16:30:00",
-      "end": "2026-10-07T17:15:00",
+      "instructor": "Hot Conditioning",
+      "start": "2026-10-07T12:00:00",
+      "end": "2026-10-07T12:45:00",
       "level": "All Levels",
       "spots_left": null,
       "color": "#3d7a8c",
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-82752",
+      "id": "Barry's Yoga Studio-56667",
       "title": "4:30 PM \u2013 5:30 PM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Hot Power",
@@ -2474,7 +1826,19 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Victor Yoga Studio-13921",
+      "id": "Barry's Yoga Studio-38130",
+      "title": "4:30 PM \u2013 5:15 PM EDT",
+      "studio": "Barry's Yoga Studio",
+      "instructor": "Hot Conditioning",
+      "start": "2026-10-07T16:30:00",
+      "end": "2026-10-07T17:15:00",
+      "level": "All Levels",
+      "spots_left": null,
+      "color": "#3d7a8c",
+      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
+    },
+    {
+      "id": "Victor Yoga Studio-39222",
       "title": "Sunset Yoga on the Grasslands at Ganondagan",
       "studio": "Victor Yoga Studio",
       "instructor": "Mandy W",
@@ -2486,7 +1850,19 @@
       "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/mandy-w"
     },
     {
-      "id": "Barry's Yoga Studio-54505",
+      "id": "Barry's Yoga Studio-71047",
+      "title": "Kirsten Weeks (substitute)",
+      "studio": "Barry's Yoga Studio",
+      "instructor": "Hot Conditioning",
+      "start": "2026-10-07T18:00:00",
+      "end": "2026-10-07T18:45:00",
+      "level": "All Levels",
+      "spots_left": null,
+      "color": "#3d7a8c",
+      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
+    },
+    {
+      "id": "Barry's Yoga Studio-98900",
       "title": "6:00 PM \u2013 7:15 PM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Hot Power",
@@ -2498,19 +1874,7 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-55724",
-      "title": "6:00 PM \u2013 6:45 PM EDT",
-      "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Conditioning",
-      "start": "2026-10-07T18:00:00",
-      "end": "2026-10-07T18:45:00",
-      "level": "All Levels",
-      "spots_left": null,
-      "color": "#3d7a8c",
-      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
-    },
-    {
-      "id": "Barry's Yoga Studio-67868",
+      "id": "Barry's Yoga Studio-95532",
       "title": "7:15 PM \u2013 8:30 PM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Yin to Restorative",
@@ -2522,19 +1886,7 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-9528",
-      "title": "Lindsey Hill (substitute)",
-      "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Conditioning",
-      "start": "2026-10-07T19:30:00",
-      "end": "2026-10-07T20:15:00",
-      "level": "All Levels",
-      "spots_left": null,
-      "color": "#3d7a8c",
-      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
-    },
-    {
-      "id": "Barry's Yoga Studio-52065",
+      "id": "Barry's Yoga Studio-38119",
       "title": "7:30 PM \u2013 8:15 PM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Hot Conditioning",
@@ -2546,10 +1898,10 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-85317",
+      "id": "Barry's Yoga Studio-17840",
       "title": "5:45 AM \u2013 6:30 AM EDT",
       "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Conditioning",
+      "instructor": "Hot Power",
       "start": "2026-10-08T05:45:00",
       "end": "2026-10-08T06:30:00",
       "level": "All Levels",
@@ -2558,7 +1910,7 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-31727",
+      "id": "Barry's Yoga Studio-10011",
       "title": "5:45 AM \u2013 6:45 AM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Hot Power",
@@ -2570,7 +1922,7 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-99595",
+      "id": "Barry's Yoga Studio-54352",
       "title": "Lisa Laluk (substitute)",
       "studio": "Barry's Yoga Studio",
       "instructor": "Hot Conditioning",
@@ -2582,19 +1934,19 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-18026",
-      "title": "7:00 AM \u2013 8:00 AM EDT",
+      "id": "Barry's Yoga Studio-88802",
+      "title": "Kirsten Weeks (substitute)",
       "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Power",
-      "start": "2026-10-08T07:00:00",
-      "end": "2026-10-08T08:00:00",
+      "instructor": "Hot Combo",
+      "start": "2026-10-08T05:45:00",
+      "end": "2026-10-08T06:30:00",
       "level": "All Levels",
       "spots_left": null,
       "color": "#3d7a8c",
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-8239",
+      "id": "Barry's Yoga Studio-58602",
       "title": "7:00 AM \u2013 7:45 AM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Hot Conditioning",
@@ -2606,7 +1958,7 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-92170",
+      "id": "Barry's Yoga Studio-74305",
       "title": "8:00 AM \u2013 8:45 AM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Hot Combo",
@@ -2618,7 +1970,7 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-96572",
+      "id": "Barry's Yoga Studio-50611",
       "title": "9:00 AM \u2013 10:15 AM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Hot Power",
@@ -2630,19 +1982,19 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-3493",
-      "title": "9:30 AM \u2013 10:30 AM EDT",
+      "id": "Barry's Yoga Studio-60638",
+      "title": "Kirsten Weeks (substitute)",
       "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Power",
+      "instructor": "Thursday, October 1",
       "start": "2026-10-08T09:30:00",
-      "end": "2026-10-08T10:30:00",
+      "end": "2026-10-08T10:15:00",
       "level": "All Levels",
       "spots_left": null,
       "color": "#3d7a8c",
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-45750",
+      "id": "Barry's Yoga Studio-71800",
       "title": "9:30 AM \u2013 10:15 AM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Hot Conditioning",
@@ -2654,7 +2006,19 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Victor Yoga Studio-49710",
+      "id": "Barry's Yoga Studio-97104",
+      "title": "9:30 AM \u2013 10:30 AM EDT",
+      "studio": "Barry's Yoga Studio",
+      "instructor": "Hot Power",
+      "start": "2026-10-08T09:30:00",
+      "end": "2026-10-08T10:30:00",
+      "level": "All Levels",
+      "spots_left": null,
+      "color": "#3d7a8c",
+      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
+    },
+    {
+      "id": "Victor Yoga Studio-44139",
       "title": "A little Slower Vinyasa Flow",
       "studio": "Victor Yoga Studio",
       "instructor": "Mandy W",
@@ -2666,7 +2030,7 @@
       "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/mandy-w"
     },
     {
-      "id": "Barry's Yoga Studio-11375",
+      "id": "Barry's Yoga Studio-53434",
       "title": "10:00 AM \u2013 11:15 AM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Sunday Service",
@@ -2678,7 +2042,7 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-12775",
+      "id": "Barry's Yoga Studio-24666",
       "title": "10:30 AM \u2013 11:30 AM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Hot Vinyasa",
@@ -2690,10 +2054,10 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-31684",
-      "title": "12:00 PM \u2013 12:45 PM EDT",
+      "id": "Barry's Yoga Studio-77235",
+      "title": "Ashley Whipkey (substitute)",
       "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Combo",
+      "instructor": "Hot Conditioning",
       "start": "2026-10-08T12:00:00",
       "end": "2026-10-08T12:45:00",
       "level": "All Levels",
@@ -2702,19 +2066,19 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-86243",
-      "title": "4:30 PM \u2013 5:15 PM EDT",
+      "id": "Barry's Yoga Studio-3543",
+      "title": "12:00 PM \u2013 12:45 PM EDT",
       "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Combo",
-      "start": "2026-10-08T16:30:00",
-      "end": "2026-10-08T17:15:00",
+      "instructor": "Hot Conditioning",
+      "start": "2026-10-08T12:00:00",
+      "end": "2026-10-08T12:45:00",
       "level": "All Levels",
       "spots_left": null,
       "color": "#3d7a8c",
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-60957",
+      "id": "Barry's Yoga Studio-39108",
       "title": "4:30 PM \u2013 5:30 PM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Hot Power",
@@ -2726,7 +2090,19 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Victor Yoga Studio-11146",
+      "id": "Barry's Yoga Studio-15555",
+      "title": "4:30 PM \u2013 5:15 PM EDT",
+      "studio": "Barry's Yoga Studio",
+      "instructor": "Hot Conditioning",
+      "start": "2026-10-08T16:30:00",
+      "end": "2026-10-08T17:15:00",
+      "level": "All Levels",
+      "spots_left": null,
+      "color": "#3d7a8c",
+      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
+    },
+    {
+      "id": "Victor Yoga Studio-67683",
       "title": "Vinyasa Flow",
       "studio": "Victor Yoga Studio",
       "instructor": "Mandy W",
@@ -2738,7 +2114,19 @@
       "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/mandy-w"
     },
     {
-      "id": "Barry's Yoga Studio-29553",
+      "id": "Barry's Yoga Studio-94405",
+      "title": "Kirsten Weeks (substitute)",
+      "studio": "Barry's Yoga Studio",
+      "instructor": "Hot Conditioning",
+      "start": "2026-10-08T18:00:00",
+      "end": "2026-10-08T18:45:00",
+      "level": "All Levels",
+      "spots_left": null,
+      "color": "#3d7a8c",
+      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
+    },
+    {
+      "id": "Barry's Yoga Studio-45807",
       "title": "6:00 PM \u2013 7:15 PM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Hot Power",
@@ -2750,19 +2138,7 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-1313",
-      "title": "6:00 PM \u2013 6:45 PM EDT",
-      "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Conditioning",
-      "start": "2026-10-08T18:00:00",
-      "end": "2026-10-08T18:45:00",
-      "level": "All Levels",
-      "spots_left": null,
-      "color": "#3d7a8c",
-      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
-    },
-    {
-      "id": "Barry's Yoga Studio-17174",
+      "id": "Barry's Yoga Studio-91302",
       "title": "7:15 PM \u2013 8:30 PM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Yin to Restorative",
@@ -2774,19 +2150,7 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-89558",
-      "title": "Lindsey Hill (substitute)",
-      "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Conditioning",
-      "start": "2026-10-08T19:30:00",
-      "end": "2026-10-08T20:15:00",
-      "level": "All Levels",
-      "spots_left": null,
-      "color": "#3d7a8c",
-      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
-    },
-    {
-      "id": "Barry's Yoga Studio-75200",
+      "id": "Barry's Yoga Studio-21709",
       "title": "7:30 PM \u2013 8:15 PM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Hot Conditioning",
@@ -2798,10 +2162,10 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-13026",
+      "id": "Barry's Yoga Studio-59337",
       "title": "5:45 AM \u2013 6:30 AM EDT",
       "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Conditioning",
+      "instructor": "Hot Power",
       "start": "2026-10-09T05:45:00",
       "end": "2026-10-09T06:30:00",
       "level": "All Levels",
@@ -2810,7 +2174,7 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-64949",
+      "id": "Barry's Yoga Studio-77576",
       "title": "5:45 AM \u2013 6:45 AM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Hot Power",
@@ -2822,7 +2186,7 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-80616",
+      "id": "Barry's Yoga Studio-26340",
       "title": "Lisa Laluk (substitute)",
       "studio": "Barry's Yoga Studio",
       "instructor": "Hot Conditioning",
@@ -2834,19 +2198,19 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-43225",
-      "title": "7:00 AM \u2013 8:00 AM EDT",
+      "id": "Barry's Yoga Studio-17256",
+      "title": "Kirsten Weeks (substitute)",
       "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Power",
-      "start": "2026-10-09T07:00:00",
-      "end": "2026-10-09T08:00:00",
+      "instructor": "Hot Combo",
+      "start": "2026-10-09T05:45:00",
+      "end": "2026-10-09T06:30:00",
       "level": "All Levels",
       "spots_left": null,
       "color": "#3d7a8c",
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-47556",
+      "id": "Barry's Yoga Studio-56175",
       "title": "7:00 AM \u2013 7:45 AM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Hot Conditioning",
@@ -2858,7 +2222,7 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-89754",
+      "id": "Barry's Yoga Studio-62404",
       "title": "8:00 AM \u2013 8:45 AM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Hot Combo",
@@ -2870,7 +2234,7 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Victor Yoga Studio-81686",
+      "id": "Victor Yoga Studio-15454",
       "title": "Sunset Yoga on the Grasslands at Ganondagan",
       "studio": "Victor Yoga Studio",
       "instructor": "Gentle Yoga in Studio",
@@ -2882,7 +2246,7 @@
       "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/mandy-w"
     },
     {
-      "id": "Victor Yoga Studio-6580",
+      "id": "Victor Yoga Studio-15733",
       "title": "Gentle Yoga in Studio",
       "studio": "Victor Yoga Studio",
       "instructor": "Bani A",
@@ -2894,7 +2258,7 @@
       "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/bani-a"
     },
     {
-      "id": "Barry's Yoga Studio-58299",
+      "id": "Barry's Yoga Studio-50696",
       "title": "9:00 AM \u2013 10:15 AM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Hot Power",
@@ -2906,19 +2270,19 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-933",
-      "title": "9:30 AM \u2013 10:30 AM EDT",
+      "id": "Barry's Yoga Studio-10948",
+      "title": "Kirsten Weeks (substitute)",
       "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Power",
+      "instructor": "Thursday, October 1",
       "start": "2026-10-09T09:30:00",
-      "end": "2026-10-09T10:30:00",
+      "end": "2026-10-09T10:15:00",
       "level": "All Levels",
       "spots_left": null,
       "color": "#3d7a8c",
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-82620",
+      "id": "Barry's Yoga Studio-50691",
       "title": "9:30 AM \u2013 10:15 AM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Hot Conditioning",
@@ -2930,7 +2294,19 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Victor Yoga Studio-72544",
+      "id": "Barry's Yoga Studio-43384",
+      "title": "9:30 AM \u2013 10:30 AM EDT",
+      "studio": "Barry's Yoga Studio",
+      "instructor": "Hot Power",
+      "start": "2026-10-09T09:30:00",
+      "end": "2026-10-09T10:30:00",
+      "level": "All Levels",
+      "spots_left": null,
+      "color": "#3d7a8c",
+      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
+    },
+    {
+      "id": "Victor Yoga Studio-63740",
       "title": "Yoga Fusion",
       "studio": "Victor Yoga Studio",
       "instructor": "Mandy W",
@@ -2942,7 +2318,7 @@
       "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/mandy-w"
     },
     {
-      "id": "Barry's Yoga Studio-60009",
+      "id": "Barry's Yoga Studio-9189",
       "title": "10:00 AM \u2013 11:15 AM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Sunday Service",
@@ -2954,7 +2330,7 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-70651",
+      "id": "Barry's Yoga Studio-13571",
       "title": "10:30 AM \u2013 11:30 AM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Hot Vinyasa",
@@ -2966,10 +2342,10 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-33591",
-      "title": "12:00 PM \u2013 12:45 PM EDT",
+      "id": "Barry's Yoga Studio-66112",
+      "title": "Ashley Whipkey (substitute)",
       "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Combo",
+      "instructor": "Hot Conditioning",
       "start": "2026-10-09T12:00:00",
       "end": "2026-10-09T12:45:00",
       "level": "All Levels",
@@ -2978,19 +2354,19 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-22609",
-      "title": "4:30 PM \u2013 5:15 PM EDT",
+      "id": "Barry's Yoga Studio-25094",
+      "title": "12:00 PM \u2013 12:45 PM EDT",
       "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Combo",
-      "start": "2026-10-09T16:30:00",
-      "end": "2026-10-09T17:15:00",
+      "instructor": "Hot Conditioning",
+      "start": "2026-10-09T12:00:00",
+      "end": "2026-10-09T12:45:00",
       "level": "All Levels",
       "spots_left": null,
       "color": "#3d7a8c",
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-97609",
+      "id": "Barry's Yoga Studio-28487",
       "title": "4:30 PM \u2013 5:30 PM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Hot Power",
@@ -3002,7 +2378,19 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Victor Yoga Studio-62636",
+      "id": "Barry's Yoga Studio-44779",
+      "title": "4:30 PM \u2013 5:15 PM EDT",
+      "studio": "Barry's Yoga Studio",
+      "instructor": "Hot Conditioning",
+      "start": "2026-10-09T16:30:00",
+      "end": "2026-10-09T17:15:00",
+      "level": "All Levels",
+      "spots_left": null,
+      "color": "#3d7a8c",
+      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
+    },
+    {
+      "id": "Victor Yoga Studio-8906",
       "title": "Sunset Yoga on the Grasslands at Ganondagan",
       "studio": "Victor Yoga Studio",
       "instructor": "Mandy W",
@@ -3014,7 +2402,19 @@
       "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/mandy-w"
     },
     {
-      "id": "Barry's Yoga Studio-71017",
+      "id": "Barry's Yoga Studio-91496",
+      "title": "Kirsten Weeks (substitute)",
+      "studio": "Barry's Yoga Studio",
+      "instructor": "Hot Conditioning",
+      "start": "2026-10-09T18:00:00",
+      "end": "2026-10-09T18:45:00",
+      "level": "All Levels",
+      "spots_left": null,
+      "color": "#3d7a8c",
+      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
+    },
+    {
+      "id": "Barry's Yoga Studio-56808",
       "title": "6:00 PM \u2013 7:15 PM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Hot Power",
@@ -3026,19 +2426,7 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-49385",
-      "title": "6:00 PM \u2013 6:45 PM EDT",
-      "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Conditioning",
-      "start": "2026-10-09T18:00:00",
-      "end": "2026-10-09T18:45:00",
-      "level": "All Levels",
-      "spots_left": null,
-      "color": "#3d7a8c",
-      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
-    },
-    {
-      "id": "Barry's Yoga Studio-48036",
+      "id": "Barry's Yoga Studio-94328",
       "title": "7:15 PM \u2013 8:30 PM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Yin to Restorative",
@@ -3050,19 +2438,7 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-64801",
-      "title": "Lindsey Hill (substitute)",
-      "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Conditioning",
-      "start": "2026-10-09T19:30:00",
-      "end": "2026-10-09T20:15:00",
-      "level": "All Levels",
-      "spots_left": null,
-      "color": "#3d7a8c",
-      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
-    },
-    {
-      "id": "Barry's Yoga Studio-64316",
+      "id": "Barry's Yoga Studio-43688",
       "title": "7:30 PM \u2013 8:15 PM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Hot Conditioning",
@@ -3074,10 +2450,10 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-56154",
+      "id": "Barry's Yoga Studio-8997",
       "title": "5:45 AM \u2013 6:30 AM EDT",
       "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Conditioning",
+      "instructor": "Hot Power",
       "start": "2026-10-10T05:45:00",
       "end": "2026-10-10T06:30:00",
       "level": "All Levels",
@@ -3086,7 +2462,7 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-2876",
+      "id": "Barry's Yoga Studio-28052",
       "title": "5:45 AM \u2013 6:45 AM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Hot Power",
@@ -3098,7 +2474,7 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-91452",
+      "id": "Barry's Yoga Studio-5017",
       "title": "Lisa Laluk (substitute)",
       "studio": "Barry's Yoga Studio",
       "instructor": "Hot Conditioning",
@@ -3110,19 +2486,19 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-36703",
-      "title": "7:00 AM \u2013 8:00 AM EDT",
+      "id": "Barry's Yoga Studio-56717",
+      "title": "Kirsten Weeks (substitute)",
       "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Power",
-      "start": "2026-10-10T07:00:00",
-      "end": "2026-10-10T08:00:00",
+      "instructor": "Hot Combo",
+      "start": "2026-10-10T05:45:00",
+      "end": "2026-10-10T06:30:00",
       "level": "All Levels",
       "spots_left": null,
       "color": "#3d7a8c",
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-4202",
+      "id": "Barry's Yoga Studio-70919",
       "title": "7:00 AM \u2013 7:45 AM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Hot Conditioning",
@@ -3134,7 +2510,7 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-53943",
+      "id": "Barry's Yoga Studio-41019",
       "title": "8:00 AM \u2013 8:45 AM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Hot Combo",
@@ -3146,7 +2522,7 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-59668",
+      "id": "Barry's Yoga Studio-43994",
       "title": "9:00 AM \u2013 10:15 AM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Hot Power",
@@ -3158,7 +2534,7 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Victor Yoga Studio-74745",
+      "id": "Victor Yoga Studio-66151",
       "title": "Open Level Yoga",
       "studio": "Victor Yoga Studio",
       "instructor": "Bani A",
@@ -3170,19 +2546,19 @@
       "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/bani-a"
     },
     {
-      "id": "Barry's Yoga Studio-50201",
-      "title": "9:30 AM \u2013 10:30 AM EDT",
+      "id": "Barry's Yoga Studio-41616",
+      "title": "Kirsten Weeks (substitute)",
       "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Power",
+      "instructor": "Thursday, October 1",
       "start": "2026-10-10T09:30:00",
-      "end": "2026-10-10T10:30:00",
+      "end": "2026-10-10T10:15:00",
       "level": "All Levels",
       "spots_left": null,
       "color": "#3d7a8c",
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-83081",
+      "id": "Barry's Yoga Studio-22208",
       "title": "9:30 AM \u2013 10:15 AM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Hot Conditioning",
@@ -3194,7 +2570,19 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-2902",
+      "id": "Barry's Yoga Studio-67431",
+      "title": "9:30 AM \u2013 10:30 AM EDT",
+      "studio": "Barry's Yoga Studio",
+      "instructor": "Hot Power",
+      "start": "2026-10-10T09:30:00",
+      "end": "2026-10-10T10:30:00",
+      "level": "All Levels",
+      "spots_left": null,
+      "color": "#3d7a8c",
+      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
+    },
+    {
+      "id": "Barry's Yoga Studio-71401",
       "title": "10:00 AM \u2013 11:15 AM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Sunday Service",
@@ -3206,7 +2594,7 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-2214",
+      "id": "Barry's Yoga Studio-10514",
       "title": "10:30 AM \u2013 11:30 AM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Hot Vinyasa",
@@ -3218,10 +2606,10 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-78901",
-      "title": "12:00 PM \u2013 12:45 PM EDT",
+      "id": "Barry's Yoga Studio-48973",
+      "title": "Ashley Whipkey (substitute)",
       "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Combo",
+      "instructor": "Hot Conditioning",
       "start": "2026-10-10T12:00:00",
       "end": "2026-10-10T12:45:00",
       "level": "All Levels",
@@ -3230,19 +2618,19 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-11867",
-      "title": "4:30 PM \u2013 5:15 PM EDT",
+      "id": "Barry's Yoga Studio-62486",
+      "title": "12:00 PM \u2013 12:45 PM EDT",
       "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Combo",
-      "start": "2026-10-10T16:30:00",
-      "end": "2026-10-10T17:15:00",
+      "instructor": "Hot Conditioning",
+      "start": "2026-10-10T12:00:00",
+      "end": "2026-10-10T12:45:00",
       "level": "All Levels",
       "spots_left": null,
       "color": "#3d7a8c",
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-59389",
+      "id": "Barry's Yoga Studio-90223",
       "title": "4:30 PM \u2013 5:30 PM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Hot Power",
@@ -3254,7 +2642,31 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-11871",
+      "id": "Barry's Yoga Studio-70933",
+      "title": "4:30 PM \u2013 5:15 PM EDT",
+      "studio": "Barry's Yoga Studio",
+      "instructor": "Hot Conditioning",
+      "start": "2026-10-10T16:30:00",
+      "end": "2026-10-10T17:15:00",
+      "level": "All Levels",
+      "spots_left": null,
+      "color": "#3d7a8c",
+      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
+    },
+    {
+      "id": "Barry's Yoga Studio-44886",
+      "title": "Kirsten Weeks (substitute)",
+      "studio": "Barry's Yoga Studio",
+      "instructor": "Hot Conditioning",
+      "start": "2026-10-10T18:00:00",
+      "end": "2026-10-10T18:45:00",
+      "level": "All Levels",
+      "spots_left": null,
+      "color": "#3d7a8c",
+      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
+    },
+    {
+      "id": "Barry's Yoga Studio-73936",
       "title": "6:00 PM \u2013 7:15 PM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Hot Power",
@@ -3266,19 +2678,7 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-71859",
-      "title": "6:00 PM \u2013 6:45 PM EDT",
-      "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Conditioning",
-      "start": "2026-10-10T18:00:00",
-      "end": "2026-10-10T18:45:00",
-      "level": "All Levels",
-      "spots_left": null,
-      "color": "#3d7a8c",
-      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
-    },
-    {
-      "id": "Barry's Yoga Studio-48534",
+      "id": "Barry's Yoga Studio-19536",
       "title": "7:15 PM \u2013 8:30 PM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Yin to Restorative",
@@ -3290,19 +2690,7 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-44854",
-      "title": "Lindsey Hill (substitute)",
-      "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Conditioning",
-      "start": "2026-10-10T19:30:00",
-      "end": "2026-10-10T20:15:00",
-      "level": "All Levels",
-      "spots_left": null,
-      "color": "#3d7a8c",
-      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
-    },
-    {
-      "id": "Barry's Yoga Studio-25381",
+      "id": "Barry's Yoga Studio-61068",
       "title": "7:30 PM \u2013 8:15 PM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Hot Conditioning",
@@ -3314,91 +2702,7 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Victor Yoga Studio-15896",
-      "title": "Warm Vinyasa in Studio",
-      "studio": "Victor Yoga Studio",
-      "instructor": "Mandy W",
-      "start": "2026-10-11T09:30:00",
-      "end": "2026-10-11T10:30:00",
-      "level": "All Levels",
-      "spots_left": null,
-      "color": "#c17a5c",
-      "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/mandy-w"
-    },
-    {
-      "id": "Victor Yoga Studio-73909",
-      "title": "Stretch and Strengthen",
-      "studio": "Victor Yoga Studio",
-      "instructor": "Mandy W",
-      "start": "2026-10-11T12:30:00",
-      "end": "2026-10-11T13:30:00",
-      "level": "All Levels",
-      "spots_left": null,
-      "color": "#c17a5c",
-      "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/mandy-w"
-    },
-    {
-      "id": "Victor Yoga Studio-43245",
-      "title": "Gentle Yoga in Studio",
-      "studio": "Victor Yoga Studio",
-      "instructor": "Mandy W",
-      "start": "2026-10-11T16:30:00",
-      "end": "2026-10-11T17:30:00",
-      "level": "All Levels",
-      "spots_left": null,
-      "color": "#c17a5c",
-      "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/mandy-w"
-    },
-    {
-      "id": "Victor Yoga Studio-29292",
-      "title": "Warm Vinyasa Flow in Studio",
-      "studio": "Victor Yoga Studio",
-      "instructor": "Alex M",
-      "start": "2026-10-12T09:30:00",
-      "end": "2026-10-12T10:30:00",
-      "level": "All Levels",
-      "spots_left": null,
-      "color": "#c17a5c",
-      "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/alex-m-bec6605c"
-    },
-    {
-      "id": "Victor Yoga Studio-65734",
-      "title": "Open Level Yoga",
-      "studio": "Victor Yoga Studio",
-      "instructor": "Bani A",
-      "start": "2026-10-12T11:00:00",
-      "end": "2026-10-12T12:00:00",
-      "level": "All Levels",
-      "spots_left": null,
-      "color": "#c17a5c",
-      "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/bani-a"
-    },
-    {
-      "id": "Victor Yoga Studio-22084",
-      "title": "Warm Vinyasa Flow in Studio",
-      "studio": "Victor Yoga Studio",
-      "instructor": "Mandy W",
-      "start": "2026-10-12T17:30:00",
-      "end": "2026-10-12T18:30:00",
-      "level": "All Levels",
-      "spots_left": null,
-      "color": "#c17a5c",
-      "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/mandy-w"
-    },
-    {
-      "id": "Victor Yoga Studio-26338",
-      "title": "Alternating Instructors",
-      "studio": "Victor Yoga Studio",
-      "instructor": "Mindful Mondays",
-      "start": "2026-10-12T19:00:00",
-      "end": "2026-10-12T20:00:00",
-      "level": "All Levels",
-      "spots_left": null,
-      "color": "#c17a5c",
-      "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/alternating-instructors-4"
-    },
-    {
-      "id": "Victor Yoga Studio-37098",
+      "id": "Victor Yoga Studio-96690",
       "title": "Vinyasa Flow",
       "studio": "Victor Yoga Studio",
       "instructor": "Kati S",
@@ -3410,7 +2714,7 @@
       "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/kati-s"
     },
     {
-      "id": "Victor Yoga Studio-78180",
+      "id": "Victor Yoga Studio-78854",
       "title": "Gentle Yoga in Studio",
       "studio": "Victor Yoga Studio",
       "instructor": "Mandy W",
@@ -3422,7 +2726,7 @@
       "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/mandy-w"
     },
     {
-      "id": "Victor Yoga Studio-29574",
+      "id": "Victor Yoga Studio-52883",
       "title": "Warm Vinyasa Flow in Studio",
       "studio": "Victor Yoga Studio",
       "instructor": "Beth C",
@@ -3434,7 +2738,7 @@
       "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/beth-c-2"
     },
     {
-      "id": "Victor Yoga Studio-10294",
+      "id": "Victor Yoga Studio-70000",
       "title": "Gentle Yoga on the Grasslands of Ganondagan",
       "studio": "Victor Yoga Studio",
       "instructor": "Mandy W",
@@ -3446,7 +2750,7 @@
       "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/mandy-w"
     },
     {
-      "id": "Victor Yoga Studio-73653",
+      "id": "Victor Yoga Studio-37211",
       "title": "Sunset Yoga on the Grasslands at Ganondagan",
       "studio": "Victor Yoga Studio",
       "instructor": "Stretch and Strengthen",
@@ -3458,7 +2762,7 @@
       "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/mandy-w"
     },
     {
-      "id": "Victor Yoga Studio-52427",
+      "id": "Victor Yoga Studio-23143",
       "title": "Stretch and Strengthen",
       "studio": "Victor Yoga Studio",
       "instructor": "Mandy W",
@@ -3470,7 +2774,7 @@
       "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/mandy-w"
     },
     {
-      "id": "Victor Yoga Studio-58776",
+      "id": "Victor Yoga Studio-12434",
       "title": "Sunset Yoga on the Grasslands at Ganondagan",
       "studio": "Victor Yoga Studio",
       "instructor": "Mandy W",
@@ -3482,7 +2786,7 @@
       "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/mandy-w"
     },
     {
-      "id": "Victor Yoga Studio-76587",
+      "id": "Victor Yoga Studio-59103",
       "title": "A little Slower Vinyasa Flow",
       "studio": "Victor Yoga Studio",
       "instructor": "Mandy W",
@@ -3494,7 +2798,7 @@
       "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/mandy-w"
     },
     {
-      "id": "Victor Yoga Studio-44997",
+      "id": "Victor Yoga Studio-80126",
       "title": "Vinyasa Flow",
       "studio": "Victor Yoga Studio",
       "instructor": "Mandy W",
@@ -3506,7 +2810,7 @@
       "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/mandy-w"
     },
     {
-      "id": "Victor Yoga Studio-57354",
+      "id": "Victor Yoga Studio-45094",
       "title": "Gentle Yoga in Studio",
       "studio": "Victor Yoga Studio",
       "instructor": "Bani A",
@@ -3518,7 +2822,7 @@
       "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/mandy-w"
     },
     {
-      "id": "Victor Yoga Studio-9201",
+      "id": "Victor Yoga Studio-84457",
       "title": "Yoga Fusion",
       "studio": "Victor Yoga Studio",
       "instructor": "Mandy W",
@@ -3530,7 +2834,7 @@
       "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/mandy-w"
     },
     {
-      "id": "Victor Yoga Studio-549",
+      "id": "Victor Yoga Studio-43417",
       "title": "Open Level Yoga",
       "studio": "Victor Yoga Studio",
       "instructor": "Bani A",
@@ -3542,7 +2846,7 @@
       "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/bani-a"
     },
     {
-      "id": "Victor Yoga Studio-40184",
+      "id": "Victor Yoga Studio-85370",
       "title": "Warm Vinyasa in Studio",
       "studio": "Victor Yoga Studio",
       "instructor": "Mandy W",
@@ -3554,7 +2858,7 @@
       "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/mandy-w"
     },
     {
-      "id": "Victor Yoga Studio-12026",
+      "id": "Victor Yoga Studio-93117",
       "title": "Stretch and Strengthen",
       "studio": "Victor Yoga Studio",
       "instructor": "Mandy W",
@@ -3566,7 +2870,7 @@
       "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/mandy-w"
     },
     {
-      "id": "Victor Yoga Studio-10652",
+      "id": "Victor Yoga Studio-89324",
       "title": "Gentle Yoga in Studio",
       "studio": "Victor Yoga Studio",
       "instructor": "Mandy W",
@@ -3578,7 +2882,7 @@
       "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/mandy-w"
     },
     {
-      "id": "Victor Yoga Studio-68218",
+      "id": "Victor Yoga Studio-34508",
       "title": "Warm Vinyasa Flow in Studio",
       "studio": "Victor Yoga Studio",
       "instructor": "Alex M",
@@ -3590,7 +2894,7 @@
       "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/alex-m-bec6605c"
     },
     {
-      "id": "Victor Yoga Studio-42767",
+      "id": "Victor Yoga Studio-56449",
       "title": "Open Level Yoga",
       "studio": "Victor Yoga Studio",
       "instructor": "Bani A",
@@ -3602,7 +2906,7 @@
       "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/bani-a"
     },
     {
-      "id": "Victor Yoga Studio-73769",
+      "id": "Victor Yoga Studio-190",
       "title": "Warm Vinyasa Flow in Studio",
       "studio": "Victor Yoga Studio",
       "instructor": "Mandy W",
@@ -3614,7 +2918,7 @@
       "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/mandy-w"
     },
     {
-      "id": "Victor Yoga Studio-83516",
+      "id": "Victor Yoga Studio-4967",
       "title": "Alternating Instructors",
       "studio": "Victor Yoga Studio",
       "instructor": "Mindful Mondays",
@@ -3626,7 +2930,7 @@
       "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/alternating-instructors-4"
     },
     {
-      "id": "Victor Yoga Studio-31229",
+      "id": "Victor Yoga Studio-65299",
       "title": "Vinyasa Flow",
       "studio": "Victor Yoga Studio",
       "instructor": "Kati S",
@@ -3638,7 +2942,7 @@
       "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/kati-s"
     },
     {
-      "id": "Victor Yoga Studio-97962",
+      "id": "Victor Yoga Studio-14489",
       "title": "Gentle Yoga in Studio",
       "studio": "Victor Yoga Studio",
       "instructor": "Mandy W",
@@ -3650,7 +2954,7 @@
       "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/mandy-w"
     },
     {
-      "id": "Victor Yoga Studio-91708",
+      "id": "Victor Yoga Studio-85533",
       "title": "Warm Vinyasa Flow in Studio",
       "studio": "Victor Yoga Studio",
       "instructor": "Beth C",
@@ -3662,7 +2966,7 @@
       "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/beth-c-2"
     },
     {
-      "id": "Victor Yoga Studio-36586",
+      "id": "Victor Yoga Studio-8204",
       "title": "Gentle Yoga on the Grasslands of Ganondagan",
       "studio": "Victor Yoga Studio",
       "instructor": "Mandy W",
@@ -3674,10 +2978,22 @@
       "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/mandy-w"
     },
     {
-      "id": "Barry's Yoga Studio-16522",
+      "id": "Victor Yoga Studio-82037",
+      "title": "Stretch and Strengthen",
+      "studio": "Victor Yoga Studio",
+      "instructor": "Mandy W",
+      "start": "2026-10-21T09:45:00",
+      "end": "2026-10-21T10:45:00",
+      "level": "All Levels",
+      "spots_left": null,
+      "color": "#c17a5c",
+      "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/mandy-w"
+    },
+    {
+      "id": "Barry's Yoga Studio-27669",
       "title": "5:45 AM \u2013 6:30 AM EDT",
       "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Conditioning",
+      "instructor": "Hot Power",
       "start": "2026-10-27T05:45:00",
       "end": "2026-10-27T06:30:00",
       "level": "All Levels",
@@ -3686,7 +3002,7 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-8599",
+      "id": "Barry's Yoga Studio-45940",
       "title": "5:45 AM \u2013 6:45 AM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Hot Power",
@@ -3698,7 +3014,7 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-66284",
+      "id": "Barry's Yoga Studio-93455",
       "title": "Lisa Laluk (substitute)",
       "studio": "Barry's Yoga Studio",
       "instructor": "Hot Conditioning",
@@ -3710,19 +3026,19 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-11791",
-      "title": "7:00 AM \u2013 8:00 AM EDT",
+      "id": "Barry's Yoga Studio-22326",
+      "title": "Kirsten Weeks (substitute)",
       "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Power",
-      "start": "2026-10-27T07:00:00",
-      "end": "2026-10-27T08:00:00",
+      "instructor": "Hot Combo",
+      "start": "2026-10-27T05:45:00",
+      "end": "2026-10-27T06:30:00",
       "level": "All Levels",
       "spots_left": null,
       "color": "#3d7a8c",
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-99335",
+      "id": "Barry's Yoga Studio-59532",
       "title": "7:00 AM \u2013 7:45 AM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Hot Conditioning",
@@ -3734,7 +3050,7 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-43793",
+      "id": "Barry's Yoga Studio-44462",
       "title": "8:00 AM \u2013 8:45 AM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Hot Combo",
@@ -3746,7 +3062,7 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-44296",
+      "id": "Barry's Yoga Studio-93648",
       "title": "9:00 AM \u2013 10:15 AM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Hot Power",
@@ -3758,19 +3074,19 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-39057",
-      "title": "9:30 AM \u2013 10:30 AM EDT",
+      "id": "Barry's Yoga Studio-30755",
+      "title": "Kirsten Weeks (substitute)",
       "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Power",
+      "instructor": "Thursday, October 1",
       "start": "2026-10-27T09:30:00",
-      "end": "2026-10-27T10:30:00",
+      "end": "2026-10-27T10:15:00",
       "level": "All Levels",
       "spots_left": null,
       "color": "#3d7a8c",
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-72013",
+      "id": "Barry's Yoga Studio-1179",
       "title": "9:30 AM \u2013 10:15 AM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Hot Conditioning",
@@ -3782,7 +3098,19 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-49799",
+      "id": "Barry's Yoga Studio-99000",
+      "title": "9:30 AM \u2013 10:30 AM EDT",
+      "studio": "Barry's Yoga Studio",
+      "instructor": "Hot Power",
+      "start": "2026-10-27T09:30:00",
+      "end": "2026-10-27T10:30:00",
+      "level": "All Levels",
+      "spots_left": null,
+      "color": "#3d7a8c",
+      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
+    },
+    {
+      "id": "Barry's Yoga Studio-98411",
       "title": "10:00 AM \u2013 11:15 AM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Sunday Service",
@@ -3794,7 +3122,7 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-56511",
+      "id": "Barry's Yoga Studio-75446",
       "title": "10:30 AM \u2013 11:30 AM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Hot Vinyasa",
@@ -3806,10 +3134,10 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-81993",
-      "title": "12:00 PM \u2013 12:45 PM EDT",
+      "id": "Barry's Yoga Studio-52387",
+      "title": "Ashley Whipkey (substitute)",
       "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Combo",
+      "instructor": "Hot Conditioning",
       "start": "2026-10-27T12:00:00",
       "end": "2026-10-27T12:45:00",
       "level": "All Levels",
@@ -3818,19 +3146,19 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-24035",
-      "title": "4:30 PM \u2013 5:15 PM EDT",
+      "id": "Barry's Yoga Studio-7699",
+      "title": "12:00 PM \u2013 12:45 PM EDT",
       "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Combo",
-      "start": "2026-10-27T16:30:00",
-      "end": "2026-10-27T17:15:00",
+      "instructor": "Hot Conditioning",
+      "start": "2026-10-27T12:00:00",
+      "end": "2026-10-27T12:45:00",
       "level": "All Levels",
       "spots_left": null,
       "color": "#3d7a8c",
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-35467",
+      "id": "Barry's Yoga Studio-54979",
       "title": "4:30 PM \u2013 5:30 PM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Hot Power",
@@ -3842,7 +3170,31 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-30382",
+      "id": "Barry's Yoga Studio-4579",
+      "title": "4:30 PM \u2013 5:15 PM EDT",
+      "studio": "Barry's Yoga Studio",
+      "instructor": "Hot Conditioning",
+      "start": "2026-10-27T16:30:00",
+      "end": "2026-10-27T17:15:00",
+      "level": "All Levels",
+      "spots_left": null,
+      "color": "#3d7a8c",
+      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
+    },
+    {
+      "id": "Barry's Yoga Studio-86161",
+      "title": "Kirsten Weeks (substitute)",
+      "studio": "Barry's Yoga Studio",
+      "instructor": "Hot Conditioning",
+      "start": "2026-10-27T18:00:00",
+      "end": "2026-10-27T18:45:00",
+      "level": "All Levels",
+      "spots_left": null,
+      "color": "#3d7a8c",
+      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
+    },
+    {
+      "id": "Barry's Yoga Studio-42079",
       "title": "6:00 PM \u2013 7:15 PM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Hot Power",
@@ -3854,19 +3206,7 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-75117",
-      "title": "6:00 PM \u2013 6:45 PM EDT",
-      "studio": "Barry's Yoga Studio",
-      "instructor": "Hot Conditioning",
-      "start": "2026-10-27T18:00:00",
-      "end": "2026-10-27T18:45:00",
-      "level": "All Levels",
-      "spots_left": null,
-      "color": "#3d7a8c",
-      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
-    },
-    {
-      "id": "Barry's Yoga Studio-72773",
+      "id": "Barry's Yoga Studio-42930",
       "title": "7:15 PM \u2013 8:30 PM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Yin to Restorative",
@@ -3878,8 +3218,8 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-83523",
-      "title": "Lindsey Hill (substitute)",
+      "id": "Barry's Yoga Studio-63529",
+      "title": "7:30 PM \u2013 8:15 PM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Hot Conditioning",
       "start": "2026-10-27T19:30:00",
@@ -3890,12 +3230,720 @@
       "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
     },
     {
-      "id": "Barry's Yoga Studio-21376",
+      "id": "Barry's Yoga Studio-83697",
+      "title": "5:45 AM \u2013 6:30 AM EDT",
+      "studio": "Barry's Yoga Studio",
+      "instructor": "Hot Power",
+      "start": "2026-10-28T05:45:00",
+      "end": "2026-10-28T06:30:00",
+      "level": "All Levels",
+      "spots_left": null,
+      "color": "#3d7a8c",
+      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
+    },
+    {
+      "id": "Barry's Yoga Studio-15335",
+      "title": "5:45 AM \u2013 6:45 AM EDT",
+      "studio": "Barry's Yoga Studio",
+      "instructor": "Hot Power",
+      "start": "2026-10-28T05:45:00",
+      "end": "2026-10-28T06:45:00",
+      "level": "All Levels",
+      "spots_left": null,
+      "color": "#3d7a8c",
+      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
+    },
+    {
+      "id": "Barry's Yoga Studio-42690",
+      "title": "Lisa Laluk (substitute)",
+      "studio": "Barry's Yoga Studio",
+      "instructor": "Hot Conditioning",
+      "start": "2026-10-28T05:45:00",
+      "end": "2026-10-28T06:30:00",
+      "level": "All Levels",
+      "spots_left": null,
+      "color": "#3d7a8c",
+      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
+    },
+    {
+      "id": "Barry's Yoga Studio-19950",
+      "title": "Kirsten Weeks (substitute)",
+      "studio": "Barry's Yoga Studio",
+      "instructor": "Hot Combo",
+      "start": "2026-10-28T05:45:00",
+      "end": "2026-10-28T06:30:00",
+      "level": "All Levels",
+      "spots_left": null,
+      "color": "#3d7a8c",
+      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
+    },
+    {
+      "id": "Barry's Yoga Studio-76414",
+      "title": "7:00 AM \u2013 7:45 AM EDT",
+      "studio": "Barry's Yoga Studio",
+      "instructor": "Hot Conditioning",
+      "start": "2026-10-28T07:00:00",
+      "end": "2026-10-28T07:45:00",
+      "level": "All Levels",
+      "spots_left": null,
+      "color": "#3d7a8c",
+      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
+    },
+    {
+      "id": "Barry's Yoga Studio-12255",
+      "title": "8:00 AM \u2013 8:45 AM EDT",
+      "studio": "Barry's Yoga Studio",
+      "instructor": "Hot Combo",
+      "start": "2026-10-28T08:00:00",
+      "end": "2026-10-28T08:45:00",
+      "level": "All Levels",
+      "spots_left": null,
+      "color": "#3d7a8c",
+      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
+    },
+    {
+      "id": "Barry's Yoga Studio-98646",
+      "title": "9:00 AM \u2013 10:15 AM EDT",
+      "studio": "Barry's Yoga Studio",
+      "instructor": "Hot Power",
+      "start": "2026-10-28T09:00:00",
+      "end": "2026-10-28T10:15:00",
+      "level": "All Levels",
+      "spots_left": null,
+      "color": "#3d7a8c",
+      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
+    },
+    {
+      "id": "Barry's Yoga Studio-61250",
+      "title": "Kirsten Weeks (substitute)",
+      "studio": "Barry's Yoga Studio",
+      "instructor": "Thursday, October 1",
+      "start": "2026-10-28T09:30:00",
+      "end": "2026-10-28T10:15:00",
+      "level": "All Levels",
+      "spots_left": null,
+      "color": "#3d7a8c",
+      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
+    },
+    {
+      "id": "Barry's Yoga Studio-68245",
+      "title": "9:30 AM \u2013 10:15 AM EDT",
+      "studio": "Barry's Yoga Studio",
+      "instructor": "Hot Conditioning",
+      "start": "2026-10-28T09:30:00",
+      "end": "2026-10-28T10:15:00",
+      "level": "All Levels",
+      "spots_left": null,
+      "color": "#3d7a8c",
+      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
+    },
+    {
+      "id": "Barry's Yoga Studio-78802",
+      "title": "9:30 AM \u2013 10:30 AM EDT",
+      "studio": "Barry's Yoga Studio",
+      "instructor": "Hot Power",
+      "start": "2026-10-28T09:30:00",
+      "end": "2026-10-28T10:30:00",
+      "level": "All Levels",
+      "spots_left": null,
+      "color": "#3d7a8c",
+      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
+    },
+    {
+      "id": "Barry's Yoga Studio-82905",
+      "title": "10:00 AM \u2013 11:15 AM EDT",
+      "studio": "Barry's Yoga Studio",
+      "instructor": "Sunday Service",
+      "start": "2026-10-28T10:00:00",
+      "end": "2026-10-28T11:15:00",
+      "level": "All Levels",
+      "spots_left": null,
+      "color": "#3d7a8c",
+      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
+    },
+    {
+      "id": "Barry's Yoga Studio-86395",
+      "title": "10:30 AM \u2013 11:30 AM EDT",
+      "studio": "Barry's Yoga Studio",
+      "instructor": "Hot Vinyasa",
+      "start": "2026-10-28T10:30:00",
+      "end": "2026-10-28T11:30:00",
+      "level": "All Levels",
+      "spots_left": null,
+      "color": "#3d7a8c",
+      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
+    },
+    {
+      "id": "Barry's Yoga Studio-79198",
+      "title": "Ashley Whipkey (substitute)",
+      "studio": "Barry's Yoga Studio",
+      "instructor": "Hot Conditioning",
+      "start": "2026-10-28T12:00:00",
+      "end": "2026-10-28T12:45:00",
+      "level": "All Levels",
+      "spots_left": null,
+      "color": "#3d7a8c",
+      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
+    },
+    {
+      "id": "Barry's Yoga Studio-49307",
+      "title": "12:00 PM \u2013 12:45 PM EDT",
+      "studio": "Barry's Yoga Studio",
+      "instructor": "Hot Conditioning",
+      "start": "2026-10-28T12:00:00",
+      "end": "2026-10-28T12:45:00",
+      "level": "All Levels",
+      "spots_left": null,
+      "color": "#3d7a8c",
+      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
+    },
+    {
+      "id": "Barry's Yoga Studio-83900",
+      "title": "4:30 PM \u2013 5:30 PM EDT",
+      "studio": "Barry's Yoga Studio",
+      "instructor": "Hot Power",
+      "start": "2026-10-28T16:30:00",
+      "end": "2026-10-28T17:30:00",
+      "level": "All Levels",
+      "spots_left": null,
+      "color": "#3d7a8c",
+      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
+    },
+    {
+      "id": "Barry's Yoga Studio-23250",
+      "title": "4:30 PM \u2013 5:15 PM EDT",
+      "studio": "Barry's Yoga Studio",
+      "instructor": "Hot Conditioning",
+      "start": "2026-10-28T16:30:00",
+      "end": "2026-10-28T17:15:00",
+      "level": "All Levels",
+      "spots_left": null,
+      "color": "#3d7a8c",
+      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
+    },
+    {
+      "id": "Barry's Yoga Studio-80054",
+      "title": "Kirsten Weeks (substitute)",
+      "studio": "Barry's Yoga Studio",
+      "instructor": "Hot Conditioning",
+      "start": "2026-10-28T18:00:00",
+      "end": "2026-10-28T18:45:00",
+      "level": "All Levels",
+      "spots_left": null,
+      "color": "#3d7a8c",
+      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
+    },
+    {
+      "id": "Barry's Yoga Studio-38826",
+      "title": "6:00 PM \u2013 7:15 PM EDT",
+      "studio": "Barry's Yoga Studio",
+      "instructor": "Hot Power",
+      "start": "2026-10-28T18:00:00",
+      "end": "2026-10-28T19:15:00",
+      "level": "All Levels",
+      "spots_left": null,
+      "color": "#3d7a8c",
+      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
+    },
+    {
+      "id": "Barry's Yoga Studio-39978",
+      "title": "7:15 PM \u2013 8:30 PM EDT",
+      "studio": "Barry's Yoga Studio",
+      "instructor": "Yin to Restorative",
+      "start": "2026-10-28T19:15:00",
+      "end": "2026-10-28T20:30:00",
+      "level": "All Levels",
+      "spots_left": null,
+      "color": "#3d7a8c",
+      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
+    },
+    {
+      "id": "Barry's Yoga Studio-21272",
       "title": "7:30 PM \u2013 8:15 PM EDT",
       "studio": "Barry's Yoga Studio",
       "instructor": "Hot Conditioning",
-      "start": "2026-10-27T19:30:00",
-      "end": "2026-10-27T20:15:00",
+      "start": "2026-10-28T19:30:00",
+      "end": "2026-10-28T20:15:00",
+      "level": "All Levels",
+      "spots_left": null,
+      "color": "#3d7a8c",
+      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
+    },
+    {
+      "id": "Barry's Yoga Studio-34299",
+      "title": "5:45 AM \u2013 6:30 AM EDT",
+      "studio": "Barry's Yoga Studio",
+      "instructor": "Hot Power",
+      "start": "2026-10-29T05:45:00",
+      "end": "2026-10-29T06:30:00",
+      "level": "All Levels",
+      "spots_left": null,
+      "color": "#3d7a8c",
+      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
+    },
+    {
+      "id": "Barry's Yoga Studio-51683",
+      "title": "5:45 AM \u2013 6:45 AM EDT",
+      "studio": "Barry's Yoga Studio",
+      "instructor": "Hot Power",
+      "start": "2026-10-29T05:45:00",
+      "end": "2026-10-29T06:45:00",
+      "level": "All Levels",
+      "spots_left": null,
+      "color": "#3d7a8c",
+      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
+    },
+    {
+      "id": "Barry's Yoga Studio-11691",
+      "title": "Lisa Laluk (substitute)",
+      "studio": "Barry's Yoga Studio",
+      "instructor": "Hot Conditioning",
+      "start": "2026-10-29T05:45:00",
+      "end": "2026-10-29T06:30:00",
+      "level": "All Levels",
+      "spots_left": null,
+      "color": "#3d7a8c",
+      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
+    },
+    {
+      "id": "Barry's Yoga Studio-33593",
+      "title": "Kirsten Weeks (substitute)",
+      "studio": "Barry's Yoga Studio",
+      "instructor": "Hot Combo",
+      "start": "2026-10-29T05:45:00",
+      "end": "2026-10-29T06:30:00",
+      "level": "All Levels",
+      "spots_left": null,
+      "color": "#3d7a8c",
+      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
+    },
+    {
+      "id": "Barry's Yoga Studio-32495",
+      "title": "7:00 AM \u2013 7:45 AM EDT",
+      "studio": "Barry's Yoga Studio",
+      "instructor": "Hot Conditioning",
+      "start": "2026-10-29T07:00:00",
+      "end": "2026-10-29T07:45:00",
+      "level": "All Levels",
+      "spots_left": null,
+      "color": "#3d7a8c",
+      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
+    },
+    {
+      "id": "Barry's Yoga Studio-29603",
+      "title": "8:00 AM \u2013 8:45 AM EDT",
+      "studio": "Barry's Yoga Studio",
+      "instructor": "Hot Combo",
+      "start": "2026-10-29T08:00:00",
+      "end": "2026-10-29T08:45:00",
+      "level": "All Levels",
+      "spots_left": null,
+      "color": "#3d7a8c",
+      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
+    },
+    {
+      "id": "Barry's Yoga Studio-69643",
+      "title": "9:00 AM \u2013 10:15 AM EDT",
+      "studio": "Barry's Yoga Studio",
+      "instructor": "Hot Power",
+      "start": "2026-10-29T09:00:00",
+      "end": "2026-10-29T10:15:00",
+      "level": "All Levels",
+      "spots_left": null,
+      "color": "#3d7a8c",
+      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
+    },
+    {
+      "id": "Barry's Yoga Studio-44277",
+      "title": "Kirsten Weeks (substitute)",
+      "studio": "Barry's Yoga Studio",
+      "instructor": "Thursday, October 1",
+      "start": "2026-10-29T09:30:00",
+      "end": "2026-10-29T10:15:00",
+      "level": "All Levels",
+      "spots_left": null,
+      "color": "#3d7a8c",
+      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
+    },
+    {
+      "id": "Barry's Yoga Studio-17476",
+      "title": "9:30 AM \u2013 10:15 AM EDT",
+      "studio": "Barry's Yoga Studio",
+      "instructor": "Hot Conditioning",
+      "start": "2026-10-29T09:30:00",
+      "end": "2026-10-29T10:15:00",
+      "level": "All Levels",
+      "spots_left": null,
+      "color": "#3d7a8c",
+      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
+    },
+    {
+      "id": "Barry's Yoga Studio-63343",
+      "title": "9:30 AM \u2013 10:30 AM EDT",
+      "studio": "Barry's Yoga Studio",
+      "instructor": "Hot Power",
+      "start": "2026-10-29T09:30:00",
+      "end": "2026-10-29T10:30:00",
+      "level": "All Levels",
+      "spots_left": null,
+      "color": "#3d7a8c",
+      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
+    },
+    {
+      "id": "Barry's Yoga Studio-68833",
+      "title": "10:00 AM \u2013 11:15 AM EDT",
+      "studio": "Barry's Yoga Studio",
+      "instructor": "Sunday Service",
+      "start": "2026-10-29T10:00:00",
+      "end": "2026-10-29T11:15:00",
+      "level": "All Levels",
+      "spots_left": null,
+      "color": "#3d7a8c",
+      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
+    },
+    {
+      "id": "Barry's Yoga Studio-21150",
+      "title": "10:30 AM \u2013 11:30 AM EDT",
+      "studio": "Barry's Yoga Studio",
+      "instructor": "Hot Vinyasa",
+      "start": "2026-10-29T10:30:00",
+      "end": "2026-10-29T11:30:00",
+      "level": "All Levels",
+      "spots_left": null,
+      "color": "#3d7a8c",
+      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
+    },
+    {
+      "id": "Barry's Yoga Studio-68113",
+      "title": "Ashley Whipkey (substitute)",
+      "studio": "Barry's Yoga Studio",
+      "instructor": "Hot Conditioning",
+      "start": "2026-10-29T12:00:00",
+      "end": "2026-10-29T12:45:00",
+      "level": "All Levels",
+      "spots_left": null,
+      "color": "#3d7a8c",
+      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
+    },
+    {
+      "id": "Barry's Yoga Studio-75493",
+      "title": "12:00 PM \u2013 12:45 PM EDT",
+      "studio": "Barry's Yoga Studio",
+      "instructor": "Hot Conditioning",
+      "start": "2026-10-29T12:00:00",
+      "end": "2026-10-29T12:45:00",
+      "level": "All Levels",
+      "spots_left": null,
+      "color": "#3d7a8c",
+      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
+    },
+    {
+      "id": "Barry's Yoga Studio-51658",
+      "title": "4:30 PM \u2013 5:30 PM EDT",
+      "studio": "Barry's Yoga Studio",
+      "instructor": "Hot Power",
+      "start": "2026-10-29T16:30:00",
+      "end": "2026-10-29T17:30:00",
+      "level": "All Levels",
+      "spots_left": null,
+      "color": "#3d7a8c",
+      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
+    },
+    {
+      "id": "Barry's Yoga Studio-46752",
+      "title": "4:30 PM \u2013 5:15 PM EDT",
+      "studio": "Barry's Yoga Studio",
+      "instructor": "Hot Conditioning",
+      "start": "2026-10-29T16:30:00",
+      "end": "2026-10-29T17:15:00",
+      "level": "All Levels",
+      "spots_left": null,
+      "color": "#3d7a8c",
+      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
+    },
+    {
+      "id": "Barry's Yoga Studio-38792",
+      "title": "Kirsten Weeks (substitute)",
+      "studio": "Barry's Yoga Studio",
+      "instructor": "Hot Conditioning",
+      "start": "2026-10-29T18:00:00",
+      "end": "2026-10-29T18:45:00",
+      "level": "All Levels",
+      "spots_left": null,
+      "color": "#3d7a8c",
+      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
+    },
+    {
+      "id": "Barry's Yoga Studio-48992",
+      "title": "6:00 PM \u2013 7:15 PM EDT",
+      "studio": "Barry's Yoga Studio",
+      "instructor": "Hot Power",
+      "start": "2026-10-29T18:00:00",
+      "end": "2026-10-29T19:15:00",
+      "level": "All Levels",
+      "spots_left": null,
+      "color": "#3d7a8c",
+      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
+    },
+    {
+      "id": "Barry's Yoga Studio-38413",
+      "title": "7:15 PM \u2013 8:30 PM EDT",
+      "studio": "Barry's Yoga Studio",
+      "instructor": "Yin to Restorative",
+      "start": "2026-10-29T19:15:00",
+      "end": "2026-10-29T20:30:00",
+      "level": "All Levels",
+      "spots_left": null,
+      "color": "#3d7a8c",
+      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
+    },
+    {
+      "id": "Barry's Yoga Studio-65680",
+      "title": "7:30 PM \u2013 8:15 PM EDT",
+      "studio": "Barry's Yoga Studio",
+      "instructor": "Hot Conditioning",
+      "start": "2026-10-29T19:30:00",
+      "end": "2026-10-29T20:15:00",
+      "level": "All Levels",
+      "spots_left": null,
+      "color": "#3d7a8c",
+      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
+    },
+    {
+      "id": "Barry's Yoga Studio-92493",
+      "title": "5:45 AM \u2013 6:30 AM EDT",
+      "studio": "Barry's Yoga Studio",
+      "instructor": "Hot Power",
+      "start": "2026-10-30T05:45:00",
+      "end": "2026-10-30T06:30:00",
+      "level": "All Levels",
+      "spots_left": null,
+      "color": "#3d7a8c",
+      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
+    },
+    {
+      "id": "Barry's Yoga Studio-46224",
+      "title": "5:45 AM \u2013 6:45 AM EDT",
+      "studio": "Barry's Yoga Studio",
+      "instructor": "Hot Power",
+      "start": "2026-10-30T05:45:00",
+      "end": "2026-10-30T06:45:00",
+      "level": "All Levels",
+      "spots_left": null,
+      "color": "#3d7a8c",
+      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
+    },
+    {
+      "id": "Barry's Yoga Studio-43429",
+      "title": "Lisa Laluk (substitute)",
+      "studio": "Barry's Yoga Studio",
+      "instructor": "Hot Conditioning",
+      "start": "2026-10-30T05:45:00",
+      "end": "2026-10-30T06:30:00",
+      "level": "All Levels",
+      "spots_left": null,
+      "color": "#3d7a8c",
+      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
+    },
+    {
+      "id": "Barry's Yoga Studio-70803",
+      "title": "Kirsten Weeks (substitute)",
+      "studio": "Barry's Yoga Studio",
+      "instructor": "Hot Combo",
+      "start": "2026-10-30T05:45:00",
+      "end": "2026-10-30T06:30:00",
+      "level": "All Levels",
+      "spots_left": null,
+      "color": "#3d7a8c",
+      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
+    },
+    {
+      "id": "Barry's Yoga Studio-56587",
+      "title": "7:00 AM \u2013 7:45 AM EDT",
+      "studio": "Barry's Yoga Studio",
+      "instructor": "Hot Conditioning",
+      "start": "2026-10-30T07:00:00",
+      "end": "2026-10-30T07:45:00",
+      "level": "All Levels",
+      "spots_left": null,
+      "color": "#3d7a8c",
+      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
+    },
+    {
+      "id": "Barry's Yoga Studio-19584",
+      "title": "8:00 AM \u2013 8:45 AM EDT",
+      "studio": "Barry's Yoga Studio",
+      "instructor": "Hot Combo",
+      "start": "2026-10-30T08:00:00",
+      "end": "2026-10-30T08:45:00",
+      "level": "All Levels",
+      "spots_left": null,
+      "color": "#3d7a8c",
+      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
+    },
+    {
+      "id": "Barry's Yoga Studio-35277",
+      "title": "9:00 AM \u2013 10:15 AM EDT",
+      "studio": "Barry's Yoga Studio",
+      "instructor": "Hot Power",
+      "start": "2026-10-30T09:00:00",
+      "end": "2026-10-30T10:15:00",
+      "level": "All Levels",
+      "spots_left": null,
+      "color": "#3d7a8c",
+      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
+    },
+    {
+      "id": "Barry's Yoga Studio-98904",
+      "title": "Kirsten Weeks (substitute)",
+      "studio": "Barry's Yoga Studio",
+      "instructor": "Thursday, October 1",
+      "start": "2026-10-30T09:30:00",
+      "end": "2026-10-30T10:15:00",
+      "level": "All Levels",
+      "spots_left": null,
+      "color": "#3d7a8c",
+      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
+    },
+    {
+      "id": "Barry's Yoga Studio-98725",
+      "title": "9:30 AM \u2013 10:15 AM EDT",
+      "studio": "Barry's Yoga Studio",
+      "instructor": "Hot Conditioning",
+      "start": "2026-10-30T09:30:00",
+      "end": "2026-10-30T10:15:00",
+      "level": "All Levels",
+      "spots_left": null,
+      "color": "#3d7a8c",
+      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
+    },
+    {
+      "id": "Barry's Yoga Studio-2964",
+      "title": "9:30 AM \u2013 10:30 AM EDT",
+      "studio": "Barry's Yoga Studio",
+      "instructor": "Hot Power",
+      "start": "2026-10-30T09:30:00",
+      "end": "2026-10-30T10:30:00",
+      "level": "All Levels",
+      "spots_left": null,
+      "color": "#3d7a8c",
+      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
+    },
+    {
+      "id": "Barry's Yoga Studio-38503",
+      "title": "10:00 AM \u2013 11:15 AM EDT",
+      "studio": "Barry's Yoga Studio",
+      "instructor": "Sunday Service",
+      "start": "2026-10-30T10:00:00",
+      "end": "2026-10-30T11:15:00",
+      "level": "All Levels",
+      "spots_left": null,
+      "color": "#3d7a8c",
+      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
+    },
+    {
+      "id": "Barry's Yoga Studio-22995",
+      "title": "10:30 AM \u2013 11:30 AM EDT",
+      "studio": "Barry's Yoga Studio",
+      "instructor": "Hot Vinyasa",
+      "start": "2026-10-30T10:30:00",
+      "end": "2026-10-30T11:30:00",
+      "level": "All Levels",
+      "spots_left": null,
+      "color": "#3d7a8c",
+      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
+    },
+    {
+      "id": "Barry's Yoga Studio-93242",
+      "title": "Ashley Whipkey (substitute)",
+      "studio": "Barry's Yoga Studio",
+      "instructor": "Hot Conditioning",
+      "start": "2026-10-30T12:00:00",
+      "end": "2026-10-30T12:45:00",
+      "level": "All Levels",
+      "spots_left": null,
+      "color": "#3d7a8c",
+      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
+    },
+    {
+      "id": "Barry's Yoga Studio-19602",
+      "title": "12:00 PM \u2013 12:45 PM EDT",
+      "studio": "Barry's Yoga Studio",
+      "instructor": "Hot Conditioning",
+      "start": "2026-10-30T12:00:00",
+      "end": "2026-10-30T12:45:00",
+      "level": "All Levels",
+      "spots_left": null,
+      "color": "#3d7a8c",
+      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
+    },
+    {
+      "id": "Barry's Yoga Studio-79480",
+      "title": "4:30 PM \u2013 5:30 PM EDT",
+      "studio": "Barry's Yoga Studio",
+      "instructor": "Hot Power",
+      "start": "2026-10-30T16:30:00",
+      "end": "2026-10-30T17:30:00",
+      "level": "All Levels",
+      "spots_left": null,
+      "color": "#3d7a8c",
+      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
+    },
+    {
+      "id": "Barry's Yoga Studio-38050",
+      "title": "4:30 PM \u2013 5:15 PM EDT",
+      "studio": "Barry's Yoga Studio",
+      "instructor": "Hot Conditioning",
+      "start": "2026-10-30T16:30:00",
+      "end": "2026-10-30T17:15:00",
+      "level": "All Levels",
+      "spots_left": null,
+      "color": "#3d7a8c",
+      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
+    },
+    {
+      "id": "Barry's Yoga Studio-64160",
+      "title": "Kirsten Weeks (substitute)",
+      "studio": "Barry's Yoga Studio",
+      "instructor": "Hot Conditioning",
+      "start": "2026-10-30T18:00:00",
+      "end": "2026-10-30T18:45:00",
+      "level": "All Levels",
+      "spots_left": null,
+      "color": "#3d7a8c",
+      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
+    },
+    {
+      "id": "Barry's Yoga Studio-46721",
+      "title": "6:00 PM \u2013 7:15 PM EDT",
+      "studio": "Barry's Yoga Studio",
+      "instructor": "Hot Power",
+      "start": "2026-10-30T18:00:00",
+      "end": "2026-10-30T19:15:00",
+      "level": "All Levels",
+      "spots_left": null,
+      "color": "#3d7a8c",
+      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
+    },
+    {
+      "id": "Barry's Yoga Studio-80425",
+      "title": "7:15 PM \u2013 8:30 PM EDT",
+      "studio": "Barry's Yoga Studio",
+      "instructor": "Yin to Restorative",
+      "start": "2026-10-30T19:15:00",
+      "end": "2026-10-30T20:30:00",
+      "level": "All Levels",
+      "spots_left": null,
+      "color": "#3d7a8c",
+      "booking_url": "https://barrysyogastudio.com/fairport-schedule/"
+    },
+    {
+      "id": "Barry's Yoga Studio-96259",
+      "title": "7:30 PM \u2013 8:15 PM EDT",
+      "studio": "Barry's Yoga Studio",
+      "instructor": "Hot Conditioning",
+      "start": "2026-10-30T19:30:00",
+      "end": "2026-10-30T20:15:00",
       "level": "All Levels",
       "spots_left": null,
       "color": "#3d7a8c",
