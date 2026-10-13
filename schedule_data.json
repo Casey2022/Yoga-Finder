@@ -1,68 +1,20 @@
 {
-  "last_updated": "2026-10-12T12:59:19",
+  "last_updated": "2026-10-13T12:35:40",
   "classes": [
     {
-      "id": "Victor Yoga Studio-88869",
+      "id": "Victor Yoga Studio-65731",
       "title": "Warm Vinyasa Flow in Studio",
       "studio": "Victor Yoga Studio",
-      "instructor": "Alex M",
-      "start": "2026-10-12T09:30:00",
-      "end": "2026-10-12T10:30:00",
+      "instructor": "Gentle Yoga in Studio",
+      "start": "2026-10-13T09:30:00",
+      "end": "2026-10-13T10:30:00",
       "level": "All Levels",
       "spots_left": null,
       "color": "#c17a5c",
-      "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/alex-m-bec6605c"
+      "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/beth-c-2"
     },
     {
-      "id": "Victor Yoga Studio-63942",
-      "title": "Open Level Yoga",
-      "studio": "Victor Yoga Studio",
-      "instructor": "Bani A",
-      "start": "2026-10-12T11:00:00",
-      "end": "2026-10-12T12:00:00",
-      "level": "All Levels",
-      "spots_left": null,
-      "color": "#c17a5c",
-      "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/bani-a"
-    },
-    {
-      "id": "Victor Yoga Studio-50982",
-      "title": "Warm Vinyasa Flow in Studio",
-      "studio": "Victor Yoga Studio",
-      "instructor": "Mandy W",
-      "start": "2026-10-12T17:30:00",
-      "end": "2026-10-12T18:30:00",
-      "level": "All Levels",
-      "spots_left": null,
-      "color": "#c17a5c",
-      "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/mandy-w"
-    },
-    {
-      "id": "Victor Yoga Studio-84486",
-      "title": "Alternating Instructors",
-      "studio": "Victor Yoga Studio",
-      "instructor": "Mindful Mondays",
-      "start": "2026-10-12T19:00:00",
-      "end": "2026-10-12T20:00:00",
-      "level": "All Levels",
-      "spots_left": null,
-      "color": "#c17a5c",
-      "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/alternating-instructors-4"
-    },
-    {
-      "id": "Victor Yoga Studio-63034",
-      "title": "Vinyasa Flow",
-      "studio": "Victor Yoga Studio",
-      "instructor": "Kati S",
-      "start": "2026-10-13T06:00:00",
-      "end": "2026-10-13T07:00:00",
-      "level": "All Levels",
-      "spots_left": null,
-      "color": "#c17a5c",
-      "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/kati-s"
-    },
-    {
-      "id": "Victor Yoga Studio-50281",
+      "id": "Victor Yoga Studio-94939",
       "title": "Gentle Yoga in Studio",
       "studio": "Victor Yoga Studio",
       "instructor": "Mandy W",
@@ -74,7 +26,7 @@
       "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/mandy-w"
     },
     {
-      "id": "Victor Yoga Studio-21098",
+      "id": "Victor Yoga Studio-69689",
       "title": "Warm Vinyasa Flow in Studio",
       "studio": "Victor Yoga Studio",
       "instructor": "Beth C",
@@ -86,19 +38,7 @@
       "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/beth-c-2"
     },
     {
-      "id": "Victor Yoga Studio-16849",
-      "title": "Gentle Yoga on the Grasslands of Ganondagan",
-      "studio": "Victor Yoga Studio",
-      "instructor": "Mandy W",
-      "start": "2026-10-13T18:00:00",
-      "end": "2026-10-13T19:00:00",
-      "level": "All Levels",
-      "spots_left": null,
-      "color": "#c17a5c",
-      "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/mandy-w"
-    },
-    {
-      "id": "Victor Yoga Studio-17932",
+      "id": "Victor Yoga Studio-96720",
       "title": "Stretch and Strengthen",
       "studio": "Victor Yoga Studio",
       "instructor": "Mandy W",
@@ -110,7 +50,7 @@
       "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/mandy-w"
     },
     {
-      "id": "Victor Yoga Studio-63726",
+      "id": "Victor Yoga Studio-71063",
       "title": "Gentle Yoga in Studio",
       "studio": "Victor Yoga Studio",
       "instructor": "Mandy W",
@@ -122,7 +62,7 @@
       "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/mandy-w"
     },
     {
-      "id": "Victor Yoga Studio-34542",
+      "id": "Victor Yoga Studio-86375",
       "title": "A little Slower Vinyasa Flow",
       "studio": "Victor Yoga Studio",
       "instructor": "Mandy W",
@@ -134,7 +74,7 @@
       "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/mandy-w"
     },
     {
-      "id": "Victor Yoga Studio-12305",
+      "id": "Victor Yoga Studio-15927",
       "title": "Gentle Yoga in Studio",
       "studio": "Victor Yoga Studio",
       "instructor": "Bani A",
@@ -143,22 +83,22 @@
       "level": "All Levels",
       "spots_left": null,
       "color": "#c17a5c",
-      "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/mandy-w"
+      "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/bani-a"
     },
     {
-      "id": "Victor Yoga Studio-6130",
+      "id": "Victor Yoga Studio-56052",
       "title": "Yoga Fusion",
       "studio": "Victor Yoga Studio",
-      "instructor": "Mandy W",
+      "instructor": "Bani A",
       "start": "2026-10-16T10:00:00",
       "end": "2026-10-16T11:00:00",
       "level": "All Levels",
       "spots_left": null,
       "color": "#c17a5c",
-      "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/mandy-w"
+      "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/bani-a"
     },
     {
-      "id": "Victor Yoga Studio-40817",
+      "id": "Victor Yoga Studio-5578",
       "title": "Open Level Yoga",
       "studio": "Victor Yoga Studio",
       "instructor": "Bani A",
@@ -170,55 +110,19 @@
       "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/bani-a"
     },
     {
-      "id": "Victor Yoga Studio-15331",
-      "title": "Warm Vinyasa in Studio",
-      "studio": "Victor Yoga Studio",
-      "instructor": "Mandy W",
-      "start": "2026-10-18T09:30:00",
-      "end": "2026-10-18T10:30:00",
-      "level": "All Levels",
-      "spots_left": null,
-      "color": "#c17a5c",
-      "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/mandy-w"
-    },
-    {
-      "id": "Victor Yoga Studio-99619",
-      "title": "Stretch and Strengthen",
-      "studio": "Victor Yoga Studio",
-      "instructor": "Mandy W",
-      "start": "2026-10-18T12:30:00",
-      "end": "2026-10-18T13:30:00",
-      "level": "All Levels",
-      "spots_left": null,
-      "color": "#c17a5c",
-      "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/mandy-w"
-    },
-    {
-      "id": "Victor Yoga Studio-54178",
-      "title": "Gentle Yoga in Studio",
-      "studio": "Victor Yoga Studio",
-      "instructor": "Mandy W",
-      "start": "2026-10-18T16:30:00",
-      "end": "2026-10-18T17:30:00",
-      "level": "All Levels",
-      "spots_left": null,
-      "color": "#c17a5c",
-      "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/mandy-w"
-    },
-    {
-      "id": "Victor Yoga Studio-24910",
+      "id": "Victor Yoga Studio-98818",
       "title": "GentlebCandlelight Yoga",
       "studio": "Victor Yoga Studio",
-      "instructor": "Mandy W",
+      "instructor": "Bani A",
       "start": "2026-10-18T18:00:00",
       "end": "2026-10-18T19:00:00",
       "level": "All Levels",
       "spots_left": null,
       "color": "#c17a5c",
-      "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/mandy-w"
+      "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/bani-a"
     },
     {
-      "id": "Victor Yoga Studio-73117",
+      "id": "Victor Yoga Studio-8705",
       "title": "Warm Vinyasa Flow in Studio",
       "studio": "Victor Yoga Studio",
       "instructor": "Alex M",
@@ -230,7 +134,7 @@
       "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/alex-m-bec6605c"
     },
     {
-      "id": "Victor Yoga Studio-49691",
+      "id": "Victor Yoga Studio-9750",
       "title": "Open Level Yoga",
       "studio": "Victor Yoga Studio",
       "instructor": "Bani A",
@@ -242,7 +146,7 @@
       "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/bani-a"
     },
     {
-      "id": "Victor Yoga Studio-56208",
+      "id": "Victor Yoga Studio-45891",
       "title": "Warm Vinyasa Flow in Studio",
       "studio": "Victor Yoga Studio",
       "instructor": "Mandy W",
@@ -254,7 +158,7 @@
       "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/mandy-w"
     },
     {
-      "id": "Victor Yoga Studio-31852",
+      "id": "Victor Yoga Studio-17640",
       "title": "Alternating Instructors",
       "studio": "Victor Yoga Studio",
       "instructor": "Mindful Mondays",
@@ -266,19 +170,19 @@
       "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/alternating-instructors-4"
     },
     {
-      "id": "Victor Yoga Studio-50060",
-      "title": "Vinyasa Flow",
+      "id": "Victor Yoga Studio-6192",
+      "title": "Gentle Yoga on the Grasslands of Ganondagan",
       "studio": "Victor Yoga Studio",
-      "instructor": "Kati S",
-      "start": "2026-10-20T06:00:00",
-      "end": "2026-10-20T07:00:00",
+      "instructor": "Gentle Yoga in Studio",
+      "start": "2026-10-20T09:30:00",
+      "end": "2026-10-20T10:30:00",
       "level": "All Levels",
       "spots_left": null,
       "color": "#c17a5c",
-      "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/kati-s"
+      "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/mandy-w"
     },
     {
-      "id": "Victor Yoga Studio-13774",
+      "id": "Victor Yoga Studio-76119",
       "title": "Gentle Yoga in Studio",
       "studio": "Victor Yoga Studio",
       "instructor": "Mandy W",
@@ -290,7 +194,7 @@
       "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/mandy-w"
     },
     {
-      "id": "Victor Yoga Studio-77721",
+      "id": "Victor Yoga Studio-95728",
       "title": "Warm Vinyasa Flow in Studio",
       "studio": "Victor Yoga Studio",
       "instructor": "Beth C",
@@ -302,7 +206,7 @@
       "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/beth-c-2"
     },
     {
-      "id": "Victor Yoga Studio-77118",
+      "id": "Victor Yoga Studio-65371",
       "title": "Gentle Yoga on the Grasslands of Ganondagan",
       "studio": "Victor Yoga Studio",
       "instructor": "Mandy W",
@@ -314,7 +218,7 @@
       "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/mandy-w"
     },
     {
-      "id": "Victor Yoga Studio-77894",
+      "id": "Victor Yoga Studio-13332",
       "title": "Stretch and Strengthen",
       "studio": "Victor Yoga Studio",
       "instructor": "Mandy W",
@@ -326,7 +230,7 @@
       "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/mandy-w"
     },
     {
-      "id": "Victor Yoga Studio-40620",
+      "id": "Victor Yoga Studio-56577",
       "title": "A little Slower Vinyasa Flow",
       "studio": "Victor Yoga Studio",
       "instructor": "Mandy W",
@@ -338,7 +242,7 @@
       "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/mandy-w"
     },
     {
-      "id": "Victor Yoga Studio-48908",
+      "id": "Victor Yoga Studio-26476",
       "title": "Vinyasa Flow",
       "studio": "Victor Yoga Studio",
       "instructor": "Mandy W",
@@ -350,7 +254,7 @@
       "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/mandy-w"
     },
     {
-      "id": "Victor Yoga Studio-8446",
+      "id": "Victor Yoga Studio-14427",
       "title": "Sunset Yoga on the Grasslands at Ganondagan",
       "studio": "Victor Yoga Studio",
       "instructor": "Gentle Yoga in Studio",
@@ -362,7 +266,7 @@
       "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/mandy-w"
     },
     {
-      "id": "Victor Yoga Studio-60765",
+      "id": "Victor Yoga Studio-33774",
       "title": "Gentle Yoga in Studio",
       "studio": "Victor Yoga Studio",
       "instructor": "Bani A",
@@ -374,7 +278,7 @@
       "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/bani-a"
     },
     {
-      "id": "Victor Yoga Studio-83120",
+      "id": "Victor Yoga Studio-66308",
       "title": "Yoga Fusion",
       "studio": "Victor Yoga Studio",
       "instructor": "Mandy W",
@@ -386,7 +290,7 @@
       "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/mandy-w"
     },
     {
-      "id": "Victor Yoga Studio-49558",
+      "id": "Victor Yoga Studio-36346",
       "title": "Sunset Yoga on the Grasslands at Ganondagan",
       "studio": "Victor Yoga Studio",
       "instructor": "Mandy W",
@@ -398,7 +302,7 @@
       "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/mandy-w"
     },
     {
-      "id": "Victor Yoga Studio-63658",
+      "id": "Victor Yoga Studio-46502",
       "title": "Open Level Yoga",
       "studio": "Victor Yoga Studio",
       "instructor": "Bani A",
@@ -410,7 +314,7 @@
       "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/bani-a"
     },
     {
-      "id": "Victor Yoga Studio-53601",
+      "id": "Victor Yoga Studio-86686",
       "title": "Warm Vinyasa in Studio",
       "studio": "Victor Yoga Studio",
       "instructor": "Mandy W",
@@ -422,7 +326,7 @@
       "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/mandy-w"
     },
     {
-      "id": "Victor Yoga Studio-49969",
+      "id": "Victor Yoga Studio-80151",
       "title": "Stretch and Strengthen",
       "studio": "Victor Yoga Studio",
       "instructor": "Mandy W",
@@ -434,7 +338,7 @@
       "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/mandy-w"
     },
     {
-      "id": "Victor Yoga Studio-5892",
+      "id": "Victor Yoga Studio-21748",
       "title": "Gentle Yoga in Studio",
       "studio": "Victor Yoga Studio",
       "instructor": "Mandy W",
@@ -446,7 +350,7 @@
       "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/mandy-w"
     },
     {
-      "id": "Victor Yoga Studio-36224",
+      "id": "Victor Yoga Studio-41029",
       "title": "GentlebCandlelight Yoga",
       "studio": "Victor Yoga Studio",
       "instructor": "Mandy W",
@@ -458,7 +362,7 @@
       "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/mandy-w"
     },
     {
-      "id": "Victor Yoga Studio-71894",
+      "id": "Victor Yoga Studio-46760",
       "title": "Warm Vinyasa Flow in Studio",
       "studio": "Victor Yoga Studio",
       "instructor": "Alex M",
@@ -470,7 +374,7 @@
       "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/mandy-w"
     },
     {
-      "id": "Victor Yoga Studio-87991",
+      "id": "Victor Yoga Studio-39545",
       "title": "Open Level Yoga",
       "studio": "Victor Yoga Studio",
       "instructor": "Bani A",
@@ -482,7 +386,7 @@
       "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/bani-a"
     },
     {
-      "id": "Victor Yoga Studio-36269",
+      "id": "Victor Yoga Studio-48057",
       "title": "Warm Vinyasa Flow in Studio",
       "studio": "Victor Yoga Studio",
       "instructor": "Mandy W",
@@ -494,7 +398,7 @@
       "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/mandy-w"
     },
     {
-      "id": "Victor Yoga Studio-29109",
+      "id": "Victor Yoga Studio-29789",
       "title": "Vinyasa Flow",
       "studio": "Victor Yoga Studio",
       "instructor": "Kati S",
@@ -506,7 +410,7 @@
       "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/kati-s"
     },
     {
-      "id": "Victor Yoga Studio-40529",
+      "id": "Victor Yoga Studio-68372",
       "title": "Gentle Yoga in Studio",
       "studio": "Victor Yoga Studio",
       "instructor": "Mandy W",
@@ -518,7 +422,7 @@
       "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/mandy-w"
     },
     {
-      "id": "Victor Yoga Studio-81054",
+      "id": "Victor Yoga Studio-15239",
       "title": "Warm Vinyasa Flow in Studio",
       "studio": "Victor Yoga Studio",
       "instructor": "Beth C",
@@ -530,7 +434,7 @@
       "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/beth-c-2"
     },
     {
-      "id": "Victor Yoga Studio-3433",
+      "id": "Victor Yoga Studio-80307",
       "title": "Gentle Yoga on the Grasslands of Ganondagan",
       "studio": "Victor Yoga Studio",
       "instructor": "Mandy W",
@@ -542,7 +446,7 @@
       "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/mandy-w"
     },
     {
-      "id": "Victor Yoga Studio-26501",
+      "id": "Victor Yoga Studio-86551",
       "title": "Stretch and Strengthen",
       "studio": "Victor Yoga Studio",
       "instructor": "Mandy W",
@@ -554,7 +458,7 @@
       "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/mandy-w"
     },
     {
-      "id": "Victor Yoga Studio-46904",
+      "id": "Victor Yoga Studio-76017",
       "title": "A little Slower Vinyasa Flow",
       "studio": "Victor Yoga Studio",
       "instructor": "Mandy W",
@@ -566,7 +470,7 @@
       "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/mandy-w"
     },
     {
-      "id": "Victor Yoga Studio-37278",
+      "id": "Victor Yoga Studio-83721",
       "title": "Vinyasa Flow",
       "studio": "Victor Yoga Studio",
       "instructor": "Mandy W",
@@ -578,7 +482,7 @@
       "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/mandy-w"
     },
     {
-      "id": "Victor Yoga Studio-87733",
+      "id": "Victor Yoga Studio-26489",
       "title": "Gentle Yoga in Studio",
       "studio": "Victor Yoga Studio",
       "instructor": "Bani A",
@@ -590,7 +494,7 @@
       "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/mandy-w"
     },
     {
-      "id": "Victor Yoga Studio-92428",
+      "id": "Victor Yoga Studio-8588",
       "title": "Yoga Fusion",
       "studio": "Victor Yoga Studio",
       "instructor": "Mandy W",
@@ -602,7 +506,7 @@
       "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/mandy-w"
     },
     {
-      "id": "Victor Yoga Studio-75681",
+      "id": "Victor Yoga Studio-87759",
       "title": "Open Level Yoga",
       "studio": "Victor Yoga Studio",
       "instructor": "Bani A",
@@ -614,7 +518,7 @@
       "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/bani-a"
     },
     {
-      "id": "Victor Yoga Studio-4976",
+      "id": "Victor Yoga Studio-62954",
       "title": "Warm Vinyasa in Studio",
       "studio": "Victor Yoga Studio",
       "instructor": "Mandy W",
@@ -626,7 +530,7 @@
       "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/mandy-w"
     },
     {
-      "id": "Victor Yoga Studio-58078",
+      "id": "Victor Yoga Studio-7333",
       "title": "Stretch and Strengthen",
       "studio": "Victor Yoga Studio",
       "instructor": "Mandy W",
@@ -638,7 +542,7 @@
       "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/mandy-w"
     },
     {
-      "id": "Victor Yoga Studio-23443",
+      "id": "Victor Yoga Studio-71912",
       "title": "Gentle Yoga in Studio",
       "studio": "Victor Yoga Studio",
       "instructor": "Mandy W",
@@ -650,7 +554,7 @@
       "booking_url": "https://www.mindbodyonline.com/explore/fitness/instructors/mandy-w"
     },
     {
-      "id": "Victor Yoga Studio-29494",
+      "id": "Victor Yoga Studio-34970",
       "title": "GentlebCandlelight Yoga",
       "studio": "Victor Yoga Studio",
       "instructor": "Mandy W",
